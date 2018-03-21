@@ -20,8 +20,10 @@
 </title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 부트스트랩 선언 -->
 <link rel="stylesheet" href="../resources/css/bootstrap.css">
-<link rel="stylesheet" href="../resources/css/custom.css">
+<!-- 개인css 선언부 -->
+<link rel="stylesheet" href="../resources/css/18sadan.css">
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="../resources/js/bootstrap.js"></script>
 <script type="text/javascript">
@@ -56,5 +58,6 @@ $(function(){
 		}
 	%>
  --%>
+ <decorator:body />
 </body>
 </html>

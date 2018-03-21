@@ -32,6 +32,9 @@ a:hover {
 	color: white;
 	background-color: #000000; 
 }
+.navbar-collapse {
+	background-color: #000000;
+}
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus { /* 네비게이션 글자에 마우스를 올렸을 때 */
 	color: white;
