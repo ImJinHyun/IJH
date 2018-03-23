@@ -10,6 +10,6 @@ public interface First_board_Mapper {
 
 
 
-	List<Map<String, Object>> selectList1(Map<String, Object> map2);
+	List<Map<String, Object>> selectList1(Map<String, Object> map2) throws Exception;
 
 }

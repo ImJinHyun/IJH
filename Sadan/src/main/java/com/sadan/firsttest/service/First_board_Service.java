@@ -17,9 +17,9 @@ public class First_board_Service {
 	
 
 
-	public Map<String, Object> List(Map<String, Object> map2) {
+	public Map<String, Object> List(Map<String, Object> map2) throws Exception{
 		
-		System.out.println(map2.get(0));
+		System.out.println(map2);
 		List<Map<String, Object>> board_List = 	first_board_Mapper.selectList1(map2); 
 		System.out.println(board_List);
 		return null;

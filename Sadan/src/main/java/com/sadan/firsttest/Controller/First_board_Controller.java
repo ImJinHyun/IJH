@@ -22,7 +22,7 @@ public class First_board_Controller {
 	private First_board_Service first_board_Service;
 	
 	@RequestMapping("/board/test.do")
-	public String board_List(Model model) {
+	public String board_List(Model model)throws Exception {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		Map<String, Object> map2 = new HashMap<String, Object>();
@@ -32,7 +32,7 @@ public class First_board_Controller {
 			map2.put("B", "2");
 			map2.put("C", "3");
 			map = first_board_Service.List(map2);
-			logger.debug(map.toString());
+			logger.debug(map2.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		

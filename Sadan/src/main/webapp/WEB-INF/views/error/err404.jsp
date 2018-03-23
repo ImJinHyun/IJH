@@ -11,7 +11,7 @@
 <p class="box-body">
 요청하신 페이지를 확인해 주세요.<br/>
 다시 한번 실행해 주세요.<br/>
-오류가 계속 나는 경우 사이트 관리자(admin@webjjang.com)에게 연락해 주세요.
+오류가 계속 나는 경우 사이트 관리자(jjangfeela@naver.com)에게 연락해 주세요.
 </p>
 </body>
 </html>

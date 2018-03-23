@@ -2,10 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
 	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
 		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -39,12 +39,7 @@
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	
-	
 	<!-- Transaction 처리를 위해서 @Transactional 어노테이션을 사용할 수 있도록 해준다. -->
 	<tx:annotation-driven/>
-
-	<!-- aop -->
-	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
-	<context:component-scan base-package="com.sadan"></context:component-scan>
-	<aop:config></aop:config>
+	
 </beans>
