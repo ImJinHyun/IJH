@@ -21,8 +21,20 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.sadan.web" />
 	
+		<!-- 자동생성을 위해 기본 패키지 선언 :기본 패키지 아래에 있는 특별한 클래스를 자동생성
+		@Controller, @Service, @Repository, @Conponent, @RestController
+	-->
+	<context:component-scan base-package="com.sadan" />
 	
+		<!-- 인터셉터 - 글쓰기,수정,삭제 시 로그인 확인하는 -->
+<!-- 	<interceptors> -->
+<!-- 		<interceptor> -->
+<!-- 			<mapping path="/board/**"/> -->
+<!-- 			<mapping path="/image/**"/> -->
+<!-- 			<beans:bean class="com.sadan.firsttest.Controller.First_board_Controller"/> 임시로 클래스지정함 -->
+<!-- 			<beans:bean class="com.webjjang.common.interceptor.AuthorityInterceptor"/> --> 
+<!-- 		</interceptor> -->
+<!-- 	</interceptors> -->
 	
 </beans:beans>

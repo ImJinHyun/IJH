@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sadan.firsttest.mapper.First_board_Mapper">
+
+	<select id="selectList1" parameterType="String" resultMap="Map">
+	select * from test01
+		
+	</select>
+
+</mapper>
