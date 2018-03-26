@@ -30,8 +30,8 @@ public class First_board_Service {
 	public Map<String, Object> List(Map<String, Object> map2) throws Exception{
 		DefaultTransactionDefinition def = new DefaultTransactionDefinition();
 		def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
-		DataSourceTransactionManager txManager = null;
-		TransactionStatus status = txManager.getTransaction(def);
+//		DataSourceTransactionManager txManager = null;
+//		TransactionStatus status = txManager.getTransaction(def);
 		
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		try {
@@ -39,12 +39,12 @@ public class First_board_Service {
 			List<Map<String, Object>> board_List = 	first_board_Mapper.selectList1(map2); 
 			resultMap.put("board_List", board_List);
 			System.out.println(board_List);
-			txManager.commit(status);
+//			txManager.commit(status);
 			
 			
 		} catch (Exception e) {
 		e.printStackTrace();
-		txManager.rollback(status);
+//		txManager.rollback(status);
 		}
 		return resultMap;
 	}
