@@ -7,14 +7,10 @@
 	<!-- hello에 대한 요청이 들어오면 적용시키는 레이아웃 선언 -->
 	<!-- 적용시키는 매핑명 -->
 	<decorator name="main" page="default_decorator.jsp">
-		<pattern>/member/*</pattern> 
-		<pattern>/time/*</pattern>
-		<pattern>/friend/*</pattern>
 		<pattern>/board/*</pattern>
-		<pattern>/image/*</pattern>
-		<pattern>/main/*</pattern>
-		<pattern>/mayknow/*</pattern>
-		<pattern>/addIinformation/*</pattern>
+		<pattern>/base/*</pattern> 
+		
+
 
 	</decorator>
 	
