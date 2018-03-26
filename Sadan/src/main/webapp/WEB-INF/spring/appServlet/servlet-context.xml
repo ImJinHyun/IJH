@@ -3,18 +3,21 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.7.xsd">
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-	
+
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<!-- html,css, js, image -->
 	<resources mapping="/resources/**" location="/resources/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
@@ -22,24 +25,66 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-	
+
 	<!-- 자동생성을 위해 기본 패키지 선언 :기본 패키지 아래에 있는 특별한 클래스를 자동생성
 		@Controller, @Service, @Repository, @Conponent, @RestController
 	-->
 	<context:component-scan base-package="com.sadan" />
-	
-	
-	<mybatis-spring:scan base-package="com.sadan" />
-	
+	<mybatis-spring:scan base-package="com.sadan"/>
 
-		<!-- 인터셉터 - 글쓰기,수정,삭제 시 로그인 확인하는 -->
+	<!-- 인터셉터 - 글쓰기,수정,삭제 시 로그인 확인하는 -->
 <!-- 	<interceptors> -->
 <!-- 		<interceptor> -->
 <!-- 			<mapping path="/board/**"/> -->
 <!-- 			<mapping path="/image/**"/> -->
-<!-- 			<beans:bean class="com.sadan.firsttest.Controller.First_board_Controller"/> 임시로 클래스지정함 -->
-<!-- 			<beans:bean class="com.webjjang.common.interceptor.AuthorityInterceptor"/> --> 
+<!-- 			<beans:bean class="com.webjjang.common.interceptor.AuthorityInterceptor"/> -->
 <!-- 		</interceptor> -->
 <!-- 	</interceptors> -->
-	
+
+
+	<!--
+	<interceptors>
+		<interceptor>
+			<mapping path="/**"/>
+			<beans:bean class="com.webjjang.interceptor.SaveLogInterceptor"/>
+		</interceptor>
+	</interceptors>
+	-->
+
+	<!-- MongoDB 관련 -->
+	<!-- 서버에 접속 정보가 들어있는 클리이언 -->
+	<!--
+	<mongo:mongo-client
+	  host="localhost" port="27017" >
+		<mongo:client-options
+		 connections-per-host="8"
+		 threads-allowed-to-block-for-connection-multiplier="4"
+		 connect-timeout="1000"
+		 max-wait-time="1500"
+		 socket-keep-alive="true"
+		 socket-timeout="1500"
+		 />
+	</mongo:mongo-client>
+	-->
+
+	<!-- 몽고디비 처리를 쉽게 작성할 수 있도록 도와주는 객체 -->
+	<!--
+	<beans:bean id="mongoTemplate"
+	 class="org.springframework.data.mongodb.core.MongoTemplate">
+		<beans:constructor-arg ref="mongo" />
+		<beans:constructor-arg
+		 name="databaseName" value="test" />
+	</beans:bean>
+	-->
+
+	<!-- fileupload 용량 제한 : 10MByte -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="10485760"></beans:property>
+	</beans:bean>
+
+	<!-- new String("이영환"); -->
+<!-- 	<beans:bean id="uploadPath" class="java.lang.String"> -->
+<!-- 		<beans:constructor-arg value="C:\\server\\image\\upload"></beans:constructor-arg> -->
+<!-- 	</beans:bean> -->
+
 </beans:beans>

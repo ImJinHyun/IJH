@@ -6,7 +6,7 @@
 <mapper namespace="com.sadan.firsttest.mapper.First_board_Mapper">
 
 	<select id="selectList1" parameterType="String" resultType="Map">
-	select name,age,sex from test01
+	select name,age,sex from test
 		
 	</select>
 
