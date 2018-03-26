@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sadan.firsttest.mapper.First_board_Mapper;
@@ -11,7 +12,7 @@ import com.sadan.firsttest.mapper.First_board_Mapper;
 @Service
 public class First_board_Service {
 	
-	@Mapper
+	@Autowired
 	private First_board_Mapper first_board_Mapper;
 	
 	
