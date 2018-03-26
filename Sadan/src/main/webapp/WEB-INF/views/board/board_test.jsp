@@ -7,6 +7,6 @@
 <title>DB테스트</title>
 </head>
 <body>
-임진현입니다.
+임진현입니다.ㄴ
 </body>
 </html>
