@@ -1,4 +1,4 @@
-/* ì „ì²´ ì˜ì—­ì„ í†µí‹€ì–´ì„œ ìŠ¤íƒ€ì¼ ì •ì˜ */
+/* ÀüÃ¼ ¿µ¿ªÀ» ÅëÆ²¾î¼­ ½ºÅ¸ÀÏ Á¤ÀÇ */
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 * {
 	font-family: 'Nanum Gothic';
@@ -12,23 +12,24 @@ a:hover {
 	text-decoration: none;
 	cursor: pointer;
 }
-/*ë„¤ì´ê²Œì´ì…˜ ì˜ì—­*/
-.navbar-default { /* ë°°ê²½ ìƒ‰ìƒ */
+/*³×ÀÌ°ÔÀÌ¼Ç ¿µ¿ª*/
+.navbar-default { /* ¹è°æ »ö»ó */
 	background-color: #000000;
 	border-color: #000000;
+	border-radius: 0;
 }
-.navbar-default .navbar-brand { /* ë„¤ë¹„ê²Œì´ì…˜ ì œëª© ìƒ‰ìƒ */
+.navbar-default .navbar-brand { /* ³×ºñ°ÔÀÌ¼Ç Á¦¸ñ »ö»ó */
 	color: #ffffff;
 }
 
 .navbar-default .navbar-brand : hover,
-.navbar-default .navbar-brand : focus { /* ë„¤ë¹„ê²Œì´ì…˜ ì œëª©ì— ë§ˆìš°ìŠ¤ë¥¼ ì˜¬ë ¸ì„ ë•Œ*/
+.navbar-default .navbar-brand : focus { /* ³×ºñ°ÔÀÌ¼Ç Á¦¸ñ¿¡ ¸¶¿ì½º¸¦ ¿Ã·ÈÀ» ¶§*/
 	background-color: transparent;
 	color: #bbbbbb;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus { /* í˜„ìž¬ ì„ íƒëœ ë„¤ë¹„ê²Œì´ì…˜ ìƒ‰ìƒ ì´ë²¤íŠ¸ */
+.navbar-default .navbar-nav > .active > a:focus { /* ÇöÀç ¼±ÅÃµÈ ³×ºñ°ÔÀÌ¼Ç »ö»ó ÀÌº¥Æ® */
 	color: white;
 	background-color: #000000; 
 }
@@ -36,22 +37,152 @@ a:hover {
 	background-color: #000000;
 }
 .navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus { /* ë„¤ë¹„ê²Œì´ì…˜ ê¸€ìžì— ë§ˆìš°ìŠ¤ë¥¼ ì˜¬ë ¸ì„ ë•Œ */
+.navbar-default .navbar-nav > li > a:focus { /* ³×ºñ°ÔÀÌ¼Ç ±ÛÀÚ¿¡ ¸¶¿ì½º¸¦ ¿Ã·ÈÀ» ¶§ */
 	color: white;
 	background-color: #000000; 
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open> a:hover,
-.navbar-default .navbar-nav > .open > a:focus { /* ë“œë¡­ë‹¤ìš´ì´ ì—´ë ¸ì„ë•Œ ë§ˆìš°ìŠ¤ ìƒ‰ìƒ ì´ë²¤íŠ¸ */
+.navbar-default .navbar-nav > .open > a:focus { /* µå·Ó´Ù¿îÀÌ ¿­·ÈÀ»¶§ ¸¶¿ì½º »ö»ó ÀÌº¥Æ® */
 	color: #000000;
 	background-color: #ffffff; 
 	text-decoration: none;
 }
-.navbar-default .navbar-nav > li > a { /* ë„¤ë¹„ê²Œì´ì…˜ ê¸°ë³¸ ìƒ‰ìƒ */
+.navbar-default .navbar-nav > li > a { /* ³×ºñ°ÔÀÌ¼Ç ±âº» »ö»ó */
 	color: white;
 }
+.navbar-default1 {
+	background-color: #000000;
+}
+.navbar-collapse .navbar-default1 > p {
+	color: #ffffff;
+	float: left;
+	margin: 10px 30px 0 30px;
+}
+.navbar-collapse .navbar-default1 > p > span {
+	font-size: 15px;
+	font-weight: 800;
+	color: red;
+}
 
-@media (max-width : 767px) { /* í•´ìƒë„ê°€ ìž‘ì„ë•Œ ë“œë¡­ë‹¤ìš´ ì•„ì´í…œì— ë§ˆìš°ìŠ¤ë¥¼ ì˜¬ë ¸ì„ ë•Œ */
+.navbar-collapse .navbar-default1 .nineteen {
+	font-weight: 800;
+	color: red;
+	margin-left: 260px;
+	margin-top: 0;
+	font-size: 15px;
+}
+.top_bar {
+	width: 1170px;
+	height: 10px; 
+	border:0; 
+	background-color: #ffffff;
+}
+.left_body {
+	width: 250px; 
+	height: 1000px; 
+	background-color: #FFDC3C; 
+	border: 0;
+}
+.login_all {
+	width: 230px; 
+	height: 150px;  
+	border:1px solid #000000; 
+	margin:10px 0 0 10px; 
+	float: left;
+	background-color: #ffffff;
+}
+
+.login_all .id {
+	width: 220px;
+	height: 30px;
+	border: 1px solid #000000;
+	margin: 5px 0 0 4px;
+}
+.login_all .pw {
+	width: 220px;
+	height: 30px;
+	border: 1px solid #000000;
+	margin: 5px 0 0 4px;
+}
+.login_all .auto_login_all {
+	width: 220px;
+	height: 30px;
+	/*border: 1px solid #000000;*/
+	margin: 5px 0 0 4px;
+
+}
+.login_all .auto_login_all input {
+	margin: 5px 0 0 5px;
+}
+.login_all .auto_login > span {
+	margin-left: 15px;
+	float: left;
+}
+.login_all2 {
+	border-top: 1px solid #000000;
+	width: 220px;
+	height: 30px;
+	/*border: 1px solid #000000;*/
+	margin: 5px 0 0 4px; 
+}
+.login_all2 span {
+	margin-left: 5px;
+}
+.login_all2 .member_join {
+	float: right;
+}
+.login_all2 .member_join a {
+	font-weight: 700;
+	color: red;
+}
+.bottom_bar {
+	width: 100%; 
+	height: 20px; 
+	border:0; 
+	background-color: #ffffff;
+}
+.left_menu_all {
+	background-color: #ffffff;
+	float: left;
+	margin: 10px;
+	padding-top: 10px;
+}
+.left_menu_all td {
+	width: 229px;
+	height: 30px;
+	border-color: #000000;
+}
+.left_menu_all td a {
+
+	margin-left: 10px;
+}
+.center_body {
+	width: 670px;
+	height:1000px; 
+	border:0; 
+	background-color: #9932CC; 
+	margin-left: 250px;
+}
+.right_body_all {
+	width: 250px; 
+	height: 1000px; 
+	border: 0; 
+	background-color: #FFB182; 
+	margin-left: 670px;
+}
+.right_body_all .right_body {
+	width: 230px;
+	height: 1000px;
+	border: 1px solid #000000;
+	margin: 10px;
+}
+.right_body_all .right_body img {
+	border: 0;
+	width: 230px;
+	height: 80px;
+}
+@media (max-width : 767px) { /* ÇØ»óµµ°¡ ÀÛÀ»¶§ µå·Ó´Ù¿î ¾ÆÀÌÅÛ¿¡ ¸¶¿ì½º¸¦ ¿Ã·ÈÀ» ¶§ */
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a {
 		color: #ffffff;
 	}
