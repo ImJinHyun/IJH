@@ -224,7 +224,7 @@ a:hover {
 	padding:0;
 	width: 670px;
 	height: 980px; 
-	background-color: green;
+	background-color: #ffffff;
 	position: absolute;
 }
 .container .body_top_banner_all {	
@@ -258,10 +258,25 @@ a:hover {
 	width: 670px;
 	height: 80px;
 }
-#board1 {
-	width: 670px;
-	height: 200px;
-} 
+.nav-tabs {
+	margin: 0;
+	padding: 0;
+	
+	
+}
+.nav-tabs > li {
+	margin: 0;
+	padding: 0;
+	
+}
+.nav-tabs .Affiliate  {
+	
+}
+.nav-tabs > li > a {
+	font-size:11px;;
+	
+}
+
 .right_body_all {
 	width: 250px; 
 	height: 1000px; 
