@@ -31,43 +31,14 @@
 		
  	$("#profile").val() != null ? $(".userImage").attr("src","../download/displayFile?userImage=<c:out value='${login.userImage}'/>") : $(".userImage").attr("src","../resources/images/logo.gif") ;
  });-->
-<!-- </script> -->
-
-<style type="text/css">
-			.jumbotron {		
-				background-image: url(images/beer.jpg);
-				background-size: cover;
-				text-shadow: black 0.2em 0.2em 0.2em;
-				color: white;	
-			}
-
-
-			/*제휴글씨*/
-			.navbar-collapse > .navbar-nav > li > .jeyu {
-				color: red;
-			}
-			.address {
-				color: red;
-			}
-			.navbar-brand > span {
-				font-size: 18px;
-			}
-			.navbar-nav li > img {
-				margin-right: 30px;
-				border:0 
-				width:80px; 
-				height:40px;
-			}
-		</style>
-		
-		
+<!-- </script> -->		
 <decorator:head />
 </head>
 
 <body>
 
 		<!--네비게이션바-->
-		<nav class="navbar navbar-default" style="margin-bottom: 0px">
+		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -131,39 +102,30 @@
 		<!--네비게이션바-->
 
 		<!--메인화면 점보트론-->
-		<div class="container" style="background-color:#000000;width: 100%;>
-			<table style="width:1170px; margin:0 auto; padding: 0px; background-color="#000000" cellspacing="0" cellpadding="0" border="0" align="center">
-			<colgroup>
-			<col width="">
-			<col width="120">
-			<col width="350">
-			<col width="470">
-			</colgroup>
-			<tbody><tr>
-				<td><div class="header_logo"><h1><a href="." onfocus="this.blur()"></a></h1></div></td>
-				<td align="left" valign="bottom"><img src="/resources/images/main1.png" border="0"></td>
-				<td align="left" valign="bottom"><img src="/resouces/images/main2.png" border="0"></td>
-				<td align="left" valign="bottom"><img src="/resources/images/main3.png" border="0"></a>
-					<div style="margin:0 0 5px 30px;">
-					
-					</div>
-				</td>
-			</tr>
-			</tbody>
-			</table>
-			<!--
-			<div class="jumbotron">
-				<h1 class="text-center">18SADAN에 오신것을 환영합니다</h1>
-				<p class="text-center">18SADAN은 다양한 정보를 제공합니다</p>
-				<p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">18사단 가입하기</a></p>
-			</div>-->	
-		</div>
+		<div class="container" id="main_container">
+			<div class="headmain">	
+			<ul>
+				<li><div class="header_logo"><h1><a href="." onfocus="this.blur()"></a></h1></div></li>
+				<li><img src="/resources/images/main1.png"></li>
+				<li><img src="/resources/images/main2.png"></li>
+				<li><img src="/resources/images/main3.png"></li>
+			</ul>
+			
+			</div>
+			</div>
+			
+<!-- 			<div class="jumbotron"> -->
+<!-- 				<h1 class="text-center">18SADAN에 오신것을 환영합니다</h1> -->
+<!-- 				<p class="text-center">18SADAN은 다양한 정보를 제공합니다</p> -->
+<!-- 				<p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">18사단 가입하기</a></p> -->
+<!-- 			</div>	 -->
+		
 	<div style="width: 100%; background-color: #000000;">
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin: 0 auto; width: 1170px; padding: 0 0 0 0;" >
 			<div class="navbar navbar-default" style="margin-bottom: 0px;">
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav" >
-							<li><a href="#">제휴업소<span class="sr-only"></span></a></li>
+							<li><a href="#" class="jeyu">제휴업소<span class="sr-only"></span></a></li>
 							<li><a href="#">이용후기</a></li>
 							<li><a href="#">커뮤니티</a></li>
 							<li><a href="#">엔터테인먼트</a></li>
@@ -181,7 +143,7 @@
 	<div style="width: 100%; background-color: #000000;">
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin: 0 auto; width: 1170px; padding: 0 0 0 0; " >
 			<div class="navbar navbar-default1" style="margin-bottom: 0px; ">
-					<p>구글에서 <br/><span>유흥그라운드</span>를 검색해주세요</p><img src="./images/google1.png">
+					<p>구글에서 <br/><span>유흥그라운드</span>를 검색해주세요</p><img src="./images/main5.png">
 					<p class="nineteen">*유흥그라운드는 성인전용 커뮤니티입니다.미성년자는 일체 접근 불허하며, 현자들의 세계에 오신걸  환영합니다.*</p>
 			</div>
 		</div>
@@ -231,7 +193,7 @@
 			</div>	
 		</div>
 		<!--좌측메뉴-->
-		<table border="1" cellpadding="0" cellspacing="0" class="left_menu_all">
+		<table class="left_menu_all" >
 				<tr>
 					<td><a>채팅방링크</a></td>
 				</tr>
@@ -245,7 +207,10 @@
 					<td><a>공지사항</a></td>
 				</tr>
 				<tr>
-					<td><a>출근부(PR)</a></td>
+					<td><a>제휴업소</a></td>
+				</tr>
+				<tr>
+					<td><a>출근부PR</a></td>
 				</tr>
 				<tr>
 					<td><a>이벤트업소배너</a></td>
@@ -288,8 +253,8 @@
 
 		
 		<!-- 푸터 -->
-		<footer style="background-color: #000000; color: #ffffff">
-			<div class="container">
+		<footer class="footer">
+			<div class="container" id="footer_container">
 				<br>
 				<div class="row">
 					<div class="col-sm-2" style="text-align: center;"><h5>CopyRight © 2018</h5><h5>임진현(JinHyun)</h5></div>

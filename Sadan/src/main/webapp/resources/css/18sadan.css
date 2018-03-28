@@ -48,9 +48,60 @@ a:hover {
 	background-color: #ffffff; 
 	text-decoration: none;
 }
+.jumbotron {		
+	background-image: url(images/beer.jpg);
+	background-size: cover;
+	text-shadow: black 0.2em 0.2em 0.2em;
+	color: white;	
+}
+/*제휴글씨*/
+.navbar-collapse > .navbar-nav > li > .jeyu {
+	color: red;
+}
+.address {
+	color: red;
+}
+.navbar-brand > span {
+	font-size: 18px;
+}
+.navbar-nav li > img {
+	margin-right: 20px;
+	border:1px solid #000000; 
+	width:80px; 
+	height:40px;
+}			
+#main_container {
+	width:100%;
+	background-color: #000000;
+}
+#main_container .headmain {
+	width: 1170px;
+	padding:0;
+	margin:0;
+	margin: 0 auto;
+	background-color: #000000;
+	border-spacing: 0;
+	border: 1px;
+	align-content: center;
+}
+#main_container .headmain ul > li {
+	float: left;
+	align-content: inherit;
+	vertical-align: bottom;
+	list-style: none;
+	
+}
+#main_container .headmain ul > li > img {
+	border: 0;
+}
+.navbar-default {
+	margin: 0;
+	padding: 0;
+}
 .navbar-default .navbar-nav > li > a { /* 네비게이션 기본 색상 */
 	color: white;
 }
+
 .navbar-default1 {
 	background-color: #000000;
 }
@@ -147,23 +198,70 @@ a:hover {
 	float: left;
 	margin: 10px;
 	padding-top: 10px;
+	border: 1px solid #000000;
+	border-spacing: 0;
 }
 .left_menu_all td {
 	width: 229px;
 	height: 30px;
-	border-color: #000000;
+	border: 1px solid #000000;
 }
 .left_menu_all td a {
 
 	margin-left: 10px;
 }
+
 .center_body {
 	width: 670px;
 	height:1000px; 
 	border:0; 
 	background-color: white; 
 	margin-left: 250px;
+	
 }
+#body_container {
+	margin:0;
+	padding:0;
+	width: 670px;
+	height: 980px; 
+	background-color: green;
+	position: absolute;
+}
+.container .body_top_banner_all {	
+	width: 670px;
+	height: 160px;
+/* 	border: 1px solid #000000; */
+	background-color: #5ACCFF;
+}
+.container .body_top_banner_all > ul {
+	margin:0;
+	padding:0;
+}
+.container .body_top_banner_all > ul {
+	list-style: none;
+}
+.container .body_top_banner_all > ul > .main_domain_banner1 {
+	
+	background-image: url("../images/main_domain_banner1.jpg");
+	background-size: 670px;
+	height: 80px;
+	background-repeat:no-repeat;		
+}
+.container .body_top_banner_all > ul > .main_domain_banner2 {
+	
+	background-image: url("../images/main_domain_banner2.jpg");
+	background-size: 670px;
+	height: 80px;
+	background-repeat:no-repeat;		
+}
+.container .body_top_banner_all > ul > li > img {
+	width: 670px;
+	height: 80px;
+}
+#board1 {
+	width: 670px;
+	height: 200px;
+} 
 .right_body_all {
 	width: 250px; 
 	height: 1000px; 
@@ -181,6 +279,10 @@ a:hover {
 	border: 0;
 	width: 230px;
 	height: 80px;
+}
+.footer {
+	background-color: #000000; 
+	color: #ffffff;
 }
 @media (max-width : 767px) { /* 해상도가 작을때 드롭다운 아이템에 마우스를 올렸을 때 */
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a {

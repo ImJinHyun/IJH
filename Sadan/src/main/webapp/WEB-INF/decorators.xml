@@ -9,6 +9,7 @@
 	<decorator name="main" page="default_decorator.jsp">
 		<pattern>/board/*</pattern>
 		<pattern>/base/*</pattern> 
+		<pattern>/Index/*</pattern> 
 		
 
 
