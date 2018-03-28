@@ -6,7 +6,7 @@
 <mapper namespace="com.sadan.boardtest.mapper.Boardtest_ListMapper">
 
 	<select id="selectList1" parameterType="String" resultType="Map">
-	select name,age,sex from test
+	select no,writer,subject,date_format(date,'%Y-%m-%d') date, hit from test
 		
 	</select>
 

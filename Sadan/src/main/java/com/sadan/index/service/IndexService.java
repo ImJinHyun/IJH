@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.TransactionManagementConfigura
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
-import com.sadan.boardtestmapper.Boardtest_ListMapper;
+import com.sadan.boardtest.mapper.Boardtest_ListMapper;
 import com.sadan.index.controller.IndexController;
 import com.sadan.index.mapper.IndexMapper;
 

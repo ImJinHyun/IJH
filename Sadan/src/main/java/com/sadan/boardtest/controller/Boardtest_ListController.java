@@ -1,9 +1,10 @@
 package com.sadan.boardtest.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,20 +24,24 @@ public class Boardtest_ListController {
 	private Boardtest_ListService first_board_Service;
 	
 	@RequestMapping("/board/test.do")
-	public String board_List(Model model)throws Exception {
+	public String board_List(Model model,HttpSession session)throws Exception {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		Map<String, Object> map2 = new HashMap<String, Object>();
 		
 		try {
-			map2.put("A", "1");
-			map2.put("B", "2");
-			map2.put("C", "3");
-			map = first_board_Service.List(map2);
-			logger.debug(map2.toString());
+			map = (Map<String, Object>) first_board_Service.List(map2);
+			System.out.println(map);
+			
+			if (!map.get("list").toString().equals("error")) {
+				@SuppressWarnings({ "unused", "unchecked" })
+				List<Map<String, Object>> board = (List<Map<String, Object>>) map.get("list");
+				model.addAttribute("board",board);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		
+			map.put("error", e.getMessage());
+			model.addAttribute("error",map.get("error"));
 		}
 		return "board/board_test";
 	}

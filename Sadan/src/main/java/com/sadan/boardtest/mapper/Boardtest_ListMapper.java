@@ -1,4 +1,4 @@
-package com.sadan.boardtestmapper;
+package com.sadan.boardtest.mapper;
 
 import java.util.List;
 import java.util.Map;
