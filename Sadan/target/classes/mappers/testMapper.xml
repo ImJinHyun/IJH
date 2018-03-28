@@ -3,7 +3,7 @@
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.sadan.firsttest.mapper.First_board_Mapper">
+<mapper namespace="com.sadan.boardtest.mapper.Boardtest_ListMapper">
 
 	<select id="selectList1" parameterType="String" resultType="Map">
 	select name,age,sex from test

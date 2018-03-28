@@ -1,4 +1,4 @@
-package com.sadan.firsttest.Controller;
+package com.sadan.boardtest.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,19 +7,20 @@ import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.sadan.firsttest.service.First_board_Service;
+import com.sadan.boardtest.service.Boardtest_ListService;
 
 
 @Controller
-public class First_board_Controller {
-	private static final Logger logger = LoggerFactory.getLogger(First_board_Controller.class);
+public class Boardtest_ListController {
+	private static final Logger logger = LoggerFactory.getLogger(Boardtest_ListController.class);
 	
-	@Inject
-	private First_board_Service first_board_Service;
+	@Autowired
+	private Boardtest_ListService first_board_Service;
 	
 	@RequestMapping("/board/test.do")
 	public String board_List(Model model)throws Exception {

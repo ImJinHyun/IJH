@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.sadan.firsttest.service.First_board_Service;
+import com.sadan.boardtest.service.Boardtest_ListService;
 import com.sadan.index.service.IndexService;
 
 
