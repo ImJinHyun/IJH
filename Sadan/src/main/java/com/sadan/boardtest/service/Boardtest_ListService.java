@@ -1,4 +1,4 @@
-package com.sadan.firsttest.service;
+package com.sadan.boardtest.service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -16,13 +16,13 @@ import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.TransactionManagementConfigurationSelector;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
-import com.sadan.firsttest.mapper.First_board_Mapper;
+import com.sadan.boardtestmapper.Boardtest_ListMapper;
 
 @Service
-public class First_board_Service {
+public class Boardtest_ListService {
 	
 	@Autowired
-	private First_board_Mapper first_board_Mapper;
+	private Boardtest_ListMapper first_board_Mapper;
 	
 	
 
