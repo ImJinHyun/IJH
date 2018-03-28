@@ -31,7 +31,8 @@
 		
  	$("#profile").val() != null ? $(".userImage").attr("src","../download/displayFile?userImage=<c:out value='${login.userImage}'/>") : $(".userImage").attr("src","../resources/images/logo.gif") ;
  });-->
-<!-- </script> -->		
+<!-- </script> -->	
+
 <decorator:head />
 </head>
 
@@ -143,7 +144,7 @@
 	<div style="width: 100%; background-color: #000000;">
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin: 0 auto; width: 1170px; padding: 0 0 0 0; " >
 			<div class="navbar navbar-default1" style="margin-bottom: 0px; ">
-					<p>구글에서 <br/><span>유흥그라운드</span>를 검색해주세요</p><img src="./images/main5.png">
+					<p>구글에서 <br/><span>유흥그라운드</span>를 검색해주세요</p><img src="/resources/images/main5.png">
 					<p class="nineteen">*유흥그라운드는 성인전용 커뮤니티입니다.미성년자는 일체 접근 불허하며, 현자들의 세계에 오신걸  환영합니다.*</p>
 			</div>
 		</div>
@@ -153,16 +154,16 @@
 			<div class="navbar navbar-default" style="margin-bottom: 0px; background-color: red;  border: 0;">
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background-color: red;">
 						<ul class="nav navbar-nav" >
-							<li><img src="./images/room.jpg" style="width: 60px; height:50px;"></li>
-							<li><img src="./images/room1.jpg" style="width: 60px; height:50px;"></li>
-							<li><img src="./images/song.jpg" style="width: 60px; height:50px;"></li>
-							<li><img src="./images/main2.png"></li>
-							<li><img src="./images/main2.png"></li>
-							<li><img src="./images/main2.png"></li>
-							<li><img src="./images/main2.png"></li>
-							<li><img src="./images/main2.png"></li>
-							<li><img src="./images/main2.png"></li>
-							<li><img src="./images/main2.png"></li>								
+							<li><img src="/resources/images/main2.png"></li>
+							<li><img src="/resources/images/main2.png"></li>
+							<li><img src="/resources/images/main2.png"></li>
+							<li><img src="/resources/images/main2.png"></li>
+							<li><img src="/resources/images/main2.png"></li>
+							<li><img src="/resources/images/main2.png"></li>
+							<li><img src="/resources/images/main2.png"></li>
+							<li><img src="/resources/images/main2.png"></li>
+							<li><img src="/resources/images/main2.png"></li>
+							<li><img src="/resources/images/main2.png"></li>								
 						</ul>
 				</div>			
 			</div>

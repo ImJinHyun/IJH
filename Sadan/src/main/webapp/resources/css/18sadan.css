@@ -115,7 +115,9 @@ a:hover {
 	font-weight: 800;
 	color: red;
 }
-
+.navbar-default1 > img {
+	margin-left: 50px;
+}
 .navbar-collapse .navbar-default1 .nineteen {
 	font-weight: 800;
 	color: red;
@@ -258,25 +260,27 @@ a:hover {
 	width: 670px;
 	height: 80px;
 }
+/*
 .nav-tabs {
+	width:670px;
+	height:200px;
+	border:1px solid #000000;
 	margin: 0;
-	padding: 0;
-	
-	
+	padding:0;	
 }
 .nav-tabs > li {
-	margin: 0;
-	padding: 0;
-	
-}
-.nav-tabs .Affiliate  {
-	
-}
-.nav-tabs > li > a {
-	font-size:11px;;
-	
+	margin: -1px;	
 }
 
+.nav-tabs > li > a {
+	font-size:11px;
+	
+}
+.nav-tabs > li > a:hover {
+	background-color: #000000;
+	color: #ffffff;
+}
+*/
 .right_body_all {
 	width: 250px; 
 	height: 1000px; 
