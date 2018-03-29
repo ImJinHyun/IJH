@@ -136,6 +136,7 @@ a:hover {
 	height: 1000px; 
 	background-color: #FFDC3C; 
 	border: 0;
+	float: left;
 }
 .login_all {
 	width: 230px; 
@@ -220,6 +221,7 @@ a:hover {
 	background-color: white; 
 	margin-left: 250px;
 	
+	
 }
 #body_container {
 	margin:0;
@@ -281,6 +283,29 @@ a:hover {
 	color: #ffffff;
 }
 */
+#maintab {
+	width:670px;
+	height:200px;
+	border:1px solid #000000;
+	margin:0;
+	padding:0;
+	float: left;
+}
+#maintab ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+	
+}
+
+#maintab > li {
+	font-size: 8px;
+}
+#maintab .nav-pills {
+	margin: 0;
+	padding: 0;
+}
+	
 .right_body_all {
 	width: 250px; 
 	height: 1000px; 

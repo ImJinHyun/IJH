@@ -219,7 +219,6 @@
 		</table>
 			<!--가운데 바디-->
 			<div class="center_body">
-			
 								<decorator:body />
 			
 			
