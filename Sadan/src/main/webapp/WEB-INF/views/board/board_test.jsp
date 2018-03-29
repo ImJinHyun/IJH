@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container table-reponsive" style="width:670px">
   <h2>베이스가 될 기본 게시판 양식</h2>
   <p>The .table-striped class adds zebra-stripes to a table:</p>        
         
@@ -39,8 +39,9 @@
             </form>
             </section>
          </div>
-             
-  <table class="table table-striped">
+
+     
+  <table class="table table-hover" >
     <thead>
       <tr>
         <th>번호</th>
@@ -56,7 +57,7 @@
     <c:forEach var="board" items="${board}" varStatus="status">
       <tr>
         <td>${board.no }</td>
-        <td>${board.subject }</td>
+        <td><a href="read.do?no=${board.no}">${board.subject }</a></td>
         <td>${board.writer }</td>
         <td>${board.date }</td>
         <td>${board.hit }</td>
@@ -116,8 +117,8 @@
          
          
 <!--          이벤트 게시판 내용 -->
-<div align="center">
-         <table class="table">
+<div align="center" class="table-reponsive">
+         <table class="table table-hover">
             <caption>이벤트 리스트</caption>
             <c:choose>
                <c:when test="${listcount>0}">
