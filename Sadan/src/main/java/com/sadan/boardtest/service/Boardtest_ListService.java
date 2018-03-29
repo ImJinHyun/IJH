@@ -4,16 +4,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
+import com.sadan.boardtest.controller.Boardtest_ListController;
 import com.sadan.boardtest.mapper.Boardtest_ListMapper;
 
 @Service
 public class Boardtest_ListService {
+	private static final Logger logger = LoggerFactory.getLogger(Boardtest_ListService.class);
 	
 	@Autowired
 	private Boardtest_ListMapper first_board_Mapper;
@@ -43,5 +46,29 @@ public class Boardtest_ListService {
 		}
 		return resultMap;
 	}
+
+
+
+
+	public Map<String, Object> board_Read(int no)  throws Exception {
+		
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		
+		try {
+			
+			logger.debug("no");
+			resultMap.put("read", first_board_Mapper.board_Read(no));		//쿼리 호출   
+			logger.debug("resultMap========",resultMap.get("list"));
+			System.out.println(resultMap.get("read"));
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+	//		txManager.rollback(status);
+			resultMap.put("error", e.getMessage());
+		}
+		return resultMap;
+	}
+
+
 
 }

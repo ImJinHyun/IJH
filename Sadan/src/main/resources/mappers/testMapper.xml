@@ -10,4 +10,15 @@
 		
 	</select>
 
+
+	<select id="board_Read" parameterType="Int" resultType="Map">
+		select no
+				,writer
+				,subject
+				,date_format(date,'%Y-%m-%d') date
+				, hit 
+		from test 
+		where no = #{no}
+			
+	</select>
 </mapper>
