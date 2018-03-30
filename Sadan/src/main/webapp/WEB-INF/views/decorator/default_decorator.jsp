@@ -32,18 +32,32 @@
 <body>
 <div class="all">
 									
-			<div class="header">헤더전체
-				<div class="header_1">헤더1
-					
+			<div class="header">
+				<div class="header_1">				
+					<span><img src="/resources/images/main4.png">&nbsp;18사단 공식트위터 <a>http://twitter.com/18sadan_com</a> 팔로우해주세요</span>
 				</div>
-				<div class="header_2">헤더2
-				
+				<div class="header_2">
+					<img src="/resources/images/main1.png" class="mainlogo1">
+					<img src="/resources/images/main2.png">
+					<img src="/resources/images/main3.png">
 				</div>
-				<div class="header_3">헤더3
-				
+				<div class="header_3">
+					<span class="ground1">유흥그라운드</span><img src="/resources/images/main6.png"><p><span>구글에서</span><span class="ground2">유흥그라운드</span><span>를 검색해주세요</span></p>
 				</div>
-				<div class="header_4">헤더4
-				
+				<div class="header_4">
+					<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </div>
+</nav>
 				</div>
 			</div>
 			
