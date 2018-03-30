@@ -48,6 +48,7 @@
 			</div>
 			
 			<div class="bodya">
+				<div class=wrapbody>
 				<div class="left_body">
 					<div class="login">로그인
 					
@@ -56,15 +57,19 @@
 					
 					</div>
 				</div>
-			
-				<div class="center_body">센터바디
-					<article><decorator:body /></article>
+				<div class="wrapcenter_body">
+					<div class="center_body">센터바디
+						<article><decorator:body /></article>
+					</div>
+				</div>
+				<div class="right_body">
+				라이트바디
 				</div>
 				
-				<div class="right_body">
-				
-				</div><!-- right_body끝 -->
+				<!-- right_body끝 -->
+				</div>
 			</div>
+			<div style="clear: both;"></div>
 			<!-- 푸터 -->
 		<div class="footer">
 <!-- 			<div class="container" id="footer_container"> -->
