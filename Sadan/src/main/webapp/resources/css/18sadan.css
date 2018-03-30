@@ -2,6 +2,27 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 * {
 	font-family: 'Nanum Gothic';
+	font-size: 13px;
+    font-weight: normal;      
+    color: black;	
+}
+html, body, form, div, p, dl, dt, dd, ul, ol, li, h1, h2, h3  {
+         border: 0;
+         margin: 0;
+         padding: 0;
+}
+table {
+        border-spacing: 0;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+}
+input {
+        margin: 0; 
+}
+
+a img {
+        border: 0;
 }
 a {
  	color: #000000;
@@ -12,329 +33,47 @@ a:hover {
 	text-decoration: none;
 	cursor: pointer;
 }
-/*네이게이션 영역*/
-.navbar-default { /* 배경 색상 */
-	background-color: #000000;
-	border-color: #000000;
-	border-radius: 0;
-}
-.navbar-default .navbar-brand { /* 네비게이션 제목 색상 */
-	color: #ffffff;
-}
-
-.navbar-default .navbar-brand : hover,
-.navbar-default .navbar-brand : focus { /* 네비게이션 제목에 마우스를 올렸을 때*/
-	background-color: transparent;
-	color: #bbbbbb;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus { /* 현재 선택된 네비게이션 색상 이벤트 */
-	color: white;
-	background-color: #000000; 
-}
-.navbar-collapse {
-	background-color: #000000;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus { /* 네비게이션 글자에 마우스를 올렸을 때 */
-	color: white;
-	background-color: #000000; 
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open> a:hover,
-.navbar-default .navbar-nav > .open > a:focus { /* 드롭다운이 열렸을때 마우스 색상 이벤트 */
-	color: #000000;
-	background-color: #ffffff; 
-	text-decoration: none;
-}
-.jumbotron {		
-	background-image: url(images/beer.jpg);
-	background-size: cover;
-	text-shadow: black 0.2em 0.2em 0.2em;
-	color: white;	
-}
-/*제휴글씨*/
-.navbar-collapse > .navbar-nav > li > .jeyu {
-	color: red;
-}
-.address {
-	color: red;
-}
-.navbar-brand > span {
-	font-size: 18px;
-}
-.navbar-nav li > img {
-	margin-right: 20px;
-	border:1px solid #000000; 
-	width:80px; 
-	height:40px;
-}			
-#main_container {
+.all {
 	width:100%;
-	background-color: #000000;
-}
-#main_container .headmain {
-	width: 1170px;
-	padding:0;
-	margin:0;
+	/*height:1200px;*/
+	/*background-color: #46FFFF;*/
 	margin: 0 auto;
-	background-color: #000000;
-	border-spacing: 0;
-	border: 1px;
-	align-content: center;
-}
-#main_container .headmain ul > li {
-	float: left;
-	align-content: inherit;
-	vertical-align: bottom;
-	list-style: none;
-	
-}
-#main_container .headmain ul > li > img {
-	border: 0;
-}
-.navbar-default {
-	margin: 0;
 	padding: 0;
-}
-.navbar-default .navbar-nav > li > a { /* 네비게이션 기본 색상 */
-	color: white;
-}
-
-.navbar-default1 {
-	background-color: #000000;
-}
-.navbar-collapse .navbar-default1 > p {
-	color: #ffffff;
-	float: left;
-	margin: 10px 30px 0 30px;
-}
-.navbar-collapse .navbar-default1 > p > span {
-	font-size: 15px;
-	font-weight: 800;
-	color: red;
-}
-.navbar-default1 > img {
-	margin-left: 50px;
-}
-.navbar-collapse .navbar-default1 .nineteen {
-	font-weight: 800;
-	color: red;
-	margin-left: 260px;
-	margin-top: 0;
-	font-size: 15px;
-}
-.top_bar {
-	width: 1170px;
-	height: 10px; 
-	border:0; 
-	background-color: #ffffff;
-}
-.left_body {
-	width: 250px; 
-	height: 1000px; 
-	background-color: #FFDC3C; 
-	border: 0;
-	float: left;
-}
-.login_all {
-	width: 230px; 
-	height: 150px;  
-	border:1px solid #000000; 
-	margin:10px 0 0 10px; 
-	float: left;
-	background-color: #ffffff;
-}
-
-.login_all .id {
-	width: 220px;
-	height: 30px;
-	border: 1px solid #000000;
-	margin: 5px 0 0 4px;
-}
-.login_all .pw {
-	width: 220px;
-	height: 30px;
-	border: 1px solid #000000;
-	margin: 5px 0 0 4px;
-}
-.login_all .auto_login_all {
-	width: 220px;
-	height: 30px;
-	/*border: 1px solid #000000;*/
-	margin: 5px 0 0 4px;
-
-}
-.login_all .auto_login_all input {
-	margin: 5px 0 0 5px;
-}
-.login_all .auto_login > span {
-	margin-left: 15px;
-	float: left;
-}
-.login_all2 {
-	border-top: 1px solid #000000;
-	width: 220px;
-	height: 30px;
-	/*border: 1px solid #000000;*/
-	margin: 5px 0 0 4px; 
-}
-.login_all2 span {
-	margin-left: 5px;
-}
-.login_all2 .member_join {
-	float: right;
-}
-.login_all2 .member_join a {
-	font-weight: 700;
-	color: red;
-}
-.bottom_bar {
-	width: 100%; 
-	height: 20px; 
-	border:0; 
-	background-color: #ffffff;
-}
-.left_menu_all {
-	background-color: #ffffff;
-	float: left;
-	margin: 10px;
-	padding-top: 10px;
-	border: 1px solid #000000;
-	border-spacing: 0;
-}
-.left_menu_all td {
-	width: 229px;
-	height: 30px;
-	border: 1px solid #000000;
-}
-.left_menu_all td a {
-
-	margin-left: 10px;
-}
-
-.center_body {
-	width: 670px;
-	height:1000px; 
-	border:0; 
-	background-color: white; 
-	margin-left: 250px;
-	
 	
 }
-#body_container {
-	margin:0;
-	padding:0;
-	width: 670px;
-	height: 980px; 
-	background-color: #ffffff;
-	position: absolute;
+.header {
+	width: 100%;
+	/*height: 250px;*/
+	background-color: #bbbbbb;
+	clear: both;
 }
-.container .body_top_banner_all {	
-	width: 670px;
-	height: 160px;
-/* 	border: 1px solid #000000; */
-	background-color: #5ACCFF;
+.header_1 {
+	width: 100%;
+	height: 40px;
+	background-color: #FAEB78;
 }
-.container .body_top_banner_all > ul {
-	margin:0;
-	padding:0;
+.header_2 {
+	width: 100%;
+	height:100px;
+	background-color: #DF75DB;
 }
-.container .body_top_banner_all > ul {
-	list-style: none;
+.header_3 {
+	width: 100%;
+	height: 70px;
+	background-color: #FAEB78;
 }
-.container .body_top_banner_all > ul > .main_domain_banner1 {
-	
-	background-image: url("../images/main_domain_banner1.jpg");
-	background-size: 670px;
-	height: 80px;
-	background-repeat:no-repeat;		
-}
-.container .body_top_banner_all > ul > .main_domain_banner2 {
-	
-	background-image: url("../images/main_domain_banner2.jpg");
-	background-size: 670px;
-	height: 80px;
-	background-repeat:no-repeat;		
-}
-.container .body_top_banner_all > ul > li > img {
-	width: 670px;
-	height: 80px;
-}
-/*
-.nav-tabs {
-	width:670px;
-	height:200px;
-	border:1px solid #000000;
-	margin: 0;
-	padding:0;	
-}
-.nav-tabs > li {
-	margin: -1px;	
+.header_4 {
+	width: 100%;
+	/*height: 40px;*/
+	background-color: #C39873;
 }
 
-.nav-tabs > li > a {
-	font-size:11px;
-	
-}
-.nav-tabs > li > a:hover {
-	background-color: #000000;
-	color: #ffffff;
-}
-*/
-#maintab {
-	width:670px;
-	height:200px;
-	border:1px solid #000000;
-	margin:0;
-	padding:0;
-	float: left;
-}
-#maintab ul {
-	margin:0;
-	padding:0;
-	list-style:none;
-	
-}
-
-#maintab > li {
-	font-size: 8px;
-}
-#maintab .nav-pills {
-	margin: 0;
-	padding: 0;
-}
-	
-.right_body_all {
-	width: 250px; 
-	height: 1000px; 
-	border: 0; 
-	background-color: #FFB182; 
-	margin-left: 670px;
-}
-.right_body_all .right_body {
-	width: 230px;
-	height: 1000px;
-	border: 1px solid #000000;
-	margin: 10px;
-}
-.right_body_all .right_body img {
-	border: 0;
-	width: 230px;
-	height: 80px;
-}
 .footer {
-	background-color: #000000; 
-	color: #ffffff;
+	width:100%;
+	height:100px;
+	background-color: #c0c0c0;
+
 }
-@media (max-width : 767px) { /* 해상도가 작을때 드롭다운 아이템에 마우스를 올렸을 때 */
-	.navbar-default .navbar-nav .open .dropdown-menu > li > a {
-		color: #ffffff;
-	}
-	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-	.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-		color: #bbbbbb;
-	}
+
 
 }
