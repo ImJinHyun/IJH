@@ -33,6 +33,7 @@
 <div class="all">
 									
 			<div class="header">
+				<div class="warpheader">
 				<div class="header_1">				
 					<span><img src="/resources/images/main4.png">&nbsp;18사단 공식트위터 <a>http://twitter.com/18sadan_com</a> 팔로우해주세요</span>
 				</div>
@@ -46,35 +47,75 @@
 				</div>
 				<div class="header_4">
 					<nav class="navbar navbar-inverse ">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
-    </ul>
-  </div>
-</nav>
-				</div>
-			</div>
+					  <div class="container-fluid">
+					    <ul class="nav navbar-nav">
+					      <li><a href="#">제휴업소</a></li>
+					      <li><a href="#">이용후기</a></li>
+					      <li><a href="#">커뮤니티</a></li>
+					      <li><a href="#">엔터테인먼트</a></li>
+					      <li><a href="#">유그이미지</a></li>
+					      <li><a href="#">출석부</a></li>
+					      <li><a href="#">이벤트존</a></li>
+					      <li><a href="#">고객센터</a></li>
+					      <li><a href="#">제휴문의</a></li>
+					    </ul>
+					  </div>
+					</nav>
+				</div><!-- header_4 -->
+				</div><!-- warpheader -->
+			</div><!-- header -->
 			
 			<div class="bodya">
 				<div class=wrapbody>
 				<div class="left_body">
-					<div class="login">로그인
-					
-					</div>
-					<div class="left_body_menu">레프트바디메뉴
-					
-					</div>
+					<div class="login">
+						  <form>
+						    <div class="input-group">
+						      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						      <input id="id" type="text" class="form-control" name="id" placeholder="id">
+						    </div>
+						    <div class="input-group">
+						      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+						      <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+						    </div>
+						    <div class="checkbox">
+						    	<label>
+							    	<input type="checkbox" value="자동로그인">
+							    	<span>자동로그인</span>
+							    </label>				   							
+						   			<button type="button" class="btn btn-sm">로그인</button>
+						    </div>
+						    <div class="member">
+						    	<span class="find1">아이디/비번찾기</span> <span class="find2">|</span><span>회원가입</span>
+						    </div>  
+						  </form>  										
+					</div><!-- login -->
+				<div class="left_body_menu">
+					<div class="container">
+						<div class="row">
+							<div class="span6">						
+							<ul class="nav nav-tabs nav-stacked">
+								<li class="active">  
+								<li><a href="#" onclick="return false;">채팅방링크</a></li>
+								<li><a href="#" onclick="return false;">할인권현황</a></li> 
+								<li><a href="#" onclick="return false;">초보자가이드</a></li> 
+								<li><a href="#" onclick="return false;">공지사항</a></li>
+								<li><a href="#" onclick="return false;">제휴업소</a></li>
+								<li><a href="#" onclick="return false;">출근부PR</a></li>
+								<li><a href="#" onclick="return false;">이벤트업소배너</a></li> 
+							</ul>						
+						</div>
+						</div>
+						</div>
+				</div>
 				</div>
 				<div class="wrapcenter_body">
-					<div class="center_body">센터바디
-						<article><decorator:body /></article>
-					</div>
+					<div class="center_body">
+						<article>
+						
+						<decorator:body />
+						</article>
+					</div>										
 				</div>
 				<div class="right_body">
 				라이트바디
