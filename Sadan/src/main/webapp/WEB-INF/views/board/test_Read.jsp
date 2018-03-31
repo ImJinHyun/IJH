@@ -34,33 +34,51 @@
 			<!-- 제목영역 -->
 			<!-- 제목감싸기 -->
 			<div class="warp_title">
+			
+				<!-- 제목 헤더 감싸기 -->
 				<div class="title">
 
-					<a href="#"><h1>강남-테란(태수대표)</h1></a>
+					<a href="#">◆ 스파르타에서만 가능한 
+					파격 2만 할인 이벤트 ◆전국 최저가 마사지 & 연애 11만원★ 와꾸실화 확실한 마인드 교육 / 언제나 내상ZERO★최고의 퀄리티로 모시겠습니다.★내용이 있는 스파르타★ ◀■ 한번도 안온 사람은 있어도 한번만 온사람이 
+					없는 스파르타 ■#분당, #정자, #성남, #서현, #오리</a>
 
 				</div>
 				
 				<!-- 작성일, ip주소, 조회, 추천 -->
-				<div style="padding: 5px 15px 0 0; clear: both;">
-					<div style="float: left; color: #aaa;">
-						<span>작성일 : </span>
-						<span>18.03.31 02:46</span> 
-						<span>|</span>
-						 <span>조회 : </span>
-						 <span>28,539</span>
-						<span>|</span> 
-						<span>추천 : </span>
-						<span style="color: blue;">0</span>
+				<div class="board_info">
+					<div style="float: left; color: gray;">
+						<span class="info_bt">작성일 : </span>
+						<span class="info_st">18.03.31 02:46 | </span> 
+						 <span class="info_bt">조회 : </span>
+						 <span class="info_st">28,539 | </span>
+						<span  class="info_bt">추천 : </span>
+						<span style="color: blue; font-size:10px;">0</span>
 					</div>
 					<div style="float: right; color: #aaa;"></div>
 					<div class="clear"></div>
 				</div>
 				<!-- 작성일 조회 추천 날짜 끝 -->
+				
+				<br>
 				<hr>	
 				<!-- 게시자 정보 -->
 				<div class="warp_writer_info">
-						<div class="">
-						
+						<div class="writer_info">
+								<div class="writer_left">
+								<img src="/resource/images/main2.png" width="100%" height="110px">
+								</div>
+								<div class="writer_right">
+								<span class="span_writer">업소명 : </span>
+								<hr class="writer_hr">
+								<span class="span_writer">업　종 : </span>
+								<hr class="writer_hr">
+								<span class="span_writer">담당자 :</span>
+								<hr class="writer_hr">
+								<span class="span_writer">지　역 : </span>
+								<hr class="writer_hr">
+								<span class="span_writer">연락처 : </span>
+								<hr class="writer_hr">
+								</div>
 						</div>
 				</div>
 				<!-- 게시자 정보 끝 -->
