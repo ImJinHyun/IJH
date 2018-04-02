@@ -106,9 +106,42 @@
 							</ul>						
 						</div>
 						</div>
-						</div>
+						</div>	
 				</div>
-				</div>
+				
+				<div class="login"><!-- 로그인했을시 화면 -->
+					<div class="loing_after_all">
+						<div class="login_after1">
+							<div class="login_logo"><img src="/resources/images/main1.png" width="70px" height="70px"></div>		
+						</div><!-- login_after1끝 -->
+						<div class="login_after2">
+							<div class="login_nick_logo">
+								<img src="/resources/images/main1.png" width="30px" height="25px">
+							</div><!-- login_nick_logo끝 -->
+						
+							<div class="nick">
+								<span>울랄라비데</span>
+							</div>
+						</div><!-- login_nick_logo_all끝 -->
+						<div class="login_point">
+							<ul>
+								<li><a href="#" onclick="return false;">쪽지 : 0</a></li>
+								<li><a href="#" onclick="return false;">포인트 : 0</a></li>
+								<li><a href="#" onclick="return false;">레벨 : 14</a></li>
+							</ul>
+						</div>	
+					</div><!-- loing_after_all 끝 -->
+					<div class="loing_after_all2">	
+						  <button type="button" class="btn btn-primary">내글반응</button>
+						  <button type="button" class="btn btn-primary">내가쓴글</button>
+						  <button type="button" class="btn btn-primary">정보수정</button>
+						  <button type="button" class="btn btn-primary">로그아웃</button>
+					</div>
+					
+						  										
+				</div><!-- login -->
+				
+				</div><!-- left_body -->
 				<div class="wrapcenter_body">
 					<div class="center_body">
 						<article>
@@ -165,7 +198,9 @@
 		</div>
 		<!-- 푸터 -->
 		
-</div><!-- div전체끝 -->		
+		
+</div><!-- div전체끝 -->
+		
 		
 		
 		

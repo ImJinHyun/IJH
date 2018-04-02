@@ -132,13 +132,15 @@ a:hover {
 	height:1200px;
 	float : left;
 	margin-right: -250px;
-/* 	background-color: #FF7F50; */
+	background-color: #FF7F50;
 	
 }
 .left_body .login{
 	background-color: #ffffff;
 	width:250px;
-	border: 1px solid #000000;	
+	border-style: none solid none solid;
+  	border-width: 0 1px 1px 1px;
+  	border-color: #bbbbbb #bbbbbb #bbbbbb #bbbbbb;	
 	padding:5px;
 	margin: 0 auto;
 	padding-top: 15px;
@@ -178,10 +180,71 @@ a:hover {
 .left_body .login .member .find2 {
 	margin-right: 45px;
 }
+.left_body .login .loing_after_all{
+	width:240px;
+	height:70px;
+/* 	background-color: red; */
+	margin-bottom: 10px;
+
+} 
+.left_body .login  .login_after1 {
+	width:70px;
+	height: 70px;
+/* 	background-color: yellow; */
+	float: left;
+}
+.left_body .login  .login_after1 .login_logo {
+	width: 70px;
+	height: 74px;
+	border: 1px solid #000000;
+	float: left;
+}
+.left_body .login  .login_after2 {
+	width:170px;
+	height: 25px;
+/* 	background-color: green; */
+	float: left;
+}
+.left_body .login  .login_after2 .nick >span {
+	margin-left:5px;
+}
+.loing_after_all .login_point {
+	width:170px;
+	height: 45px;
+	background-color: white;
+	float: left;
+}
+.loing_after_all .login_point >ul > li{
+	list-style: none;
+	margin-left: 10px;
+}
+.loing_after_all .login_point >ul > li > a {
+	font-weight: 900;
+	font-size: 10px;
+}
+.left_body .login .login_nick_logo {
+	width: 30px;
+	height: 25px;
+	border: 1px solid #000000;
+	margin-left: 10px;
+    float: left;
+    position: relative;
+}
+.loing_after_all2 {
+	width:230px;
+	height:90px;
+/* 	background-color: #C1FF6B; */
+	margin-left: 5px;
+	margin: 0 auto;
+}
+.loing_after_all2 .btn-primary {
+	margin: 5px;
+	width: 100px;
+}
+
 .left_body .left_body_menu{
 	width : 100%;
-	background-color: #ffffff;
-	margin: 0 auto;	
+	background-color: #ffffff;	
 }
 .left_body_menu .container .row .nav-tabs {
 	border-bottom: 0;
@@ -190,7 +253,9 @@ a:hover {
 	margin:0;
 	padding:0;
 	width:250px;
-	border: 1px solid #bbbbbb;	
+	border-style: none solid solid solid;
+  	border-width: 0 1px 1px 1px;
+  	border-color: #bbbbbb #bbbbbb #bbbbbb #bbbbbb;	
 }
 .wrapcenter_body{
 	width:100%;
@@ -223,7 +288,7 @@ a:hover {
 .right_body .right_banner_all .banner_all > a > img {
 	width: 240px;
 	height: 80px;
-	border: 1px solid #000000;
+	border: 1px solid #bbbbbb;
 }
 
 
