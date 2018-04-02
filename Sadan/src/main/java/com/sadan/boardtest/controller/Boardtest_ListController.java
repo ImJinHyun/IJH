@@ -75,5 +75,16 @@ public class Boardtest_ListController {
 		return "board/test_Read";
 	}
 	
-	
+	//게시판 보기
+		@RequestMapping("/board/write.do")
+		private String board_write(Model model)throws Exception {
+			return "board/board_write";
+		}
+		
+		//제휴업소 보기
+			@RequestMapping("/board/jehyu.do")
+			private String jehyu(Model model)throws Exception {
+				return "jehyu/jehyu";
+			}
+			
 }

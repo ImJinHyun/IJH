@@ -197,7 +197,7 @@
 <!--             글쓰기 페이지로 이동 -->
             <div class="btnJoinAreb">
                <button type="button" value="button"
-                onclick="location.href='./event_write.event'" class="btnOk">글쓰기</button>
+                onclick="location.href='./write.do'" class="btnOk">글쓰기</button>
             </div>
          </div>
       </section>

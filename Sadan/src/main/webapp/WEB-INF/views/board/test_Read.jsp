@@ -65,7 +65,7 @@
 				<div class="warp_writer_info">
 						<div class="writer_info">
 								<div class="writer_left">
-								<img src="/resource/images/main2.png" width="100%" height="110px">
+								<img src="/resources/images/main2.png" width="100%" height="110px">
 								</div>
 								<div class="writer_right">
 								<span class="span_writer">업소명 : </span>
@@ -84,9 +84,27 @@
 				<!-- 게시자 정보 끝 -->
 				
 			</div>
-			<!-- 제목 끝 -->
+		<!-- 제목 끝 -->
+		<div class="clear">
+		</div>
+		<!-- 글 본문 시작 -->
+			<!-- 예약문의시 18사단 회원임을 알려주세요 -->
+			<div class="sale">
+				<img src="/resources/images/18sadan_member.gif" />
+			</div>
+				<div class="clear"></div>
+
+			<!-- 본문 내용 시작 -->
+			<div class="body_content">
+				<img src="/resources/images/a.gif" />
+			</div>
+			<div class="clear"></div>
+			<!-- 본문 내용 끝 -->
 			
+			<!-- 댓글 시작 -->
+			<div class="reply">
 			
+			</div>
 		</div>
 		<!-- 바디 내용 끝 -->
 		
