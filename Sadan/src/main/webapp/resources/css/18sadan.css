@@ -73,7 +73,7 @@ a:hover {
 	height:100px;
 	background-color: #000000;
 }
-.header_2 .mainlogo1 {
+.header_2 .mainlogo1  {
 	margin-left: 150px;
 } 
 .header_2 > img {
@@ -119,11 +119,11 @@ a:hover {
 	border-radius: 0;
 }
 .bodya{
-		background-color: #7B68EE;
+/* 		background-color: #7B68EE; */
 }
 .wrapbody{
-	background-color: #66CDAA	;
-		width:1300px;
+/* 	background-color: #66CDAA; */
+	width:1300px;
 	height: 2000px;
 	margin : 0 auto;
 }
@@ -132,7 +132,7 @@ a:hover {
 	height:1200px;
 	float : left;
 	margin-right: -250px;
-	background-color: #FF7F50;
+/* 	background-color: #FF7F50; */
 	
 }
 .left_body .login{
@@ -205,8 +205,28 @@ a:hover {
 	width:250px;
 	float:right;
 	margin-left:-250px;	
-	background-color: #FF7F50;
+/* 	background-color: #FF7F50; */
 }
+.right_body .right_banner_all {
+	width:250px;
+	height:1200px;
+/* 	background-color: #FF7F50; */
+	padding: 5px;
+	padding-left: 0;
+}
+.right_body .right_banner_all .banner_all {
+	width: 240px;
+	height: 80px;
+/* 	background-color: yellow; */
+	margin-bottom: 5px;
+}
+.right_body .right_banner_all .banner_all > a > img {
+	width: 240px;
+	height: 80px;
+	border: 1px solid #000000;
+}
+
+
 article{
 	margin: 10px 10px 0 10px;
 	

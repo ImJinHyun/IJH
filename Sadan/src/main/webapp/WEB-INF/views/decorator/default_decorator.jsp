@@ -38,9 +38,9 @@
 					<span><img src="/resources/images/main4.png">&nbsp;18사단 공식트위터 <a>http://twitter.com/18sadan_com</a> 팔로우해주세요</span>
 				</div>
 				<div class="header_2">
-					<img src="/resources/images/main1.png" class="mainlogo1">
-					<img src="/resources/images/main2.png">
-					<img src="/resources/images/main3.png">
+					<a href="#" onclick="return false;"><img src="/resources/images/main1.png" class="mainlogo1"></a>
+					<a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a>
+					<a href="#" onclick="return false;"><img src="/resources/images/main3.png"></a>
 				</div>
 				<div class="header_3">
 					<span class="ground1">유흥그라운드</span><img src="/resources/images/main6.png"><p><span>구글에서</span><span class="ground2">유흥그라운드</span><span>를 검색해주세요</span></p>
@@ -49,15 +49,15 @@
 					<nav class="navbar navbar-inverse ">
 					  <div class="container-fluid">
 					    <ul class="nav navbar-nav">
-					      <li><a href="#">제휴업소</a></li>
-					      <li><a href="#">이용후기</a></li>
-					      <li><a href="#">커뮤니티</a></li>
-					      <li><a href="#">엔터테인먼트</a></li>
-					      <li><a href="#">유그이미지</a></li>
-					      <li><a href="#">출석부</a></li>
-					      <li><a href="#">이벤트존</a></li>
-					      <li><a href="#">고객센터</a></li>
-					      <li><a href="#">제휴문의</a></li>
+					      <li><a href="#" onclick="return false;">제휴업소</a></li>
+					      <li><a href="#" onclick="return false;">이용후기</a></li>
+					      <li><a href="#" onclick="return false;">커뮤니티</a></li>
+					      <li><a href="#" onclick="return false;">엔터테인먼트</a></li>
+					      <li><a href="#" onclick="return false;">유그이미지</a></li>
+					      <li><a href="#" onclick="return false;">출석부</a></li>
+					      <li><a href="#" onclick="return false;">이벤트존</a></li>
+					      <li><a href="#" onclick="return false;">고객센터</a></li>
+					      <li><a href="#" onclick="return false;">제휴문의</a></li>
 					    </ul>
 					  </div>
 					</nav>
@@ -86,7 +86,7 @@
 						   			<button type="button" class="btn btn-sm">로그인</button>
 						    </div>
 						    <div class="member">
-						    	<span class="find1">아이디/비번찾기</span> <span class="find2">|</span><span>회원가입</span>
+						    	<a  class="find1" href="#" onclick="return false;">아이디/비번찾기</a> <span class="find2">|</span><a href="#" onclick="return false;">회원가입</a>
 						    </div>  
 						  </form>  										
 					</div><!-- login -->
@@ -118,11 +118,24 @@
 					</div>										
 				</div>
 				<div class="right_body">
-				라이트바디
+					<div class="right_banner_all">
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>					
+					</div>
+					
 				</div>
 				
 				<!-- right_body끝 -->
 				</div>
+				
 			</div>
 			<div style="clear: both;"></div>
 			<!-- 푸터 -->
