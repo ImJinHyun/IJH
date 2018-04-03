@@ -49,7 +49,7 @@
 					<nav class="navbar navbar-inverse ">
 					  <div class="container-fluid">
 					    <ul class="nav navbar-nav">
-					      <li><a href="#" onclick="return false;">제휴업소</a></li>
+					      <li><a href="http://www.jehyu.jsp" onclick="return false;">제휴업소</a></li>
 					      <li><a href="#" onclick="return false;">이용후기</a></li>
 					      <li><a href="#" onclick="return false;">커뮤니티</a></li>
 					      <li><a href="#" onclick="return false;">엔터테인먼트</a></li>
@@ -86,7 +86,7 @@
 						   			<button type="button" class="btn btn-sm">로그인</button>
 						    </div>
 						    <div class="member">
-						    	<a  class="find1" href="#" onclick="return false;">아이디/비번찾기</a> <span class="find2">|</span><a href="#" onclick="return false;">회원가입</a>
+						    	<a class="find1" href="#" onclick="return false;">아이디/비번찾기</a><span class="find2">|</span><a href="#" onclick="return false;">회원가입</a>
 						    </div>  
 						  </form>  										
 					</div><!-- login -->
