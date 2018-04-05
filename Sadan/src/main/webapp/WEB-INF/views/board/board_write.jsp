@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	<c:set var="path" value="${pageContext.request.contextPath }"></c:set>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>DB테스트</title>
-<script type="text/javascript" src="/resources/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="${path }/ckeditor/ckeditor.js"></script>
 <link rel="stylesheet" href="/resources/css/board_write.css">
 </head>
 <body>
@@ -82,7 +84,7 @@
 			</div>
 		</form>
 	</div>
-
+${pageContent.request.contextPath}
 
 
 	<script>
@@ -90,7 +92,7 @@
 			CKEDITOR.replace('ckeditor', {//해당 이름으로 된 textarea에 에디터를 적용
 				width : '100%',
 				height : '400px',
-				filebrowserImageUploadUrl : '/community/imageUpload' //여기 경로로 파일을 전달하여 업로드 시킨다.
+				filebrowserImageUploadUrl : "${path}/imageUpload.do" //여기 경로로 파일을 전달하여 업로드 시킨다.
 			});
 
 			CKEDITOR.on('dialogDefinition', function(ev) {

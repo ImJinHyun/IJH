@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -30,14 +31,15 @@ public class Boardtest_ListController {
 	
 	//게시판 글 리스트
 	@RequestMapping("/board/test.do")
-	private String board_List(Model model,HttpSession session)throws Exception {
+	private String board_List(Model model,HttpSession session,		HttpServletRequest request)throws Exception {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		Map<String, Object> map2 = new HashMap<String, Object>();
-		
+
 		try {
 			map = (Map<String, Object>) first_board_Service.List(map2);
 			System.out.println(map);
+			System.out.println(request.getContextPath());
 			
 			if (!map.get("list").toString().equals("error")) {
 				@SuppressWarnings({ "unused", "unchecked" })
