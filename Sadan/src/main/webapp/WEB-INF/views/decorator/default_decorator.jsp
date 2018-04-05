@@ -91,12 +91,7 @@
 						  		</div> 
 						    </div>
 						      
-						  </form> 
-						  <div class="member">				    	
-						    	<a href="/member/forgotmember.do" class="find1">아이디/비번찾기</a>
-						    		<span class="find2">|</span>
-						    	<a href="/member/member.do">회원가입</a>
-						  </div> 										
+						  </form>  										
 					</div><!-- login -->
 				<div class="left_body_menu">
 					<div class="container">
