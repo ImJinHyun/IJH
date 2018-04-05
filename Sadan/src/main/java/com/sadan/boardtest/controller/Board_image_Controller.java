@@ -46,20 +46,24 @@ import org.springframework.web.multipart.MultipartFile;
 	        	
 	        	//업로드한 파일이름
 	            String fileName = upload.getOriginalFilename();
+	            
+	            //파일을 바이트 배열로 변환
 	            byte[] bytes = upload.getBytes();
+	            
+	            //배포 디렉토리가 저장됌
 	            String uploadPath = UploadPath.path(request) +fileName;
 	            System.out.println(fileName+"\nupLoadPath======"+uploadPath+"\nbytes================"+bytes+"\n\nUPloadPath====="+ UploadPath.path(request));
-	            System.out.println(request.getLocalAddr());
-	            System.out.println(request.getContextPath());
-	            System.out.println(request.getServletPath());
-	            System.out.println(request.getRequestURL());
+	            //파일 아웃 스트림 서버로 파일을 올리는것 <-> 파일 인풋스트림 서버에서 파일을 내려받음
 	            out = new FileOutputStream(new File(uploadPath));
 	            out.write(bytes);
+	            
+	            //클라이언트에 결과를 표시
 	            String callback = request.getParameter("CKEditorFuncNum");
 	 
+	            //서버가 클라이언트에게 응답을 해주는 메소드
 	            printWriter = response.getWriter();
-	            String fileUrl = UploadPath.path(request)+ fileName;		//url경로
-	 
+	            String fileUrl = request.getContextPath()+"/images/test_img/"+ fileName;		//url경로
+	            System.out.println(fileUrl);
 	            printWriter.println("<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction("
 	                    + callback
 	                    + ",'"
