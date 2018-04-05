@@ -13,7 +13,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sadan.boardtest.service.Boardtest_ListService;
 
@@ -85,6 +87,28 @@ public class Boardtest_ListController {
 			@RequestMapping("/board/jehyu.do")
 			private String jehyu(Model model)throws Exception {
 				return "jehyu/jehyu";
+			}
+			
+	//게시글 등록
+			@RequestMapping(value = "/board/board_insert.do", method = RequestMethod.POST)
+			private String board_insert(Model model, List<Map<String, Object>> board) throws Exception{
+				Map<String, Object> map = new HashMap<String, Object>();
+				Map<String, Object> resultMap = new HashMap<String, Object>();
+				
+				try {
+					
+					logger.debug("WEB에서 넘어온 변수 값들 ======",board.get(0));
+					map = board.get(0);
+					first_board_Service.board_insert(map);
+				} catch (Exception e) {
+					e.printStackTrace();
+					resultMap.put("error", e.getMessage());
+					model.addAttribute("error",resultMap.get("error"));
+				}
+				
+				
+				// 이미지 리스트로 간다.
+				return "redirect:test.do";
 			}
 			
 }

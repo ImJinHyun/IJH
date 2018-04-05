@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import com.sadan.boardtest.controller.Boardtest_ListController;
@@ -67,6 +68,20 @@ public class Boardtest_ListService {
 			resultMap.put("error", e.getMessage());
 		}
 		return resultMap;
+	}
+
+
+
+@Transactional
+	public void board_insert(Map<String, Object> map) {
+	Map<String, Object> resultMap = new HashMap<String, Object>();
+	
+		try {
+			
+			first_board_Mapper.board_insert(map);
+		} catch (Exception e) {
+			resultMap.put("error", e.getMessage());
+		}
 	}
 
 
