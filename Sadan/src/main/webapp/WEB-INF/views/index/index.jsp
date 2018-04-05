@@ -10,10 +10,10 @@
 <body>
 	<div class="body_container">
 		<div class="center_logo">
-			<a href="#" onclick="return false;"><img width="100%" src="/resources/images/main7.jpg"></a>					
+			<a href="#" onclick="return false;"><img width="100%" src="/images/main7.jpg"></a>					
 		</div>
 		<div class="center_logo">
-			<a href="#" onclick="return false;"><img width="100%" src="/resources/images/main8.jpg"></a>					
+			<a href="#" onclick="return false;"><img width="100%" src="/images/main8.jpg"></a>					
 		</div> 
 	</div>
 	<div class="tab_wrap">
@@ -63,12 +63,12 @@
 			</ul>
 		</div>
 		<div class="tab_wrap_gallary_board">
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>		
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>		
 		</div>
 	</div>
 	
@@ -102,12 +102,12 @@
 			</ul>
 		</div>
 		<div class="tab_wrap_gallary_board">
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>		
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>		
 		</div>
 	</div>
 	
@@ -139,12 +139,12 @@
 			</ul>
 		</div>
 		<div class="tab_wrap_gallary_board">
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-			<div class="photo"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>		
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+			<div class="photo"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>		
 		</div>
 	</div>
 	

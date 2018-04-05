@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="/resources/css/bootstrap.css">
 <link rel="stylesheet" href="/resources/css/18sadan.css">
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="/resources/js/bootstrap.js"></script>
+<script src="/js/bootstrap.js"></script>
 	
 <decorator:head />
 </head>
@@ -35,29 +35,29 @@
 			<div class="header">
 				<div class="warpheader">
 				<div class="header_1">				
-					<span><img src="/resources/images/main4.png">&nbsp;18사단 공식트위터 <a>http://twitter.com/18sadan_com</a> 팔로우해주세요</span>
+					<span><img src="/images/main4.png">&nbsp;18사단 공식트위터 <a>http://twitter.com/18sadan_com</a> 팔로우해주세요</span>
 				</div>
 				<div class="header_2">
-					<a href="#" onclick="return false;"><img src="/resources/images/main1.png" class="mainlogo1"></a>
-					<a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a>
-					<a href="#" onclick="return false;"><img src="/resources/images/main3.png"></a>
+					<a href="/Index/main.do"><img src="/images/main1.png" class="mainlogo1"></a>
+					<a href="/Index/main.do"><img src="/images/main2.png"></a>
+					<a href="#" onclick="return false;"><img src="/images/main3.png"></a>
 				</div>
 				<div class="header_3">
-					<span class="ground1">유흥그라운드</span><img src="/resources/images/main6.png"><p><span>구글에서</span><span class="ground2">유흥그라운드</span><span>를 검색해주세요</span></p>
+					<span class="ground1">유흥그라운드</span><img src="/images/main6.png"><p><span>구글에서</span><span class="ground2">유흥그라운드</span><span>를 검색해주세요</span></p>
 				</div>
 				<div class="header_4">
 					<nav class="navbar navbar-inverse ">
 					  <div class="container-fluid">
 					    <ul class="nav navbar-nav">
-					      <li><a href="http://www.jehyu.jsp" onclick="return false;">제휴업소</a></li>
-					      <li><a href="#" onclick="return false;">이용후기</a></li>
-					      <li><a href="#" onclick="return false;">커뮤니티</a></li>
-					      <li><a href="#" onclick="return false;">엔터테인먼트</a></li>
-					      <li><a href="#" onclick="return false;">유그이미지</a></li>
-					      <li><a href="#" onclick="return false;">출석부</a></li>
-					      <li><a href="#" onclick="return false;">이벤트존</a></li>
-					      <li><a href="#" onclick="return false;">고객센터</a></li>
-					      <li><a href="#" onclick="return false;">제휴문의</a></li>
+					      <li><a href="/board/jehyu.do">제휴업소</a></li>
+					      <li><a href="/board/useafter.do">이용후기</a></li>
+					      <li><a href="/board/community.do">커뮤니티</a></li>
+					      <li><a href="/board/entertainment.do">엔터테인먼트</a></li>
+					      <li><a href="/board/uggallary.do">유그이미지</a></li>
+					      <li><a href="/board/calendar.do">출석부</a></li>
+					      <li><a href="/board/eventzone.do">이벤트존</a></li>
+					      <li><a href="/board/servicecenter.do">고객센터</a></li>
+					      <li><a href="/board/contactus.do">제휴문의</a></li>
 					    </ul>
 					  </div>
 					</nav>
@@ -82,11 +82,11 @@
 						    	<label>
 							    	<input type="checkbox" value="자동로그인">
 							    	<span>자동로그인</span>
-							    </label>				   							
+							    </label>										   							
 						   			<button type="button" class="btn btn-sm">로그인</button>
 						    </div>
 						    <div class="member">
-						    	<a class="find1" href="#" onclick="return false;">아이디/비번찾기</a><span class="find2">|</span><a href="#" onclick="return false;">회원가입</a>
+						    	<a href="#" class="find1" onclick="return false;">아이디/비번찾기</a><span class="find2">|</span><a href="http://www.member/member.jsp" onclick="return false;">회원가입</a>
 						    </div>  
 						  </form>  										
 					</div><!-- login -->
@@ -95,14 +95,33 @@
 						<div class="row">
 							<div class="span6">						
 							<ul class="nav nav-tabs nav-stacked">
-								<li class="active">  
-								<li><a href="#" onclick="return false;">채팅방링크</a></li>
+								<li class="active">
+								<li class="left_subject"><a href="#" onclick="return false;">제휴업소</a></li>
+								<li><a href="/board/fullssa.do">룸/풀싸롱</a></li>
+								<li><a href="/board/songnightbar.do">노래방/나이트/바</a></li>
+								<li><a href="/board/aroma.do">아로마</a></li>
+								<li><a href="/board/masage.do">출장마사지</a></li>
+								<li><a href="/board/sportsmasage.do">스포츠마사지</a></li>
+								<li><a href="/board/kissroom.do">키스방</a></li>
+								<li><a href="/board/office.do">오피</a></li>
+								<li><a href="/board/resttel.do">휴게텔</a></li>
+								<li><a href="/board/etc.do">기타업소</a></li>  
+								<li><a href="/board/chat.do">채팅방링크</a></li>
 								<li><a href="#" onclick="return false;">할인권현황</a></li> 
 								<li><a href="#" onclick="return false;">초보자가이드</a></li> 
 								<li><a href="#" onclick="return false;">공지사항</a></li>
 								<li><a href="#" onclick="return false;">제휴업소</a></li>
-								<li><a href="#" onclick="return false;">출근부PR</a></li>
-								<li><a href="#" onclick="return false;">이벤트업소배너</a></li> 
+								<li class="left_subject"><a href="#" onclick="return false;">출근부PR</a></li>
+								<li><a href="#" onclick="return false;">이벤트업소배너</a></li>
+								<li><a href="http://www.menuboard.jsp" onclick="return false;">룸/풀싸롱PR</a></li>
+								<li><a href="#" onclick="return false;">노래방/나이트/바PR</a></li>
+								<li><a href="#" onclick="return false;">아로마PR</a></li>
+								<li><a href="#" onclick="return false;">출장마사지PR</a></li>
+								<li><a href="#" onclick="return false;">스포츠마사지PR</a></li>
+								<li><a href="#" onclick="return false;">키스방PR</a></li>
+								<li><a href="#" onclick="return false;">오피PR</a></li>
+								<li><a href="#" onclick="return false;">휴게텔PR</a></li>
+								<li><a href="#" onclick="return false;">기타업소PR</a></li> 
 							</ul>						
 						</div>
 						</div>
@@ -112,11 +131,11 @@
 				<div class="login"><!-- 로그인했을시 화면 -->
 					<div class="loing_after_all">
 						<div class="login_after1">
-							<div class="login_logo"><img src="/resources/images/main1.png" width="70px" height="70px"></div>		
+							<div class="login_logo"><img src="/images/main1.png" width="70px" height="70px"></div>		
 						</div><!-- login_after1끝 -->
 						<div class="login_after2">
 							<div class="login_nick_logo">
-								<img src="/resources/images/main1.png" width="30px" height="25px">
+								<img src="/images/main1.png" width="30px" height="25px">
 							</div><!-- login_nick_logo끝 -->
 						
 							<div class="nick">
@@ -152,16 +171,16 @@
 				</div>
 				<div class="right_body">
 					<div class="right_banner_all">
-						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>
-						<div class="banner_all"><a href="#" onclick="return false;"><img src="/resources/images/main2.png"></a></div>					
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>
+						<div class="banner_all"><a href="#" onclick="return false;"><img src="/images/main2.png"></a></div>					
 					</div>
 					
 				</div>

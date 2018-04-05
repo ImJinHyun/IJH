@@ -29,8 +29,7 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
-
+	
 	<filter>
 		<description>사이트에 레이아웃을 잡는 필터 처리</description>
 		<filter-name>sitemesh</filter-name>
