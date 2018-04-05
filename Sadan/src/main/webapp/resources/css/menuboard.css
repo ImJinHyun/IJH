@@ -8,14 +8,10 @@ a img {border: 0;}
 img {margin-bottom: 10px;}
 a {color: #000000;text-decoration: none;}
 a:hover {columns: #bbbbbb;text-decoration: none;cursor: pointer;}
-
-
-
-.board_all {
+.menu_all{
 	width:100%;
-	height: 220px;
 /* 	background-color: yellow; */
-	border-style: solid solid solid solid;
+	border-style: solid none none none;
   	border-width: 1px 1px 1px 1px;
   	border-color: #bbbbbb #bbbbbb #bbbbbb #bbbbbb;
   	margin-bottom: 5px;
@@ -23,42 +19,45 @@ a:hover {columns: #bbbbbb;text-decoration: none;cursor: pointer;}
 .board_all .board_subject {
 	width:100%;
 	height: 30px;	
-	border-style: none none solid none;
-  	border-width: 0 0px 3px 0px;
+	border-style: solid solid solid solid;
+  	border-width: 1px 1px 3px 1px;
   	border-color: #bbbbbb #bbbbbb #bbbbbb #bbbbbb;
 }
- .board_subject .board_main_subject {
-	width: 100%;
-	height: 30px;
-	border-style: none none solid none;
-  	border-width: 0 0px 1px 0px;
-  	border-color: #bbbbbb #bbbbbb #bbbbbb #bbbbbb;
-  	margin-top: 2px;
-  	
-}
-
-.board_all .board_subject .board_main_subject > span {
+.menu_all .board_subject .board_main_subject > span {
 	font-size: 14px;
 	font-weight: 900;
 	padding-left: 5px;
 	color: red;	
+} 
+.menu_all .board_subject .board_main_subject .aa {
+	color: black;	
 }
-.board_all .board_subject .board_main_subject .more {
-	float: right;
-	margin-right: 5px;
-	font-weight: 900;
-	font-size: 15px;
+.buttonall {
+	width:100%;
+	height: 40px;	
+/*   	background-color: yellow; */
+  	padding: 5px; 	
+}
+.buttonall .room {
+/* 	border:1px solid #000000; */
+	border-radius: 10px; 
+	float: left;	
+}
+.buttonall .room .btn-sm {
+	margin-right: 5px;	 
 }
 
-.table-responsive .table > tbody > tr > td{
-	font-size: 11px;
+.clearfix::after{
+	content:"";
+	clear:both;
+	display: table;
+	
 }
-.table-responsive .table > tbody > tr > td > a{
-	font-size: 11px;
-}
-.table-responsive .table > tbody > tr > td:first-child {
-	width: 80px; 
-}
-.table-responsive .table > tbody > tr > td:last-child {
-	width: 50px;
-}
+.banner_image_all {
+	float:left;
+	width: 33.3%;
+	height:300px;
+    padding:5px;
+/*     border: 3px solid #73AD21; */
+	
+}	

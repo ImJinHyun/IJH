@@ -25,7 +25,7 @@ public class Member_Controller {
 	private Member_Service member;
 	
 	@RequestMapping("/member/member.do")
-	private String chat() {
+	private String member() {
 		
 		return "member/member";
 	}

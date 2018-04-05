@@ -16,21 +16,21 @@
 		<pattern>/menuboard/*</pattern> 
 		<pattern>/member/*</pattern> 
 		<pattern>/community/*</pattern> 
-		<pattern>/entertainment</pattern>
-		<pattern>/eventzone</pattern>
-		<pattern>/servicecenter</pattern>
-		<pattern>/contactus</pattern>
-		<pattern>/uggallary</pattern>
-		<pattern>/calendar</pattern>
-		<pattern>/fullssa</pattern>
-		<pattern>/songnightbar</pattern>		
-		<pattern>/aroma</pattern>
-		<pattern>/masage</pattern>
-		<pattern>/sportsmasage</pattern>
-		<pattern>/kissrooom</pattern>
-		<pattern>/office</pattern>
-		<pattern>/resttel</pattern>
-		<pattern>/etc</pattern>
+		<pattern>/entertainment/*</pattern>
+		<pattern>/eventzone/*</pattern>
+		<pattern>/servicecenter/*</pattern>
+		<pattern>/contactus/*</pattern>
+		<pattern>/uggallary/*</pattern>
+		<pattern>/calendar/*</pattern>
+		<pattern>/fullssa/*</pattern>
+		<pattern>/songnightbar/*</pattern>		
+		<pattern>/aroma/*</pattern>
+		<pattern>/masage/*</pattern>
+		<pattern>/sportsmasage/*</pattern>
+		<pattern>/kissrooom/*</pattern>
+		<pattern>/office/*</pattern>
+		<pattern>/resttel/*</pattern>
+		<pattern>/etc/*</pattern>
 		
 
 

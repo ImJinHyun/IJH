@@ -50,14 +50,14 @@
 					  <div class="container-fluid">
 					    <ul class="nav navbar-nav">
 					      <li><a href="/board/jehyu.do">제휴업소</a></li>
-					      <li><a href="/board/useafter.do">이용후기</a></li>
-					      <li><a href="/board/community.do">커뮤니티</a></li>
-					      <li><a href="/board/entertainment.do">엔터테인먼트</a></li>
-					      <li><a href="/board/uggallary.do">유그이미지</a></li>
-					      <li><a href="/board/calendar.do">출석부</a></li>
-					      <li><a href="/board/eventzone.do">이벤트존</a></li>
-					      <li><a href="/board/servicecenter.do">고객센터</a></li>
-					      <li><a href="/board/contactus.do">제휴문의</a></li>
+					      <li><a href="/useafter/useafter.do">이용후기</a></li>
+					      <li><a href="/community/community.do">커뮤니티</a></li>
+					      <li><a href="/entertainment/entertainment.do">엔터테인먼트</a></li>
+					      <li><a href="/uggallary/uggallary.do">유그이미지</a></li>
+					      <li><a href="/calendar/calendar.do">출석부</a></li>
+					      <li><a href="/eventzone/eventzone.do">이벤트존</a></li>
+					      <li><a href="/servicecenter/servicecenter.do">고객센터</a></li>
+					      <li><a href="/contactus/contactus.do">제휴문의</a></li>
 					    </ul>
 					  </div>
 					</nav>
@@ -81,14 +81,22 @@
 						    <div class="checkbox">
 						    	<label>
 							    	<input type="checkbox" value="자동로그인">
-							    	<span>자동로그인</span>
+							    	<span>자동로그인</span>						    	
 							    </label>										   							
 						   			<button type="button" class="btn btn-sm">로그인</button>
+						   		<div class="member">				    	
+							    	<a href="/member/forgotmember.do" class="find1">아이디/비번찾기</a>
+							    		<span class="find2">|</span>
+							    	<a href="/member/member.do">회원가입</a>
+						  		</div> 
 						    </div>
-						    <div class="member">
-						    	<a href="#" class="find1" onclick="return false;">아이디/비번찾기</a><span class="find2">|</span><a href="http://www.member/member.jsp" onclick="return false;">회원가입</a>
-						    </div>  
-						  </form>  										
+						      
+						  </form> 
+						  <div class="member">				    	
+						    	<a href="/member/forgotmember.do" class="find1">아이디/비번찾기</a>
+						    		<span class="find2">|</span>
+						    	<a href="/member/member.do">회원가입</a>
+						  </div> 										
 					</div><!-- login -->
 				<div class="left_body_menu">
 					<div class="container">
@@ -97,16 +105,16 @@
 							<ul class="nav nav-tabs nav-stacked">
 								<li class="active">
 								<li class="left_subject"><a href="#" onclick="return false;">제휴업소</a></li>
-								<li><a href="/board/fullssa.do">룸/풀싸롱</a></li>
-								<li><a href="/board/songnightbar.do">노래방/나이트/바</a></li>
-								<li><a href="/board/aroma.do">아로마</a></li>
-								<li><a href="/board/masage.do">출장마사지</a></li>
-								<li><a href="/board/sportsmasage.do">스포츠마사지</a></li>
-								<li><a href="/board/kissroom.do">키스방</a></li>
-								<li><a href="/board/office.do">오피</a></li>
-								<li><a href="/board/resttel.do">휴게텔</a></li>
-								<li><a href="/board/etc.do">기타업소</a></li>  
-								<li><a href="/board/chat.do">채팅방링크</a></li>
+								<li><a href="/menuboard/fullssa.do">룸/풀싸롱</a></li>
+								<li><a href="/menuboard/songnightbar.do">노래방/나이트/바</a></li>
+								<li><a href="/menuboard/aroma.do">아로마</a></li>
+								<li><a href="/menuboard/masage.do">출장마사지</a></li>
+								<li><a href="/menuboard/sportsmasage.do">스포츠마사지</a></li>
+								<li><a href="/menuboard/kissroom.do">키스방</a></li>
+								<li><a href="/menuboard/office.do">오피</a></li>
+								<li><a href="/menuboard/resttel.do">휴게텔</a></li>
+								<li><a href="/menuboard/etc.do">기타업소</a></li>  
+								<li><a href="/menuboard/chat.do">채팅방링크</a></li>
 								<li><a href="#" onclick="return false;">할인권현황</a></li> 
 								<li><a href="#" onclick="return false;">초보자가이드</a></li> 
 								<li><a href="#" onclick="return false;">공지사항</a></li>
