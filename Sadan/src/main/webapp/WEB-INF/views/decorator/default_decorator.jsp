@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="/resources/css/bootstrap.css">
 <link rel="stylesheet" href="/resources/css/18sadan.css">
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="/js/bootstrap.js"></script>
+<script src="/resources/js/bootstrap.js"></script>
 	
 <decorator:head />
 </head>
