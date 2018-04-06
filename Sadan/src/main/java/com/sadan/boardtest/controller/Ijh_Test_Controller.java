@@ -27,108 +27,177 @@ public class Ijh_Test_Controller {
 	@Autowired
 	private Boardtest_ListService first_board_Service;
 	
-	//풀싸롱
-	@RequestMapping("/menuboard/fullssa.do")
-	private String fullssa(Model model)throws Exception {
+	
+	//제휴업소
+		@RequestMapping("/headmenu_all/jehyu.do")
+		private String jehyu(Model model)throws Exception {
 		
-		return "menuboard/fullssa";
+			return "headmenu_all/jehyu";
+	}
+	//이용후기
+		@RequestMapping("/headmenu_all/useafter.do")
+		private String useafter(Model model)throws Exception {
+			
+			return "headmenu_all/useafter";
+	}
+	//커뮤니티
+		@RequestMapping("/headmenu_all/community.do")
+		private String community(Model model)throws Exception {
+			
+			return "headmenu_all/community";
+	}
+	//엔터테인먼트
+		@RequestMapping("/headmenu_all/entertainment.do")
+		private String entertainment(Model model)throws Exception {
+			
+			return "headmenu_all/entertainment";
+	}
+	//유그이미지
+		@RequestMapping("/headmenu_all/uggallary.do")
+		private String uggallary(Model model)throws Exception {
+			
+			return "headmenu_all/uggallary";
+	}			
+	//출석부
+		@RequestMapping("/headmenu_all/calendar.do")
+		private String calendar(Model model)throws Exception {
+			
+			return "headmenu_all/calendar";
+	}
+	//이벤트존	
+		@RequestMapping("/headmenu_all/eventzone.do")
+		private String eventzone(Model model)throws Exception {
+					
+			return "headmenu_all/eventzone";
+	}
+	//서비스센터
+		@RequestMapping("/headmenu_all/servicecenter.do")
+		private String servicecenter(Model model)throws Exception {
+					
+			return "headmenu_all/servicecenter";
+	}			
+	//제휴문의
+		@RequestMapping("/headmenu_all/contactus.do")
+		private String contactus(Model model)throws Exception {
+					
+			return "headmenu_all/contactus";
+	}
+	
+	//풀싸롱
+		@RequestMapping("/leftmenuboard/fullssa.do")
+		private String fullssa(Model model)throws Exception {
+		
+		return "leftmenuboard/fullssa";
 	}
 	//노래방/나이트/바
-		@RequestMapping("/menuboard/songnightbar.do")
+		@RequestMapping("/leftmenuboard/songnightbar.do")
 		private String songnightbar(Model model)throws Exception {
 			
-			return "menuboard/songnightbar";
+			return "leftmenuboard/songnightbar";
 		}
 	//아로마
-		@RequestMapping("/menuboard/aroma.do")
+		@RequestMapping("/leftmenuboard/aroma.do")
 		private String aroma(Model model)throws Exception {
 			
-			return "menuboard/aroma";
+			return "leftmenuboard/aroma";
 		}
 	//출장마사지
-		@RequestMapping("/menuboard/masage.do")
+		@RequestMapping("/leftmenuboard/masage.do")
 		private String masage(Model model)throws Exception {
 			
-			return "menuboard/masage";
+			return "leftmenuboard/masage";
 		}
 	//스포츠마사지
-		@RequestMapping("/menuboard/sportsmasage.do")
+		@RequestMapping("/leftmenuboard/sportsmasage.do")
 		private String sportsmasage(Model model)throws Exception {
 			
-			return "menuboard/sportsmasage";
+			return "leftmenuboard/sportsmasage";
 		}
 	//키스방
-		@RequestMapping("/menuboard/kissroom.do")
+		@RequestMapping("/leftmenuboard/kissroom.do")
 		private String kissroom(Model model)throws Exception {
 			
-			return "menuboard/kissroom";
+			return "leftmenuboard/kissroom";
 		}
 	//오피
-		@RequestMapping("/menuboard/office.do")
+		@RequestMapping("/leftmenuboard/office.do")
 		private String office(Model model)throws Exception {
 			
-			return "menuboard/office";
+			return "leftmenuboard/office";
 		}
 	//휴게텔
-		@RequestMapping("/menuboard/resttel.do")
+		@RequestMapping("/leftmenuboard/resttel.do")
 		private String resttel(Model model)throws Exception {
 			
-			return "menuboard/resttel";
+			return "leftmenuboard/resttel";
 		}
 	//기타업소
-		@RequestMapping("/menuboard/etc.do")
+		@RequestMapping("/leftmenuboard/etc.do")
 		private String etc(Model model)throws Exception {
 			
-			return "menuboard/etc";
+			return "leftmenuboard/etc";
 		}
-	//이용후기
-				@RequestMapping("/useafter/useafter.do")
-		private String useafter(Model model)throws Exception {
+	//채팅방링크
+		@RequestMapping("/leftmenuboard/chat.do")
+		private String chat(Model model)throws Exception {
 					
-			return "useafter/useafter";
-		}
-	//커뮤니티
-				@RequestMapping("/community/community.do")
-		private String community(Model model)throws Exception {
-					
-			return "community/community";
-		}
-	//엔터테인먼트
-				@RequestMapping("/entertainment/entertainment.do")
-		private String entertainment(Model model)throws Exception {
-					
-			return "entertainment/entertainment";
-		}
-	//유그이미지
-				@RequestMapping("/uggallary/uggallary.do")
-		private String uggallary(Model model)throws Exception {
-					
-			return "uggallary/uggallary";
+			return "leftmenuboard/chat";
 		}			
-	//유그이미지
-				@RequestMapping("/calendar/calendar.do")
-		private String calendar(Model model)throws Exception {
+	//룸/풀싸롱PR
+		@RequestMapping("/leftmenuboard/prfullssa.do")
+		private String prfullssa(Model model)throws Exception {
 					
-			return "calendar/calendar";
+			return "leftmenuboard/prfullssa";
 		}
-	//이벤트존	
-				@RequestMapping("/eventzone/eventzone.do")
-				private String eventzone(Model model)throws Exception {
-							
-			return "eventzone/eventzone";
+	//노래방/나이트바PR
+		@RequestMapping("/leftmenuboard/prsongnightbar.do")
+		private String prsongnightbar(Model model)throws Exception {
+					
+			return "leftmenuboard/prsongnightbar";
 		}
-	//서비스센터
-				@RequestMapping("/servicecenter/servicecenter.do")
-				private String servicecenter(Model model)throws Exception {
-							
-			return "servicecenter/servicecenter";
-		}			
-	//제휴문의
-				@RequestMapping("/contactus/contactus.do")
-				private String contactus(Model model)throws Exception {
-							
-			return "contactus/contactus";
+	//아로마PR
+		@RequestMapping("/leftmenuboard/praroma.do")
+		private String prarom(Model model)throws Exception {
+					
+			return "leftmenuboard/praroma";
 		}
+	//출장마사지PR
+		@RequestMapping("/leftmenuboard/prmasage.do")
+		private String prmasage(Model model)throws Exception {
+					
+			return "leftmenuboard/prmasage";
+		}
+	//스포츠마사지PR
+		@RequestMapping("/leftmenuboard/prsportsmasage.do")
+		private String prsportsmasage(Model model)throws Exception {
+				
+			return "leftmenuboard/prsportsmasage";
+		}
+	//키스방PR
+		@RequestMapping("/leftmenuboard/prkissroom.do")
+		private String prkissroom(Model model)throws Exception {
+					
+			return "leftmenuboard/prkissroom";
+		}
+	//오피PR
+		@RequestMapping("/leftmenuboard/proffice.do")
+		private String proffice(Model model)throws Exception {
+					
+			return "leftmenuboard/proffice";
+		}
+	//휴게텔PR
+		@RequestMapping("/leftmenuboard/prresttel.do")
+		private String prresttel(Model model)throws Exception {
+					
+			return "leftmenuboard/prresttel";
+		}
+	//기타업소PR
+		@RequestMapping("/leftmenuboard/pretc.do")
+		private String pretc(Model model)throws Exception {
+					
+			return "leftmenuboard/pretc";
+		}	
+	
 					
 			
 				
