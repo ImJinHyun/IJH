@@ -25,14 +25,17 @@
 	<insert id="board_insert" parameterType="String">
 		INSERT INTO TEST(
 							NO
-							, WRITER
+							, OPTION
+							,CATEGORY
 							, SUBJECT
+							,CONTENT
 							, DATE
 		)
-		VALUES((select ifnull(max(no),0)+1 from test seq)			/*글번호 */
-					, #{writer}														/*작성자*/
-					, #{subject}														/*제목*/
-					, #{content}													/*글내용*/
+		VALUES((select ifnull(max(no),0)+1 from test seq)		
+					, #{option}													
+					, #{category}												
+					, #{subject}													
+					, #{content}
 					,sysdate() 
 					)	
 	</insert>

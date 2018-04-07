@@ -93,14 +93,13 @@ public class Boardtest_ListController {
 			
 	//게시글 등록
 			@RequestMapping(value = "/board/board_insert.do", method = RequestMethod.POST)
-			private String board_insert(Model model, List<Map<String, Object>> board) throws Exception{
+			private String board_insert(Model model, Map<String, Object> board) throws Exception{
 				Map<String, Object> map = new HashMap<String, Object>();
 				Map<String, Object> resultMap = new HashMap<String, Object>();
 				
 				try {
 					
 					logger.debug("WEB에서 넘어온 변수 값들 ======",board.get(0));
-					map = board.get(0);
 					first_board_Service.board_insert(map);
 				} catch (Exception e) {
 					e.printStackTrace();

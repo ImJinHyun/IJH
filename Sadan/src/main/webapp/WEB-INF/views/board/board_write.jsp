@@ -9,6 +9,16 @@
 <title>DB테스트</title>
 <script type="text/javascript" src="${path }/ckeditor/ckeditor.js"></script>
 <link rel="stylesheet" href="/resources/css/board_write.css">
+<script type="text/javascript">
+$(function(){
+	$("#insert").on("click",function(){
+		$("#content").attr("value",CKEDITOR.instances.ckeditor.getData())
+		
+		alert($("#content").val());
+	});
+	
+});
+</script>
 </head>
 <body>
 	<div class="boardhead">
@@ -20,22 +30,20 @@
 	<div class="div_clear"></div>
 
 	<div class="container-fluid">
-		<form class="form-horizontal">
+		<form class="form-horizontal" action="board_insert.do" method="post" role="form">
 			<!-- 비밀글 -->
 			<div class="form-group">
 				<label class="control-label col-sm-1" for="pwd"
 					style="padding-top: 11px">옵션 :</label>
-				<div class="col-sm-offset col-sm-3">
-					<div class="checkbox">
-						<label><input type="checkbox">비밀글</label>
-					</div>
-				</div>
+			    <div class="col-sm-11"  style="padding-top: 11px">
+			          <label><input type="checkbox" name="serect"> 비밀글</label>
+			    </div>
 			</div>
 			<!-- 분류 -->
 			<div class="form-group">
 				<label class="control-label col-sm-1" for="email">분류 :</label>
 				<div class="col-sm-11">
-					<select class="form-control" id="sel1">
+					<select class="form-control" id="sel1" name="category">
 						<option>인천</option>
 						<option>주안</option>
 						<option>광주</option>
@@ -53,13 +61,15 @@
 			</div>
 			<!-- 제목 -->
 			<div class="form-group">
-				<label class="control-label col-sm-1" for="subject">제목 :</label>
+				<label class="control-label col-sm-1">제목 :</label>
 				<div class="col-sm-11">
-					<input type="text" class="form-control" id="subject"
+					<input type="text" class="form-control" id="subject" name="subject"
 						placeholder="제목을 입력하세요">
 				</div>
 			</div>
-
+			
+			<!-- 본문 내용이 히든으로 넘어간다. -->
+				<input type="hidden" name="content" id="content" />
 
 			<!--     <div class="form-group">         -->
 			<!--       <div class="col-sm-offset-2 col-sm-10"> -->
@@ -78,7 +88,7 @@
 				</div>
 				<div class="form-group">
 					<div class="col-lg-12" align="right">
-						<button type="submit" class="btn btn-default">저장</button>
+						<button type="submit" class="btn btn-default" id="insert">저장</button>
 					</div>
 				</div>
 			</div>
