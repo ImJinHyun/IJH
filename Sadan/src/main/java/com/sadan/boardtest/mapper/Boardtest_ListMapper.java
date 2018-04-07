@@ -5,6 +5,8 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.sadan.firsttest.model.First_board_DTO;
+
 @Mapper
 public interface Boardtest_ListMapper {
 	
@@ -12,7 +14,7 @@ public interface Boardtest_ListMapper {
 
 	List<Map<String, Object>> board_Read(int no)  throws Exception;
 
-	void board_insert(Map<String, Object> map);
+	void board_insert(First_board_DTO first_board_DTO);
 
 
 }

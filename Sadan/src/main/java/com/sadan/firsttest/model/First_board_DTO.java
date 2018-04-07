@@ -7,7 +7,7 @@ public class First_board_DTO {
 	private String content;
 	private String writer;
 	private String date;
-	private String secret;
+	private String option;
 	private String category;
 	public String getNo() {
 		return no;
@@ -39,11 +39,11 @@ public class First_board_DTO {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public String getSecret() {
-		return secret;
+	public String getOption() {
+		return option;
 	}
-	public void setSecret(String secret) {
-		this.secret = secret;
+	public void setOption(String option) {
+		this.option = option;
 	}
 	public String getCategory() {
 		return category;
@@ -54,6 +54,6 @@ public class First_board_DTO {
 	@Override
 	public String toString() {
 		return "First_board_DTO [no=" + no + ", subject=" + subject + ", content=" + content + ", writer=" + writer
-				+ ", date=" + date + ", secret=" + secret + ", category=" + category + "]";
+				+ ", date=" + date + ", secret=" + option + ", category=" + category + "]";
 	}
 }

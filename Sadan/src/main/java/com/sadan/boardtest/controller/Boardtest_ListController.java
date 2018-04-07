@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sadan.boardtest.service.Boardtest_ListService;
+import com.sadan.firsttest.model.First_board_DTO;
 
 
 @Controller
@@ -93,14 +94,13 @@ public class Boardtest_ListController {
 			
 	//게시글 등록
 			@RequestMapping(value = "/board/board_insert.do", method = RequestMethod.POST)
-			private String board_insert(Model model, Map<String, Object> board) throws Exception{
+			private String board_insert(Model model, First_board_DTO first_board_DTO) throws Exception{
 				Map<String, Object> map = new HashMap<String, Object>();
 				Map<String, Object> resultMap = new HashMap<String, Object>();
 				
 				try {
-					
-					logger.debug("WEB에서 넘어온 변수 값들 ======",board.get(0));
-					first_board_Service.board_insert(map);
+					System.out.println(first_board_DTO);
+					first_board_Service.board_insert(first_board_DTO);
 				} catch (Exception e) {
 					e.printStackTrace();
 					resultMap.put("error", e.getMessage());

@@ -36,7 +36,7 @@ $(function(){
 				<label class="control-label col-sm-1" for="pwd"
 					style="padding-top: 11px">옵션 :</label>
 			    <div class="col-sm-11"  style="padding-top: 11px">
-			          <label><input type="checkbox" name="serect"> 비밀글</label>
+			          <label><input type="checkbox" name="serect" value="1"> 비밀글</label>
 			    </div>
 			</div>
 			<!-- 분류 -->

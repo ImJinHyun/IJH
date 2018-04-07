@@ -62,7 +62,7 @@ import org.springframework.web.multipart.MultipartFile;
 	 
 	            //서버가 클라이언트에게 응답을 해주는 메소드
 	            printWriter = response.getWriter();
-	            String fileUrl = request.getContextPath()+"/images/"+ fileName;		//url경로
+	            String fileUrl = request.getContextPath()+"/images/test_img/"+ fileName;		//url경로
 	            System.out.println(fileUrl);
 	            printWriter.println("<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction("
 	                    + callback

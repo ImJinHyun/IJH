@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UploadPath {
 
-	public static String attach_path="WEB-INF/views/images/test_Img/";
+	public static String attach_path="WEB-INF/views/images/test_img/";
 	
 	public static String path( HttpServletRequest request){
 		String uploadPath ="/";

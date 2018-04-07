@@ -22,17 +22,17 @@
 			
 	</select>
 	
-	<insert id="board_insert" parameterType="String">
+	<insert id="board_insert" parameterType="com.sadan.firsttest.model.First_board_DTO">
 		INSERT INTO TEST(
 							NO
-							, OPTION
+							, secret
 							,CATEGORY
 							, SUBJECT
 							,CONTENT
 							, DATE
 		)
-		VALUES((select ifnull(max(no),0)+1 from test seq)		
-					, #{option}													
+		VALUES((select ifnull(max(no),0)+1 from test seq)
+					, #{option}
 					, #{category}												
 					, #{subject}													
 					, #{content}

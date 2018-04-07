@@ -14,6 +14,7 @@ import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import com.sadan.boardtest.controller.Boardtest_ListController;
 import com.sadan.boardtest.mapper.Boardtest_ListMapper;
+import com.sadan.firsttest.model.First_board_DTO;
 
 @Service
 public class Boardtest_ListService {
@@ -73,14 +74,15 @@ public class Boardtest_ListService {
 
 
 @Transactional
-	public void board_insert(Map<String, Object> map) {
+	public void board_insert(First_board_DTO first_board_DTO) {
+	
 	Map<String, Object> resultMap = new HashMap<String, Object>();
 	
 		try {
 			
-			first_board_Mapper.board_insert(map);
+			first_board_Mapper.board_insert(first_board_DTO);
 		} catch (Exception e) {
-			resultMap.put("error", e.getMessage());
+			e.printStackTrace();
 		}
 	}
 
