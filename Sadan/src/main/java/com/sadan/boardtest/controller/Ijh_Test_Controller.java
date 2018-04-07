@@ -29,11 +29,12 @@ public class Ijh_Test_Controller {
 	
 	
 	//제휴업소
-		@RequestMapping("/headmenu_all/jehyu.do")
+		@RequestMapping("/jehyu/index.do")
 		private String jehyu(Model model)throws Exception {
 		
 			return "headmenu_all/jehyu";
 	}
+		
 	//이용후기
 		@RequestMapping("/headmenu_all/useafter.do")
 		private String useafter(Model model)throws Exception {

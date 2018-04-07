@@ -13,13 +13,17 @@
 		<pattern>/menuboard/*</pattern> 
 		<pattern>/member/*</pattern> 
 		<pattern>/leftmenuboard/*</pattern>
-		<pattern>/headmenu_all/*</pattern>
 		
-		
-		
-
-
+	
 	</decorator>
+	
+		<decorator name="gallry" page="uggallary_decorator.jsp">
+			<pattern>/headmenu_all/uggallary.do</pattern>
+		</decorator>
+		
+		<decorator name="calendar" page="calendar_decorator.jsp">
+			<pattern>/headmenu_all/calendar.do</pattern>
+		</decorator>
 	
 <!-- 	관리자 페이지의 레이아웃 -->
 
