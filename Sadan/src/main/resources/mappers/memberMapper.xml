@@ -6,13 +6,17 @@
 <mapper namespace="com.sadan.member.mapper.Member_Mapper">
 
 	<select id="login" parameterType="String" resultType="com.sadan.member.model.LoginDTO">
-				SELECT ID
+				SELECT USERID
 				, PASSWORD
+				, nickname
+				, sex
+				, email
+				, grade
 				FROM MEMBER
 				WHERE
-				ID = #{ID}
+				userId = #{userId}
 				AND
-				PASSWORD  = #{PASSWORD}
+				PASSWORD  = #{password}
 	</select>
 
 </mapper>

@@ -19,7 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.sadan.member.service.Member_Service;
 import com.sadan.member.model.LoginDTO;
 
-@Controller("/member")
+@Controller
+@RequestMapping("/member")
 public class Member_Controller {
 	private static final Logger logger = LoggerFactory.getLogger(Member_Controller.class);
 	
@@ -47,17 +48,19 @@ public class Member_Controller {
 		logger.info("MemberController.loginprosess() : 로그인 처리문 : loginDTO " + loginDTO);
 		
 		loginDTO  = member_Service.login(loginDTO);
+		logger.info(""+loginDTO);
+		
 		if(loginDTO == null ){
 			// login 실패할 때의 처리
-			return "redirect:../index/index.do";
+			return "redirect:../Index/main.do";
 		}
 		else{ // 로그인이 성공했을 때
 			session.setAttribute("login", loginDTO);
 			
-			if(loginDTO.getGrade()==5){
-				return "redirect:../member/userlist.do";
+			if(loginDTO.getGrade()==5){	//등급이 5일때 가관리자 등급
+				return "redirect:../Index/main.do";
 			}else if(loginDTO.getGrade()==3){
-				return "redirect:../index/index.do";
+				return "redirect:../index/main.do";
 			}else{
 			return "redirect:../time/list.ti";
 			}
@@ -75,7 +78,7 @@ public class Member_Controller {
 		System.out.println("LoginController.logout() : 로그아웃 처리문 : " + session );
 		session.invalidate();
 		// main으로 리턴
-		return "redirect:../index/index.do";
+		return "redirect:../Index/main.do";
 	}
 	
 			

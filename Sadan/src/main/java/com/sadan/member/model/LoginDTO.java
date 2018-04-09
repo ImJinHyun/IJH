@@ -1,17 +1,18 @@
 package com.sadan.member.model;
 
 public class LoginDTO {
-	private String id;
+	private String userId;
 	private String password;
 	private String nickname;
 	private String sex;
 	private String email;
 	private int grade;
-	public String getId() {
-		return id;
+	
+	public String getUserId() {
+		return userId;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 	public String getPassword() {
 		return password;
@@ -45,7 +46,7 @@ public class LoginDTO {
 	}
 	@Override
 	public String toString() {
-		return "LoginDTO [id=" + id + ", password=" + password + ", nickname=" + nickname + ", sex=" + sex + ", email="
+		return "LoginDTO [userId=" + userId + ", password=" + password + ", nickname=" + nickname + ", sex=" + sex + ", email="
 				+ email + ", grade=" + grade + "]";
 	}
 }

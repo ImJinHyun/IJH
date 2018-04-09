@@ -10,10 +10,6 @@
 	uri="http://www.opensymphony.com/sitemesh/decorator"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
-<decorator:usePage id="thePage"/>
-<% String selection = thePage.getProperty("meta.selection"); %>
-
 <!-- header.jsp 에서 복사해서 가져오세요. -->
 <!DOCTYPE html>
 <html>
@@ -27,14 +23,33 @@
 <link rel="stylesheet" href="/resources/css/18sadan.css">
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="/resources/js/bootstrap.js"></script>
-
-<script>
+<script type="text/javascript">
 
 </script>
 <decorator:head />
 </head>
 
 <body>
+<%
+		// 		String userId = (String) session.getAttribute("userId");
+
+		// 		세션 처리 (유저가 로그인시 세션처리) - 접속유무 파악
+		String userId = null;
+		if (session.getAttribute("userId") != null) {
+			userId = (String) session.getAttribute("userId");
+		}
+
+		// 		로그인이 된 상태로 회원가입 페이지에 들어온다면 index.do로 돌려보냄
+		if (userId != null) {
+	%>
+	alert("잘못된 경로 입니다.");
+	<%
+		session.setAttribute("messageType", "오류 메시지");
+			session.setAttribute("messageContent", "현재 로그인이 되어 있는 상태입니다.");
+			response.sendRedirect("index.do");
+			return;
+		}
+	%>
 <div class="all">
 									
 			<div class="header">
@@ -72,39 +87,39 @@
 			
 			<div class="bodya">
 				<div class=wrapbody>
-				<div class="left_body">
-					<div class="login">
-						  <form>
-						    <div class="input-group">
-						      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-						      <input id="id" type="text" class="form-control" name="id" placeholder="id">
-						    </div>
-						    <div class="input-group">
-						      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-						      <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-						    </div>
-						    <div class="checkbox">
-						    	<label>
-							    	<input type="checkbox" value="자동로그인">
-							    	<span>자동로그인</span>						    	
-							    </label>										   							
-						   			<button type="button" class="btn btn-sm">로그인</button>
-						   		<div class="member">				    	
-							    	<a href="#" data-toggle="popover" data-content="고객센터로 문의해주세요^^" class="find1 ">아이디/비번찾기</a>
-							    		<span class="find2">|</span>
-							    	<a href="/member/member.do">회원가입</a>
-						  		</div> 
-						    </div>
-						      
-						  </form>  										
-					</div><!-- login -->
-			
-			
-				<div class="left_body_menu" id="left_body_menu">
-						
-				</div>
+					<div class="left_body">
 				
-				<div class="login"><!-- 로그인했을시 화면 -->
+					<c:if test="${login.userId == null}">
+						 <div class="login">
+							  <form action="/member/login.do" method="post">
+							    <div class="input-group">
+							      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							      <input id="id" type="text" class="form-control" name="userId" placeholder="ID를 입력하세요">
+							    </div>
+							    <div class="input-group">
+							      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+							      <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+							    </div>
+							    <div class="checkbox">
+							    	<label>
+								    	<input type="checkbox" value="자동로그인">
+								    	<span>자동로그인</span>						    	
+								    </label>										   							
+							   			<button type="submit" class="btn btn-sm">로그인</button>
+							   		<div class="member">				    	
+								    	<a href="#" data-toggle="popover" data-content="고객센터로 문의해주세요^^" class="find1 ">아이디/비번찾기</a>
+								    		<span class="find2">|</span>
+								    	<a href="/member/member.do">회원가입</a>
+							  		</div> 
+							    </div>
+							      
+							  </form>  										
+						</div>
+				</c:if>
+				
+				<!-- 로그인했을시 화면 -->
+					<c:if test="${login.userId != null}">
+						<div class="login"><!-- 로그인했을시 화면 -->
 					<div class="loing_after_all">
 						<div class="login_after1">
 							<div class="login_logo"><img src="/images/main1.png" width="70px" height="70px"></div>		
@@ -115,7 +130,7 @@
 							</div><!-- login_nick_logo끝 -->
 						
 							<div class="nick">
-								<span>울랄라비데</span>
+								<span>${login.userId} </span>
 							</div>
 						</div><!-- login_nick_logo_all끝 -->
 						<div class="login_point">
@@ -130,14 +145,25 @@
 						  <button type="button" class="btn btn-primary">내글반응</button>
 						  <button type="button" class="btn btn-primary">내가쓴글</button>
 						  <button type="button" class="btn btn-primary">정보수정</button>
-						  <button type="button" class="btn btn-primary">로그아웃</button>
+						  	<button type="button" class="btn btn-primary" onclick="location.replace('/member/logout.do')">로그아웃</button>
 					</div>
 					
 						  										
 				</div><!-- login -->
+					</c:if>
+					<!-- login -->
+				<!-- login 화면 끝 -->
+			
+				<div class="left_body_menu" id="left_body_menu">
+						
+				</div>
+
 				
-				</div><!-- left_body -->
-				<div class="wrapcenter_body">
+				</div>
+				<!-- left_body끝 -->
+				
+				
+					<div class="wrapcenter_body">
 					<div class="center_body">
 						<article>
 						

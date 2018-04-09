@@ -30,7 +30,7 @@ public class IndexController {
 		Map<String, Object> map2 = new HashMap<String, Object>();
 		
 		try {
-			map = indexService.List(map2);
+//			map = indexService.List(map2);
 			logger.debug(map2.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
