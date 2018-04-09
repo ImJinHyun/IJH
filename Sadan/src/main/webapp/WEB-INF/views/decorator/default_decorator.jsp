@@ -55,7 +55,7 @@
 					  <div class="container-fluid">
 					    <ul class="nav navbar-nav">
 					      <li><a href="/jehyu/main.do" id="jehyu">제휴업소</a></li>
-					      <li><a href="/headmenu_all/useafter.do">이용후기</a></li>
+					      <li><a href="/headmenu_all/useaftr.do">이용후기</a></li>
 					      <li><a href="/headmenu_all/community.do">커뮤니티</a></li>
 					      <li><a href="/headmenu_all/entertainment.do">엔터테인먼트</a></li>
 					      <li><a href="/headmenu_all/uggallary.do" id="ugimage">유그이미지</a></li>

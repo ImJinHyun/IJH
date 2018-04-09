@@ -54,15 +54,15 @@
 					<nav class="navbar navbar-inverse ">
 					  <div class="container-fluid">
 					    <ul class="nav navbar-nav">
-					      <li><a href="/headmenu_all/jehyu.do" id="jehyu">제휴업소</a></li>
-					      <li><a href="/headmenu_all/useafter.do">이용후기</a></li>
-					      <li><a href="/headmenu_all/community.do">커뮤니티</a></li>
-					      <li><a href="/headmenu_all/entertainment.do">엔터테인먼트</a></li>
-					      <li><a href="/headmenu_all/uggallary.do" id="ugimage">유그이미지</a></li>
-					      <li><a href="/headmenu_all/calendar.do">출석부</a></li>
-					      <li><a href="/headmenu_all/eventzone.do">이벤트존</a></li>
-					      <li><a href="/headmenu_all/servicecenter.do">고객센터</a></li>
-					      <li><a href="/headmenu_all/contactus.do">제휴문의</a></li>
+					      <li><a href="/jehyu/main.do" id="jehyu">제휴업소</a></li>
+					      <li><a href="/useafter/main.do">이용후기</a></li>
+					      <li><a href="/community/main.do">커뮤니티</a></li>
+					      <li><a href="/entertainment/main.do">엔터테인먼트</a></li>
+					      <li><a href="/uggallary/main.do" id="ugimage">유그이미지</a></li>
+					      <li><a href="/attendence/main.do">출석부</a></li>
+					      <li><a href="/eventzone/main.do">이벤트존</a></li>
+					      <li><a href="/servicecenter/main.do">고객센터</a></li>
+					      <li><a href="/contactus/main.do">제휴문의</a></li>
 					    </ul>
 					  </div>
 					</nav>

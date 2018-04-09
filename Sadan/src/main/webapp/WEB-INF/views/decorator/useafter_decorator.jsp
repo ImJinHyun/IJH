@@ -54,7 +54,7 @@
 					<nav class="navbar navbar-inverse ">
 					  <div class="container-fluid">
 					    <ul class="nav navbar-nav">
-					      <li><a href="/headmenu_all/jehyu.do" id="jehyu">제휴업소</a></li>
+					      <li><a href="/jehyu/main.do" id="jehyu">제휴업소</a></li>
 					      <li><a href="/useafter/main.do">이용후기</a></li>
 					      <li><a href="/community/main.do">커뮤니티</a></li>
 					      <li><a href="/entertainment/main.do">엔터테인먼트</a></li>
