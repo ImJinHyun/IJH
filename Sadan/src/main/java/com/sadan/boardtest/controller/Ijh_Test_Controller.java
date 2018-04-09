@@ -29,10 +29,10 @@ public class Ijh_Test_Controller {
 	
 	
 	//제휴업소
-		@RequestMapping("/jehyu/index.do")
+		@RequestMapping("/jehyu/jehyu.do")
 		private String jehyu(Model model)throws Exception {
 		
-			return "headmenu_all/jehyu";
+			return "jehyu/jehyu";
 	}
 		
 	//이용후기
@@ -60,10 +60,10 @@ public class Ijh_Test_Controller {
 			return "headmenu_all/uggallary";
 	}			
 	//출석부
-		@RequestMapping("/headmenu_all/calendar.do")
-		private String calendar(Model model)throws Exception {
+		@RequestMapping("/headmenu_all/attendence.do")
+		private String attendence(Model model)throws Exception {
 			
-			return "headmenu_all/calendar";
+			return "headmenu_all/attendence";
 	}
 	//이벤트존	
 		@RequestMapping("/headmenu_all/eventzone.do")
@@ -82,13 +82,12 @@ public class Ijh_Test_Controller {
 		private String contactus(Model model)throws Exception {
 					
 			return "headmenu_all/contactus";
-	}
-	
+	}	
 	//풀싸롱
 		@RequestMapping("/leftmenuboard/fullssa.do")
 		private String fullssa(Model model)throws Exception {
 		
-		return "leftmenuboard/fullssa";
+			return "leftmenuboard/fullssa";
 	}
 	//노래방/나이트/바
 		@RequestMapping("/leftmenuboard/songnightbar.do")

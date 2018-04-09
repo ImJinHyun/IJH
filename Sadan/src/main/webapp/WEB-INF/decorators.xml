@@ -17,13 +17,34 @@
 	
 	</decorator>
 	
-		<decorator name="gallry" page="uggallary_decorator.jsp">
-			<pattern>/headmenu_all/uggallary.do</pattern>
+		<decorator name="jehyu" page="jehyu_decorator.jsp">
+			<pattern>/jehyu/*</pattern>
+		</decorator>	
+		<decorator name="useafter" page="useafter_decorator.jsp">
+			<pattern>/useafter/*</pattern>
+		</decorator>
+		<decorator name="community" page="community_decorator.jsp">
+			<pattern>/community/*</pattern>
+		</decorator>	
+		<decorator name="entertainment" page="entertainment_decorator.jsp">
+			<pattern>/entertainment/*</pattern>
+		</decorator>
+		<decorator name="uggallary" page="uggallary_decorator.jsp">
+			<pattern>/uggallary/*</pattern>
+		</decorator>
+		<decorator name="attendence" page="attendence_decorator.jsp">
+			<pattern>/attendence/*</pattern>
+		</decorator>
+		<decorator name="eventzone" page="eventzone_decorator.jsp">
+			<pattern>/eventzone/*</pattern>
+		</decorator>
+		<decorator name="servicecenter" page="servicecenter_decorator.jsp">
+			<pattern>/servicecenter/*</pattern>
+		</decorator>
+		<decorator name="question" page="question.jsp">
+			<pattern>/question/*</pattern>
 		</decorator>
 		
-		<decorator name="calendar" page="calendar_decorator.jsp">
-			<pattern>/headmenu_all/calendar.do</pattern>
-		</decorator>
 	
 <!-- 	관리자 페이지의 레이아웃 -->
 

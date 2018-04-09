@@ -55,14 +55,14 @@
 					  <div class="container-fluid">
 					    <ul class="nav navbar-nav">
 					      <li><a href="/jehyu/main.do" id="jehyu">제휴업소</a></li>
-					      <li><a href="/headmenu_all/useafter.do">이용후기</a></li>
-					      <li><a href="/headmenu_all/community.do">커뮤니티</a></li>
-					      <li><a href="/headmenu_all/entertainment.do">엔터테인먼트</a></li>
-					      <li><a href="/headmenu_all/uggallary.do" id="ugimage">유그이미지</a></li>
-					      <li><a href="/headmenu_all/calendar.do">출석부</a></li>
-					      <li><a href="/headmenu_all/eventzone.do">이벤트존</a></li>
-					      <li><a href="/headmenu_all/servicecenter.do">고객센터</a></li>
-					      <li><a href="/headmenu_all/contactus.do">제휴문의</a></li>
+					      <li><a href="/useafter/main.do">이용후기</a></li>
+					      <li><a href="/community/main.do">커뮤니티</a></li>
+					      <li><a href="/entertainment/main.do">엔터테인먼트</a></li>
+					      <li><a href="/uggallary/main.do" id="ugimage">유그이미지</a></li>
+					      <li><a href="/attendence/main.do">출석부</a></li>
+					      <li><a href="/eventzone/main.do">이벤트존</a></li>
+					      <li><a href="/servicecenter/main.do">고객센터</a></li>
+					      <li><a href="/question/main.do">제휴문의</a></li>
 					    </ul>
 					  </div>
 					</nav>
@@ -101,7 +101,41 @@
 			
 			
 				<div class="left_body_menu" id="left_body_menu">
-						
+					<div class="container">
+						<div class="row">
+							<div class="span6">						
+							<ul class="nav nav-tabs nav-stacked">
+								<li class="active">
+								<li class="left_subject"><a href="/jehyu/main.do">제휴업소</a></li>
+								<li><a href="/leftmenuboard/fullssa.do">룸/풀싸롱</a></li>
+								<li><a href="/leftmenuboard/songnightbar.do">노래방/나이트/바</a></li>
+								<li><a href="/leftmenuboard/aroma.do">아로마</a></li>
+								<li><a href="/leftmenuboard/masage.do">출장마사지</a></li>
+								<li><a href="/leftmenuboard/sportsmasage.do">스포츠마사지</a></li>
+								<li><a href="/leftmenuboard/kissroom.do">키스방</a></li>
+								<li><a href="/leftmenuboard/office.do">오피</a></li>
+								<li><a href="/leftmenuboard/resttel.do">휴게텔</a></li>
+								<li><a href="/leftmenuboard/etc.do">기타업소</a></li>  
+								<li><a href="/leftmenuboard/chat.do">채팅방링크</a></li>
+								<li><a href="#" onclick="return false;">할인권현황</a></li> 
+								<li><a href="#" onclick="return false;">초보자가이드</a></li> 
+								<li><a href="#" onclick="return false;">공지사항</a></li>
+								<li><a href="#" onclick="return false;">제휴업소</a></li>
+								<li><a href="#" onclick="return false;">이벤트업소배너</a></li>
+								<li class="left_subject"><a href="#" onclick="return false;">출근부PR</a></li>	
+								<li><a href="/leftmenuboard/prfullssa.do">룸/풀싸롱PR</a></li>
+								<li><a href="/leftmenuboard/prsongnightbar.do">노래방/나이트/바PR</a></li>
+								<li><a href="/leftmenuboard/praroma.do">아로마PR</a></li>
+								<li><a href="/leftmenuboard/prmasage.do">출장마사지PR</a></li>
+								<li><a href="/leftmenuboard/prsportsmasage.do">스포츠마사지PR</a></li>
+								<li><a href="/leftmenuboard/prkissroom.do">키스방PR</a></li>
+								<li><a href="/leftmenuboard/proffice.do">오피PR</a></li>
+								<li><a href="/leftmenuboard/prresttel.do">휴게텔PR</a></li>
+								<li><a href="/leftmenuboard/pretc.do">기타업소PR</a></li> 
+							</ul>						
+						</div>
+						</div>
+						</div>		
 				</div>
 				
 				<div class="login"><!-- 로그인했을시 화면 -->
