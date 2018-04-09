@@ -106,16 +106,12 @@
 							<div class="span6">						
 							<ul class="nav nav-tabs nav-stacked">
 								<li class="active">
-								<li class="left_subject"><a href="#" onclick="return false;">커뮤니티</a></li>
-								<li><a href="/leftmenuboard/fullssa.do">공지사항</a></li>			
-								<li><a href="/leftmenuboard/songnightbar.do">가입인사(등업)</a></li>
-								<li><a href="/leftmenuboard/aroma.do">질문및답변</a></li>
-								<li><a href="/leftmenuboard/masage.do">정모와번개</a></li>
-								<li><a href="/leftmenuboard/sportsmasage.do">자유게시판</a></li>
-								<li><a href="/leftmenuboard/kissroom.do">여우게시판</a></li>
-								<li><a href="/leftmenuboard/office.do">구인</a></li>
-								<li><a href="#" onclick="return false;">초보자가이드</a></li> 
-								<li><a href="#" onclick="return false;">이벤트업소배너</a></li> 								
+								<li class="left_subject"><a href="/jehyu/main.do">고객센터</a></li>
+								<li><a href="/leftmenuboard/fullssa.do">업소공지사항</a></li>
+								<li><a href="/leftmenuboard/songnightbar.do">고객문의(일반)</a></li>
+								<li><a href="/leftmenuboard/aroma.do">고객문의(업소)</a></li>								   																 
+								<li><a href="#" onclick="return false;">초보자가이드</a></li> 								
+								<li><a href="#" onclick="return false;">이벤트업소배너</a></li>																
 							</ul>						
 						</div>
 						</div>

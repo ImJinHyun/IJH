@@ -106,7 +106,7 @@
 							<div class="span6">						
 							<ul class="nav nav-tabs nav-stacked">
 								<li class="active">
-								<li class="left_subject"><a href="#" onclick="return false;">제휴업소</a></li>
+								<li class="left_subject"><a href="#" onclick="return false;">이용후기</a></li>
 								<li><a href="/leftmenuboard/fullssa.do">룸/풀싸롱</a></li>
 								<li><a href="/leftmenuboard/songnightbar.do">노래방/나이트/바</a></li>
 								<li><a href="/leftmenuboard/aroma.do">아로마</a></li>
@@ -115,12 +115,8 @@
 								<li><a href="/leftmenuboard/kissroom.do">키스방</a></li>
 								<li><a href="/leftmenuboard/office.do">오피</a></li>
 								<li><a href="/leftmenuboard/resttel.do">휴게텔</a></li>
-								<li><a href="/leftmenuboard/etc.do">기타업소</a></li>  
-								<li><a href="/leftmenuboard/chat.do">채팅방링크</a></li>
-								<li><a href="#" onclick="return false;">할인권현황</a></li> 
+								<li><a href="/leftmenuboard/etc.do">기타업소</a></li>  							
 								<li><a href="#" onclick="return false;">초보자가이드</a></li> 
-								<li><a href="#" onclick="return false;">공지사항</a></li>
-								<li><a href="#" onclick="return false;">제휴업소</a></li>
 								<li><a href="#" onclick="return false;">이벤트업소배너</a></li> 
 							</ul>						
 						</div>

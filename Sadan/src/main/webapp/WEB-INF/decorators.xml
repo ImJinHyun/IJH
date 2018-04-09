@@ -41,7 +41,7 @@
 		<decorator name="servicecenter" page="servicecenter_decorator.jsp">
 			<pattern>/servicecenter/*</pattern>
 		</decorator>
-		<decorator name="question" page="question.jsp">
+		<decorator name="question" page="question_decorator.jsp">
 			<pattern>/question/*</pattern>
 		</decorator>
 		
