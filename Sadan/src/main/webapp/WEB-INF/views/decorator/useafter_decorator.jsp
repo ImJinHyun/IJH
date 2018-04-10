@@ -107,17 +107,17 @@
 							<ul class="nav nav-tabs nav-stacked">
 								<li class="active">
 								<li class="left_subject"><a href="#" onclick="return false;">이용후기</a></li>
-								<li><a href="/leftmenuboard/fullssa.do">룸/풀싸롱</a></li>
-								<li><a href="/leftmenuboard/songnightbar.do">노래방/나이트/바</a></li>
-								<li><a href="/leftmenuboard/aroma.do">아로마</a></li>
-								<li><a href="/leftmenuboard/masage.do">출장마사지</a></li>
-								<li><a href="/leftmenuboard/sportsmasage.do">스포츠마사지</a></li>
-								<li><a href="/leftmenuboard/kissroom.do">키스방</a></li>
-								<li><a href="/leftmenuboard/office.do">오피</a></li>
-								<li><a href="/leftmenuboard/resttel.do">휴게텔</a></li>
-								<li><a href="/leftmenuboard/etc.do">기타업소</a></li>  							
-								<li><a href="#" onclick="return false;">초보자가이드</a></li> 
-								<li><a href="#" onclick="return false;">이벤트업소배너</a></li> 
+								<li><a href="/useafter/fullssa.do">룸/풀싸롱</a></li>
+								<li><a href="/useafter/songnightbar.do">노래방/나이트/바</a></li>
+								<li><a href="/useafter/aroma.do">아로마</a></li>
+								<li><a href="/useafter/masage.do">출장마사지</a></li>
+								<li><a href="/useafter/sportsmasage.do">스포츠마사지</a></li>
+								<li><a href="/useafter/kissroom.do">키스방</a></li>
+								<li><a href="/useafter/office.do">오피</a></li>
+								<li><a href="/useafter/resttel.do">휴게텔</a></li>
+								<li><a href="/useafter/etc.do">기타업소</a></li>  							
+								<li><a href="/useafter/choboguide.do">초보자가이드</a></li> 								
+								<li><a href="/useafter/eventbanner.do">이벤트업소배너</a></li> 
 							</ul>						
 						</div>
 						</div>
@@ -144,7 +144,8 @@
 								<li><a href="#" onclick="return false;">포인트 : 0</a></li>
 								<li><a href="#" onclick="return false;">레벨 : 14</a></li>
 							</ul>
-						</div>	
+						</div>
+							
 					</div><!-- loing_after_all 끝 -->
 					<div class="loing_after_all2">	
 						  <button type="button" class="btn btn-primary">내글반응</button>
@@ -153,8 +154,10 @@
 						  <button type="button" class="btn btn-primary">로그아웃</button>
 					</div>
 					
+					
 						  										
 				</div><!-- login -->
+
 				
 				</div><!-- left_body -->
 				<div class="wrapcenter_body">

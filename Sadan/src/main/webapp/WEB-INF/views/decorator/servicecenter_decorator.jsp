@@ -106,12 +106,12 @@
 							<div class="span6">						
 							<ul class="nav nav-tabs nav-stacked">
 								<li class="active">
-								<li class="left_subject"><a href="/jehyu/main.do">고객센터</a></li>
-								<li><a href="/leftmenuboard/fullssa.do">업소공지사항</a></li>
-								<li><a href="/leftmenuboard/songnightbar.do">고객문의(일반)</a></li>
-								<li><a href="/leftmenuboard/aroma.do">고객문의(업소)</a></li>								   																 
-								<li><a href="#" onclick="return false;">초보자가이드</a></li> 								
-								<li><a href="#" onclick="return false;">이벤트업소배너</a></li>																
+								<li class="left_subject"><a href="#" onclick="return false">고객센터</a></li>
+								<li><a href="/servicecenter/fullssa.do">업소공지사항</a></li>
+								<li><a href="/servicecenter/songnightbar.do">고객문의(일반)</a></li>
+								<li><a href="/servicecenter/aroma.do">고객문의(업소)</a></li>								   																 
+								<li><a href="/servicecenter/chobo.do">초보자가이드</a></li> 								
+								<li><a href="/servicecenter/event.do">이벤트업소배너</a></li>																	
 							</ul>						
 						</div>
 						</div>

@@ -1,0 +1,89 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+* {	font-family: 'Nanum Gothic';font-size: 13px;font-weight: normal;color: black;}
+html, body, form, div, p, dl, dt, dd, ul, ol, li, h1, h2, h3{border: 0;margin: 0;padding: 0;}
+table{border-spacing: 0;border-collapse: collapse;margin: 0;padding: 0;}
+input {margin: 0;}
+a img {border: 0;}
+img {margin-bottom: 10px;}
+a {color: #000000;text-decoration: none;}
+a:hover {columns: #bbbbbb;text-decoration: none;cursor: pointer;}
+
+.top_all {
+	width: 100%;
+	height:85px;
+	border: 1px solid #bbbbbb;
+	margin-bottom: 20px;
+}
+.top_1 {
+	width: 100%;
+	height: 30px;
+	border-style: none none solid none;
+	border-width: 0 0 1px 0;
+  	border-color: #bbbbbb #bbbbbb #bbbbbb #bbbbbb;	
+		
+}
+.top_1 > h4 {
+	padding: 5px 0 0 10px;
+	
+}
+.top_2 {
+	width: 100%;
+	height: 45px;
+	padding-top: 7px;	
+}
+.top_2 > span {
+	padding: 10px 0 0 10px;
+	font-size: 18px;
+	font-weight: 900;
+}
+.smallbox {
+	margin: 4px 0 0 10px;
+	width: 40px;
+	height: 20px;
+	background-color:red;
+	float: left;
+}
+.smallbox > span {
+	color: white;
+	margin-left: 8px;
+	font-weight: 900;
+}
+.top_2 .date {
+	float: right;
+	padding: 0 10px 0 0;
+}
+.gallaryall {
+	width: 100%;
+	margin: 0 auto;	
+}
+.gallary {
+	width: 100%;
+	height: 100px;
+	float: left;	
+	margin: 10px 0 80px 0;	
+}
+.gallary .abcd {
+	position: relative;
+	width:181px;
+	height:160x;
+	float: left;
+	margin-right: 10px;
+	margin-left: 4px;	
+}
+#abcd {
+	margin-right: 0;
+}
+
+.gallary .banner_image_all {
+	width:180px;
+	height:160x;
+	float: left;	
+}
+.img_subject1 {
+	text-align: center;
+	font-weight: 900;
+}
+.img_subject2 .glyphicon-comment {
+	margin:5px 2px 20px 100px;
+}

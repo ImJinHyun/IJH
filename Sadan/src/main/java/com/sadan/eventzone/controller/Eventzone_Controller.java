@@ -22,7 +22,7 @@ public class Eventzone_Controller {
 	@RequestMapping("/eventzone/main.do")
 	private String eventzone() {
 		
-		return "eventzone/eventzone";
+		return "board/eventzone/eventzone";
 	}
 			
 }

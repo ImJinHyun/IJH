@@ -10,16 +10,12 @@
 	uri="http://www.opensymphony.com/sitemesh/decorator"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
-<decorator:usePage id="thePage"/>
-<% String selection = thePage.getProperty("meta.selection"); %>
-
 <!-- header.jsp 에서 복사해서 가져오세요. -->
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>18sadan | <decorator:title />
+<title>유흥그라운드 | 출석부<decorator:title />
 </title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -106,28 +102,28 @@
 							<div class="span6">						
 							<ul class="nav nav-tabs nav-stacked">
 								<li class="active">
-								<li class="left_subject"><a href="/jehyu/main.do">출석부</a></li>
-								<li><a href="/leftmenuboard/fullssa.do">룸/풀싸롱</a></li>
-								<li><a href="/leftmenuboard/songnightbar.do">노래방/나이트/바</a></li>
-								<li><a href="/leftmenuboard/aroma.do">아로마</a></li>
-								<li><a href="/leftmenuboard/masage.do">출장마사지</a></li>
-								<li><a href="/leftmenuboard/sportsmasage.do">스포츠마사지</a></li>
-								<li><a href="/leftmenuboard/kissroom.do">키스방</a></li>
-								<li><a href="/leftmenuboard/office.do">오피</a></li>
-								<li><a href="/leftmenuboard/resttel.do">휴게텔</a></li>
-								<li><a href="/leftmenuboard/etc.do">기타업소</a></li>
+								<li class="left_subject"><a href="#" onclick="return false">출석부</a></li>
+								<li><a href="/attendence/fullssa.do">룸/풀싸롱</a></li>
+								<li><a href="/attendence/songnightbar.do">노래방/나이트/바</a></li>
+								<li><a href="/attendence/aroma.do">아로마</a></li>
+								<li><a href="/attendence/masage.do">출장마사지</a></li>
+								<li><a href="/attendence/sportsmasage.do">스포츠마사지</a></li>
+								<li><a href="/attendence/kissroom.do">키스방</a></li>
+								<li><a href="/attendence/office.do">오피</a></li>
+								<li><a href="/attendence/resttel.do">휴게텔</a></li>
+								<li><a href="/attendence/etc.do">기타업소</a></li>
 								<li class="left_subject"><a href="#" onclick="return false;">출근부PR</a></li>
-								<li><a href="/leftmenuboard/prfullssa.do">룸/풀싸롱PR</a></li>
-								<li><a href="/leftmenuboard/prsongnightbar.do">노래방/나이트/바PR</a></li>
-								<li><a href="/leftmenuboard/praroma.do">아로마PR</a></li>
-								<li><a href="/leftmenuboard/prmasage.do">출장마사지PR</a></li>
-								<li><a href="/leftmenuboard/prsportsmasage.do">스포츠마사지PR</a></li>
-								<li><a href="/leftmenuboard/prkissroom.do">키스방PR</a></li>
-								<li><a href="/leftmenuboard/proffice.do">오피PR</a></li>
-								<li><a href="/leftmenuboard/prresttel.do">휴게텔PR</a></li>
-								<li><a href="/leftmenuboard/pretc.do">기타업소PR</a></li>   																 
-								<li><a href="#" onclick="return false;">초보자가이드</a></li> 								
-								<li><a href="#" onclick="return false;">이벤트업소배너</a></li>																
+								<li><a href="/attendence/prfullssa.do">룸/풀싸롱PR</a></li>
+								<li><a href="/attendence/prsongnightbar.do">노래방/나이트/바PR</a></li>
+								<li><a href="/attendence/praroma.do">아로마PR</a></li>
+								<li><a href="/attendence/prmasage.do">출장마사지PR</a></li>
+								<li><a href="/attendence/prsportsmasage.do">스포츠마사지PR</a></li>
+								<li><a href="/attendence/prkissroom.do">키스방PR</a></li>
+								<li><a href="/attendence/proffice.do">오피PR</a></li>
+								<li><a href="/attendence/prresttel.do">휴게텔PR</a></li>
+								<li><a href="/attendence/pretc.do">기타업소PR</a></li>   																 
+								<li><a href="/attendence/choboguide.do">초보자가이드</a></li> 								
+								<li><a href="/attendence/eventbanner.do">이벤트업소배너</a></li>																
 							</ul>						
 						</div>
 						</div>

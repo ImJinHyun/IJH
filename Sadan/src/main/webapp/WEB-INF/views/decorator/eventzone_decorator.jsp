@@ -107,14 +107,14 @@
 							<ul class="nav nav-tabs nav-stacked">
 								<li class="active">
 								<li class="left_subject"><a href="/jehyu/main.do">이벤트존</a></li>
-								<li><a href="/leftmenuboard/fullssa.do">유그이벤트</a></li>
-								<li><a href="/leftmenuboard/songnightbar.do">개별업소이벤트</a></li>
-								<li><a href="/leftmenuboard/aroma.do">고렙이밴트</a></li>
+								<li><a href="/eventzone/fullssa.do">유그이벤트</a></li>
+								<li><a href="/eventzone/songnightbar.do">개별업소이벤트</a></li>
+								<li><a href="/eventzone/aroma.do">고렙이밴트</a></li>
 								<li class="left_subject"><a href="/jehyu/main.do">포인트게임</a></li>
-								<li><a href="/leftmenuboard/masage.do">즉석복권</a></li>
-								<li><a href="/leftmenuboard/sportsmasage.do">레이싱게임</a></li>																   																 
-								<li><a href="#" onclick="return false;">초보자가이드</a></li> 								
-								<li><a href="#" onclick="return false;">이벤트업소배너</a></li>																
+								<li><a href="/eventzone/masage.do">즉석복권</a></li>
+								<li><a href="/eventzone/sportsmasage.do">레이싱게임</a></li>																   																 
+								<li><a href="/eventzone/chobo.do">초보자가이드</a></li> 								
+								<li><a href="/eventzone/event.do">이벤트업소배너</a></li>																
 							</ul>						
 						</div>
 						</div>

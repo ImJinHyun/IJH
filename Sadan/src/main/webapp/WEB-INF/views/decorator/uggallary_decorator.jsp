@@ -19,7 +19,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>18sadan | <decorator:title />
+<title>유흥그라운드 | 유그갤러리<decorator:title />
 </title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -107,15 +107,15 @@
 							<ul class="nav nav-tabs nav-stacked">
 								<li class="active">
 								<li class="left_subject"><a href="#" onclick="return false;">유그갤러리</a></li>
-								<li><a href="/leftmenuboard/fullssa.do">업소갤러리</a></li>
-								<li><a href="/leftmenuboard/songnightbar.do">일반인갤러리</a></li>
-								<li><a href="/leftmenuboard/aroma.do">레이싱갤러리</a></li>
-								<li><a href="/leftmenuboard/masage.do">서양갤러리</a></li>
-								<li><a href="/leftmenuboard/sportsmasage.do">슴가갤러리</a></li>
-								<li><a href="/leftmenuboard/kissroom.do">힙갤러리</a></li>
-								<li><a href="/leftmenuboard/office.do">자유갤러리</a></li>																 
-								<li><a href="#" onclick="return false;">초보자가이드</a></li> 							
-								<li><a href="#" onclick="return false;">이벤트업소배너</a></li>
+								<li><a href="/uggallary/eobsogal.do">업소갤러리</a></li>
+								<li><a href="/uggallary/publicgal.do">일반인갤러리</a></li>
+								<li><a href="/uggallary/racinggal.do">레이싱갤러리</a></li>
+								<li><a href="/uggallary/westerngal.do">서양갤러리</a></li>
+								<li><a href="/uggallary/chestgal.do">슴가갤러리</a></li>
+								<li><a href="/uggallary/hipgal.do">힙갤러리</a></li>
+								<li><a href="/uggallary/freegal.do">자유갤러리</a></li>																 
+								<li><a href="/uggallary/choboguide.do">초보자가이드</a></li> 								
+								<li><a href="/uggallary/eventbanner.do">이벤트업소배너</a></li>
 							</ul>						
 						</div>
 						</div>

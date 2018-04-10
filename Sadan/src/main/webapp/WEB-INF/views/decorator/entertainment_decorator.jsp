@@ -19,7 +19,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>18sadan | <decorator:title />
+<title>유흥그라운드 | 엔터테인먼트<decorator:title />
 </title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -107,14 +107,14 @@
 							<ul class="nav nav-tabs nav-stacked">
 								<li class="active">
 								<li class="left_subject"><a href="#" onclick="return false;">엔터테인먼트</a></li>
-								<li><a href="/leftmenuboard/fullssa.do">토렌토</a></li>
-								<li><a href="/leftmenuboard/songnightbar.do">움짤/동영상</a></li>
-								<li><a href="/leftmenuboard/aroma.do">웹툰게시판</a></li>
-								<li><a href="/leftmenuboard/masage.do">유머게시판</a></li>
-								<li><a href="/leftmenuboard/sportsmasage.do">매거진</a></li>
-								<li><a href="/leftmenuboard/kissroom.do">맛집</a></li>
-								<li><a href="#" onclick="return false;">초보자가이드</a></li> 
-								<li><a href="#" onclick="return false;">이벤트업소배너</a></li> 							
+								<li><a href="/entertainment/torento.do">토렌토</a></li>
+								<li><a href="/entertainment/video.do">움짤/동영상</a></li>
+								<li><a href="/entertainment/webtoonboard.do">웹툰게시판</a></li>
+								<li><a href="/entertainment/funnyboard.do">유머게시판</a></li>
+								<li><a href="/entertainment/magazine.do">매거진</a></li>
+								<li><a href="/entertainment/restaurant.do">맛집</a></li>
+								<li><a href="/entertainment/choboguide.do">초보자가이드</a></li> 								
+								<li><a href="/entertainment/eventbanner.do">이벤트업소배너</a></li> 							
 							</ul>						
 						</div>
 						</div>

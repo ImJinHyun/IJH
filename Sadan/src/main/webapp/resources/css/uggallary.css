@@ -61,7 +61,5 @@ a:hover {columns: #bbbbbb;text-decoration: none;cursor: pointer;}
 	padding:5px;		
 	text-align: center;
 	overflow: hidden;
-    text-overflow: ellipsis;
-    
-	
+    text-overflow: ellipsis;	
 }
