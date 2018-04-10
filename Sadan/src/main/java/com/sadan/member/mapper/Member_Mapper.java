@@ -9,8 +9,12 @@ import com.sadan.member.model.LoginDTO;
 
 @Mapper
 public interface Member_Mapper {
-
-	public LoginDTO login(LoginDTO loginDTO);
+	//로그인 기능
+	public LoginDTO login(LoginDTO loginDTO) throws Exception;
+	//회원정보수정
+	public LoginDTO modify(LoginDTO loginDTO)throws Exception ;
+	//회원가입 처리
+	public LoginDTO insert(LoginDTO loginDTO) throws Exception;
 
 
 

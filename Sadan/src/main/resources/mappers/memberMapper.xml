@@ -19,4 +19,35 @@
 				PASSWORD  = #{password}
 	</select>
 
+
+	<update id="modify" parameterType="String">
+	update member set
+	password = #{password}
+	, nickname = #{nickname}
+	, sex = #{sex}
+	, email = #{email}
+	, grade = #{grade}
+	where userid = #{userId} 
+	</update>
+	
+	<insert id="insert" parameterType="String">
+	insert into member
+	(
+	userId
+	, password
+	, nickname
+	,sex
+	, email
+	, grade
+	) 
+	values(
+			#{userId}
+			, #{password}
+			, #{nickname}
+			, #	{sex}
+			, #{email}
+			, #{grade}
+			) 
+	</insert>
+
 </mapper>
