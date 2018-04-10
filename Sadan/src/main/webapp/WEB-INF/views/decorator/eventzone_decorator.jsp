@@ -73,55 +73,37 @@
 			<div class="bodya">
 				<div class=wrapbody>
 				<div class="left_body">
-					<div class="login">
-						  <form>
-						    <div class="input-group">
-						      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-						      <input id="id" type="text" class="form-control" name="id" placeholder="id">
-						    </div>
-						    <div class="input-group">
-						      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-						      <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-						    </div>
-						    <div class="checkbox">
-						    	<label>
-							    	<input type="checkbox" value="자동로그인">
-							    	<span>자동로그인</span>						    	
-							    </label>										   							
-						   			<button type="button" class="btn btn-sm">로그인</button>
-						   		<div class="member">				    	
-							    	<a href="#" data-toggle="popover" data-content="고객센터로 문의해주세요^^" class="find1 ">아이디/비번찾기</a>
-							    		<span class="find2">|</span>
-							    	<a href="/member/member.do">회원가입</a>
-						  		</div> 
-						    </div>
-						      
-						  </form>  										
-					</div><!-- login -->
-			
-			
-				<div class="left_body_menu" id="left_body_menu">
-					<div class="container">
-						<div class="row">
-							<div class="span6">						
-							<ul class="nav nav-tabs nav-stacked">
-								<li class="active">
-								<li class="left_subject"><a href="/jehyu/main.do">이벤트존</a></li>
-								<li><a href="/eventzone/fullssa.do">유그이벤트</a></li>
-								<li><a href="/eventzone/songnightbar.do">개별업소이벤트</a></li>
-								<li><a href="/eventzone/aroma.do">고렙이밴트</a></li>
-								<li class="left_subject"><a href="/jehyu/main.do">포인트게임</a></li>
-								<li><a href="/eventzone/masage.do">즉석복권</a></li>
-								<li><a href="/eventzone/sportsmasage.do">레이싱게임</a></li>																   																 
-								<li><a href="/eventzone/chobo.do">초보자가이드</a></li> 								
-								<li><a href="/eventzone/event.do">이벤트업소배너</a></li>																
-							</ul>						
+					<c:if test="${login.userId == null}">
+						 <div class="login">
+							  <form action="/member/login.do" method="post">
+							    <div class="input-group">
+							      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							      <input id="id" type="text" class="form-control" name="userId" placeholder="ID를 입력하세요">
+							    </div>
+							    <div class="input-group">
+							      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+							      <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+							    </div>
+							    <div class="checkbox">
+							    	<label>
+								    	<input type="checkbox" value="자동로그인">
+								    	<span>자동로그인</span>						    	
+								    </label>										   							
+							   			<button type="submit" class="btn btn-sm">로그인</button>
+							   		<div class="member">				    	
+								    	<a href="#" data-toggle="popover" data-content="고객센터로 문의해주세요^^" class="find1 ">아이디/비번찾기</a>
+								    		<span class="find2">|</span>
+								    	<a href="/member/member.do">회원가입</a>
+							  		</div> 
+							    </div>
+							      
+							  </form>  										
 						</div>
-						</div>
-						</div>	
-				</div>
+				</c:if>
 				
-				<div class="login"><!-- 로그인했을시 화면 -->
+				<!-- 로그인했을시 화면 -->
+					<c:if test="${login.userId != null}">
+						<div class="login"><!-- 로그인했을시 화면 -->
 					<div class="loing_after_all">
 						<div class="login_after1">
 							<div class="login_logo"><img src="/images/main1.png" width="70px" height="70px"></div>		
@@ -132,7 +114,7 @@
 							</div><!-- login_nick_logo끝 -->
 						
 							<div class="nick">
-								<span>울랄라비데</span>
+								<span>${login.userId} </span>
 							</div>
 						</div><!-- login_nick_logo_all끝 -->
 						<div class="login_point">
@@ -146,12 +128,39 @@
 					<div class="loing_after_all2">	
 						  <button type="button" class="btn btn-primary">내글반응</button>
 						  <button type="button" class="btn btn-primary">내가쓴글</button>
-						  <button type="button" class="btn btn-primary">정보수정</button>
-						  <button type="button" class="btn btn-primary">로그아웃</button>
+						  <button type="button" class="btn btn-primary" onclick="location.replace('/member/memModify.do')">정보수정</button>
+						  	<button type="button" class="btn btn-primary" onclick="location.replace('/member/logout.do')">로그아웃</button>
 					</div>
 					
 						  										
 				</div><!-- login -->
+					</c:if>
+					<!-- login -->
+				<!-- login 화면 끝 -->
+			
+			
+				<div class="left_body_menu" id="left_body_menu">
+					<div class="container">
+						<div class="row">
+							<div class="span6">						
+							<ul class="nav nav-tabs nav-stacked">
+								<li class="active">
+								<li class="left_subject"><a href="#" onclick="return false">이벤트존</a></li>
+								<li><a href="/eventzone/ugevent.do">유그이벤트</a></li>
+								<li><a href="/eventzone/singleevent.do">개별업소이벤트</a></li>
+								<li><a href="/eventzone/highlevelevent.do">고렙이밴트</a></li>
+								<li class="left_subject"><a href="#" onclick="return false">포인트게임</a></li>
+								<li><a href="/eventzone/lotto.do">즉석복권</a></li>
+								<li><a href="/eventzone/sportsmasage.do">레이싱게임</a></li>																   																 
+								<li><a href="/eventzone/choboguide.do">초보자가이드</a></li> 								
+								<li><a href="/eventzone/eventbanner.do">이벤트업소배너</a></li>																
+							</ul>						
+						</div>
+						</div>
+						</div>	
+				</div>
+				
+				
 				
 				</div><!-- left_body -->
 				<div class="wrapcenter_body">

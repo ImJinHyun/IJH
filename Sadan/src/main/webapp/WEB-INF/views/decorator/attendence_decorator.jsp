@@ -69,31 +69,70 @@
 			<div class="bodya">
 				<div class=wrapbody>
 				<div class="left_body">
-					<div class="login">
-						  <form>
-						    <div class="input-group">
-						      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-						      <input id="id" type="text" class="form-control" name="id" placeholder="id">
-						    </div>
-						    <div class="input-group">
-						      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-						      <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-						    </div>
-						    <div class="checkbox">
-						    	<label>
-							    	<input type="checkbox" value="자동로그인">
-							    	<span>자동로그인</span>						    	
-							    </label>										   							
-						   			<button type="button" class="btn btn-sm">로그인</button>
-						   		<div class="member">				    	
-							    	<a href="#" data-toggle="popover" data-content="고객센터로 문의해주세요^^" class="find1 ">아이디/비번찾기</a>
-							    		<span class="find2">|</span>
-							    	<a href="/member/member.do">회원가입</a>
-						  		</div> 
-						    </div>
-						      
-						  </form>  										
-					</div><!-- login -->
+					<c:if test="${login.userId == null}">
+						 <div class="login">
+							  <form action="/member/login.do" method="post">
+							    <div class="input-group">
+							      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							      <input id="id" type="text" class="form-control" name="userId" placeholder="ID를 입력하세요">
+							    </div>
+							    <div class="input-group">
+							      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+							      <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+							    </div>
+							    <div class="checkbox">
+							    	<label>
+								    	<input type="checkbox" value="자동로그인">
+								    	<span>자동로그인</span>						    	
+								    </label>										   							
+							   			<button type="submit" class="btn btn-sm">로그인</button>
+							   		<div class="member">				    	
+								    	<a href="#" data-toggle="popover" data-content="고객센터로 문의해주세요^^" class="find1 ">아이디/비번찾기</a>
+								    		<span class="find2">|</span>
+								    	<a href="/member/member.do">회원가입</a>
+							  		</div> 
+							    </div>
+							      
+							  </form>  										
+						</div>
+				</c:if>
+				
+				<!-- 로그인했을시 화면 -->
+					<c:if test="${login.userId != null}">
+						<div class="login"><!-- 로그인했을시 화면 -->
+					<div class="loing_after_all">
+						<div class="login_after1">
+							<div class="login_logo"><img src="/images/main1.png" width="70px" height="70px"></div>		
+						</div><!-- login_after1끝 -->
+						<div class="login_after2">
+							<div class="login_nick_logo">
+								<img src="/images/main1.png" width="30px" height="25px">
+							</div><!-- login_nick_logo끝 -->
+						
+							<div class="nick">
+								<span>${login.userId} </span>
+							</div>
+						</div><!-- login_nick_logo_all끝 -->
+						<div class="login_point">
+							<ul>
+								<li><a href="#" onclick="return false;">쪽지 : 0</a></li>
+								<li><a href="#" onclick="return false;">포인트 : 0</a></li>
+								<li><a href="#" onclick="return false;">레벨 : 14</a></li>
+							</ul>
+						</div>	
+					</div><!-- loing_after_all 끝 -->
+					<div class="loing_after_all2">	
+						  <button type="button" class="btn btn-primary">내글반응</button>
+						  <button type="button" class="btn btn-primary">내가쓴글</button>
+						  <button type="button" class="btn btn-primary" onclick="location.replace('/member/memModify.do')">정보수정</button>
+						  	<button type="button" class="btn btn-primary" onclick="location.replace('/member/logout.do')">로그아웃</button>
+					</div>
+					
+						  										
+				</div><!-- login -->
+					</c:if>
+					<!-- login -->
+				<!-- login 화면 끝 -->
 			
 			
 				<div class="left_body_menu" id="left_body_menu">
@@ -130,37 +169,7 @@
 						</div>	
 				</div>
 				
-				<div class="login"><!-- 로그인했을시 화면 -->
-					<div class="loing_after_all">
-						<div class="login_after1">
-							<div class="login_logo"><img src="/images/main1.png" width="70px" height="70px"></div>		
-						</div><!-- login_after1끝 -->
-						<div class="login_after2">
-							<div class="login_nick_logo">
-								<img src="/images/main1.png" width="30px" height="25px">
-							</div><!-- login_nick_logo끝 -->
-						
-							<div class="nick">
-								<span>울랄라비데</span>
-							</div>
-						</div><!-- login_nick_logo_all끝 -->
-						<div class="login_point">
-							<ul>
-								<li><a href="#" onclick="return false;">쪽지 : 0</a></li>
-								<li><a href="#" onclick="return false;">포인트 : 0</a></li>
-								<li><a href="#" onclick="return false;">레벨 : 14</a></li>
-							</ul>
-						</div>	
-					</div><!-- loing_after_all 끝 -->
-					<div class="loing_after_all2">	
-						  <button type="button" class="btn btn-primary">내글반응</button>
-						  <button type="button" class="btn btn-primary">내가쓴글</button>
-						  <button type="button" class="btn btn-primary">정보수정</button>
-						  <button type="button" class="btn btn-primary">로그아웃</button>
-					</div>
-					
-						  										
-				</div><!-- login -->
+				
 				
 				</div><!-- left_body -->
 				<div class="wrapcenter_body">
