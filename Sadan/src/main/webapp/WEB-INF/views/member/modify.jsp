@@ -7,8 +7,6 @@
         <!-- meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"/ -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>회원정보 수정</title>
-        <!-- Bootstrap -->
-        <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="/resources/css/member.css">
  <script type="text/javascript">
 		// 글쓰기가 완료 했거나 글삭제가 완료된 상태에서 리스트로 넘어오면 메시지를 출력한다.
@@ -16,11 +14,18 @@
 		if(result=="MODIFYSUCCESS")
 			alert("정보수정이 완료되었습니다..");
 </script>
+<script type="text/javascript">
+$(function (){
+	$("#join").on("click",function(){
+		alert($("#grade").val());
+	});
+});
+</script>
     </head>
 <body>
 <h1 class="memberjoin">*회원정보 수정*</h1>
 <form class="form-horizontal" role="form" method="post" action="/member/memModify.do">
-<input name="grade" value="${login.grade }" type="hidden">
+<input name="grade" value="${login.grade }" type="hidden" id="grade">
 		<div class="input-group-all">
             <div class="input-group">
 		    	<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -53,7 +58,7 @@
          </div>                            
             <div class="form-group">
                 <div class="button_group">
-                    <button type="submit" class="btn btn-default" >회원가입</button>
+                    <button type="submit" class="btn btn-default" id="join">회원가입</button>
                      <button type="reset" class="btn btn-default">취소</button>
                 </div>
             </div>
