@@ -144,7 +144,7 @@
 					<div class="loing_after_all2">	
 						  <button type="button" class="btn btn-primary">내글반응</button>
 						  <button type="button" class="btn btn-primary">내가쓴글</button>
-						  <button type="button" class="btn btn-primary">정보수정</button>
+						  <button type="button" class="btn btn-primary" onclick="location.replace('/member/memModify.do')">정보수정</button>
 						  	<button type="button" class="btn btn-primary" onclick="location.replace('/member/logout.do')">로그아웃</button>
 					</div>
 					

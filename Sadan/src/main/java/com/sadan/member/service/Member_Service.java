@@ -28,6 +28,18 @@ public class Member_Service {
 			 
 		return member_Mapper.login(loginDTO);
 	}
+
+
+
+	public LoginDTO modify(LoginDTO loginDTO) throws Exception {
+		return member_Mapper.modify(loginDTO);
+	}
+
+
+
+	public LoginDTO insert(LoginDTO loginDTO)throws Exception {
+		return member_Mapper.insert(loginDTO);
+	}
 	
 	
 

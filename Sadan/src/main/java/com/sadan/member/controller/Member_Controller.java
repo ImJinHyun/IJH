@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sadan.member.service.Member_Service;
 import com.sadan.member.model.LoginDTO;
@@ -35,6 +36,43 @@ public class Member_Controller {
 	}
 	
 	
+	//회원가입 처리
+	@RequestMapping("/join.do")
+	private String member_insert(LoginDTO loginDTO, RedirectAttributes attributes) throws Exception {
+		loginDTO = member_Service.modify(loginDTO);
+		return "Index/main.do";
+	}
+	
+	/**
+	 * 	회원정보 수정처리
+	 * @param loginDTO
+	 * @param attributes
+	 * @return
+	 * @throws Exception
+	 */
+	//회원정보 수정 매핑
+	@RequestMapping("/memModify.do")
+	private String member_modify(LoginDTO loginDTO, RedirectAttributes attributes)throws Exception {
+		
+		return "member/modify";
+	}
+	
+	//회원정보 수정 페이지 매핑
+	/**
+	 * 회원정보 수저 처리
+	 * @param loginDTO
+	 * @param attributes
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/memModify.do", method=RequestMethod.POST)
+	private String modify_process(LoginDTO loginDTO, RedirectAttributes attributes) throws Exception {
+		logger.info("MemberController.modify_prosess() : 회원정보수정 처리문 : loginDTO " + loginDTO);
+		
+		loginDTO  = member_Service.modify(loginDTO);
+		attributes.addFlashAttribute("msg","MODIFYSUCCESS");
+		return "redirect:member/modify";
+	}
 	/**로그인 처리
 	 * 
 	 * @param loginDTO
