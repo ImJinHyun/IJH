@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>이벤트업소배너</title>
+<title>초보자가이드</title>
 <link rel="stylesheet" href="/resources/css/chatinglink.css">
 <link rel="stylesheet" href="/resources/css/jeyu.css">
 <link rel="stylesheet" href="/resources/css/pr.css">
@@ -14,17 +14,34 @@
 	<div class="prfullssa_all">
 		<div class="board_subject">
 			<div class="board_main_subject">			
-				<span>이벤트업소배너</span>							
+				<span>유그이벤트</span>							
 			</div>
 		</div>
 	</div>
 	<div>
 	<select class="form-control">
-	 	<option>제목</option> 
-	 	<option>내용</option> 
-	 	<option>제목+내용</option> 
-	 	<option>글쓴이</option> 
-	 	<option>글쓴이(댓글)</option> 
+	 	<option>강남</option> 
+	 	<option>비강남</option> 
+	 	<option>인천</option> 
+	 	<option>경기</option> 
+	 	<option>부산</option>
+	 	<option>울산/경남/제주</option>
+	 	<option>대구</option>
+	 	<option>경북</option>
+	 	<option>광주/전라</option>
+	 	<option>대전/충청/세종</option>
+	 	<option>강원</option> 
+	 </select>
+	 <select class="form-control">
+	 	<option>룸/풀싸롱</option> 
+	 	<option>노래방/나이트/바</option> 
+	 	<option>아로마</option> 
+	 	<option>출장마사지</option> 
+	 	<option>스포츠마사지</option>
+	 	<option>키스방</option>
+	 	<option>오피</option>
+	 	<option>휴게텔</option>
+	 	<option>기타업소</option> 
 	 </select>
 	 <input type="text" class="form-control" id="usr">
 	 <button type="button" class="btn">검색</button>

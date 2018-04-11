@@ -25,7 +25,12 @@ public class Boardtest_ListService {
 	
 	
 
-
+	/**	
+	 * 
+	 * @param map2
+	 * @return
+	 * @throws Exception
+	 */
 	public Map<String, Object> List(Map<String, Object> map2) throws Exception{
 		DefaultTransactionDefinition def = new DefaultTransactionDefinition();
 		def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);

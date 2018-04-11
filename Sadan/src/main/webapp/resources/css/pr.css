@@ -47,7 +47,12 @@ a:hover {columns: #bbbbbb;text-decoration: none;cursor: pointer;}
 .main_tr {
 	background-color: #000000;
 }
+
 .main_tr > tr> th {
 	color: #ffffff;
 	font-weight: 900;
+	text-align: center;
+}
+tbody > tr > td {
+	text-align: center;
 }

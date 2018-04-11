@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sadan.useafter.mapper.Useafter_Mapper">
+
+	<select id="room_Full_list" parameterType="String" resultType="Map">
+		SELECT no
+		, content
+		, subject
+		, writer
+		, location
+		, recommand
+		, date_format(dates,'%Y-%m-%d') dates
+		, business_nm
+		, business_type
+		, hit
+		, secret
+		FROM
+		USEAFTER
+		WHERE
+		BUSINESS_TYPE = #{business_type}
+		order by no desc
+	</select>
+
+	<insert id="board_insert" parameterType="String">
+
+		insert into useafter(
+		no
+		,content
+		,subject
+		,writer
+		,location
+		,recommand
+		,dates
+		,business_nm
+		,business_type
+		,hit
+		,secret
+		) values (
+		(select ifnull(max(no),0)+1 from useafter asdf)
+		,#{content}
+		, #{subject}
+		, #{writer}
+		, #{location}
+		, '0'
+		, now()
+		, #{business_nm}
+		, #{business_type}
+		,'0'
+		,#{secret}
+		);
+	</insert>
+	
+	<select id="board_read" parameterType="String" resultType="com.sadan.useafter.model.Useafter_DTO">
+	select 
+	 no
+	 
+		, replace(replace(content,'\r\n',''),'\r','') content	
+		, subject
+		, writer
+		, location
+		, recommand
+		, date_format(dates,'%Y-%m-%d %H:%i') dates
+		, business_nm
+		, business_type
+		, hit
+		, secret
+	from useafter
+	where no = #{no}
+
+	</select>
+	
+	<delete id="board_delete" parameterType="String">
+		DELETE FROM useafter
+			WHERE no = #{no}	
+	</delete>
+	
+	<update id="board_modify" parameterType="String">
+	UPDATE useafter SET
+		  content = #{content}
+		, subject = #{subject}
+		, writer = #{writer}
+		, location = #{location}
+		, business_nm = #{business_nm}
+		, business_type = #{business_type}
+		, secret = #{secret}
+		WHERE no = #{no}
+		
+	
+	
+	</update>
+</mapper>

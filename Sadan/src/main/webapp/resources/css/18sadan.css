@@ -223,7 +223,9 @@ a:hover {columns: #bbbbbb;text-decoration: none;cursor: pointer;}
 }
 .left_body_menu .container .row .nav-tabs {
 	border-bottom: 0;
+	width:100%;
 }
+
 .left_body_menu .container .row .nav-tabs > li {
 	margin:0;
 	padding:0;
@@ -234,6 +236,9 @@ a:hover {columns: #bbbbbb;text-decoration: none;cursor: pointer;}
 }
 .left_body_menu .container .row .nav-tabs .left_subject {
 	background: #58D3F7;
+}
+.container {
+	width: 250px;
 }
 .wrapcenter_body{
 	width:100%;
