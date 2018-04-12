@@ -5,25 +5,43 @@
 
 <mapper namespace="com.sadan.useafter.mapper.Useafter_Mapper">
 
-	<select id="room_Full_list" parameterType="String" resultType="Map">
-		SELECT no
-		, content
-		, subject
-		, writer
-		, location
-		, recommand
-		, date_format(dates,'%Y-%m-%d') dates
-		, business_nm
-		, business_type
-		, hit
-		, secret
-		FROM
-		USEAFTER
-		WHERE
-		BUSINESS_TYPE = #{business_type}
-		order by no desc
+	<select id="room_Full_list" resultType="Map">
+		select * from (select	@rn:=@rn+1 as rownum, after.*
+			from		
+		    (select no
+			, content
+		    , subject
+		    , writer
+		    , location
+		    , recommand
+		    , dates
+		    , business_nm
+		    , business_type
+		    , hit
+		    , secret 
+		    from useafter 
+		    where 
+		    <include refid="search"></include>
+		    business_type = #{business_type}
+		    order by no desc
+		    ) as after,
+		    (select @rn:=0) as R
+		    ) aftertable
+		    
+		    where rownum between #{criteria.startRow} and #{criteria.endRow}
 	</select>
-
+	
+	<!-- 검색조건 쿼리 -->
+<!-- 	<sql id="search"> -->
+<!-- 		<if test="searchType= != " -->
+<!-- 	</sql> -->
+	<!--페이지 쪽수 처리를 위해 전체 데이터의 갯수를 구한다 -->
+	<select id="getRow" resultType="Integer">
+	select count(*)
+	from useafter
+	where business_type = #{business_type}
+	</select>
+	
 	<insert id="board_insert" parameterType="String">
 
 		insert into useafter(

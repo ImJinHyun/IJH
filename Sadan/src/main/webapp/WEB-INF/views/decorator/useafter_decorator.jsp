@@ -146,7 +146,7 @@
 							<ul class="nav nav-tabs nav-stacked">
 								<li class="active">
 								<li class="left_subject"><a href="#" onclick="return false;">이용후기</a></li>
-								<li><a href="/useafter/fullssa.do?business_type=룸/풀싸롱">룸/풀싸롱</a></li>
+								<li><a href="/useafter/Page_fullssa.do?business_type=룸/풀싸롱">룸/풀싸롱</a></li>
 								<li><a href="/useafter/songnightbar.do?business_type=노래방/나이트/바">노래방/나이트/바</a></li>
 								<li><a href="/useafter/aroma.do">아로마</a></li>
 								<li><a href="/useafter/masage.do">출장마사지</a></li>

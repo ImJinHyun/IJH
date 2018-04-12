@@ -17,6 +17,7 @@ import org.springframework.transaction.support.DefaultTransactionDefinition;
 import com.sadan.boardtest.controller.Boardtest_ListController;
 import com.sadan.boardtest.mapper.Boardtest_ListMapper;
 import com.sadan.chat.mapper.Chat_Mapper;
+import com.sadan.common.model.SearchCriteria;
 import com.sadan.useafter.mapper.Useafter_Mapper;
 import com.sadan.useafter.model.Useafter_DTO;
 
@@ -28,10 +29,10 @@ public class Useafter_Service {
 	private Useafter_Mapper useafter_Mapper;
 
 	@Transactional
-	public Map<String, Object> room_Full_list(String business_type)throws Exception {
+	public Map<String, Object> room_Full_list(String business_type, SearchCriteria criteria)throws Exception {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		try {
-			resultMap.put("list", useafter_Mapper.room_Full_list(business_type));
+			resultMap.put("list", useafter_Mapper.room_Full_list(business_type,criteria));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -52,6 +53,11 @@ public class Useafter_Service {
 	
 	}
 
+
+	public int getRow(String business_type) throws Exception{
+		return useafter_Mapper.getRow(business_type); 
+	}
+	
 	@Transactional
 	public void board_modify(Useafter_DTO useafter_DTO)throws Exception {
 		try {
@@ -61,6 +67,8 @@ public class Useafter_Service {
 		}
 	
 	}
+
+
 
 	
 	
