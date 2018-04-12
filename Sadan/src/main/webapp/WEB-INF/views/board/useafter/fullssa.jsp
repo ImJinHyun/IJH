@@ -19,34 +19,40 @@
 			</div>
 		</div>
 	</div>
-	<div>
+	<!-- 검색 시작 -->
+	<form action="fullssa.do?business_type=룸/풀싸롱">
 	<select class="form-control">
-	 	<option>강남</option> 
-	 	<option>비강남</option> 
-	 	<option>인천</option> 
-	 	<option>경기</option> 
-	 	<option>부산</option>
-	 	<option>울산/경남/제주</option>
-	 	<option>대구</option>
-	 	<option>경북</option>
-	 	<option>광주/전라</option>
-	 	<option>대전/충청/세종</option>
-	 	<option>강원</option> 
+		<option value="n" ${pageMaker.cri.searchType == null or cri.searchType == "n"?"selected='selected'":"" } >전체</option>
+	 	<option value="gangNam" ${pageMaker.cri.searchType =="gangNam"?"selected='selected'":"" }>강남</option> 
+	 	<option value="nonGangNam">비강남</option> 
+	 	<option value="inCheon">인천</option> 
+	 	<option value="gyeonGi">경기</option> 
+	 	<option value="buSan">부산</option>
+	 	<option value="ulSan">울산/경남/제주</option>
+	 	<option value="daeGu">대구</option>
+	 	<option value="gyeongBuk">경북</option>
+	 	<option value="gwangJu">광주/전라</option>
+	 	<option value="daeJeon">대전/충청/세종</option>
+	 	<option value="gangWon">강원</option> 
 	 </select>
-	 <select class="form-control">
-	 	<option>룸/풀싸롱</option> 
-	 	<option>노래방/나이트/바</option> 
-	 	<option>아로마</option> 
-	 	<option>출장마사지</option> 
-	 	<option>스포츠마사지</option>
-	 	<option>키스방</option>
-	 	<option>오피</option>
-	 	<option>휴게텔</option>
-	 	<option>기타업소</option> 
-	 </select>
+	 
+	 <!-- 2차 분류 (보류 : 2018.04.12) -->
+<!-- 	 <select class="form-control"> -->
+<!-- 	 	<option>룸/풀싸롱</option>  -->
+<!-- 	 	<option>노래방/나이트/바</option>  -->
+<!-- 	 	<option>아로마</option>  -->
+<!-- 	 	<option>출장마사지</option>  -->
+<!-- 	 	<option>스포츠마사지</option> -->
+<!-- 	 	<option>키스방</option> -->
+<!-- 	 	<option>오피</option> -->
+<!-- 	 	<option>휴게텔</option> -->
+<!-- 	 	<option>기타업소</option>  -->
+<!-- 	 </select> -->
+
 	 <input type="text" class="form-control" id="usr">
 	 <button type="button" class="btn">검색</button>
-	 </div>		 
+	 </form>		 
+	 <!-- 게시글 시작 -->
 	<table class="table table-hover">
 		<thead class="main_tr">
 			<tr>
@@ -75,15 +81,32 @@
 		</c:forEach>
 		</tbody>
 	</table>		
+	<!-- 게시글 끝 -->
 		<hr/>
+		
+		
 		<a class="btn btn-default pull-right" href="fullssainsert.do?type=룸/풀싸롱">글쓰기</a>		
+		<!-- 페이지 처리 시작 -->
 		<div class="text-center">
 			<ul class="pagination">
-				<li><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li>
-				<li><a href="#">5</a></li>
+			<!-- 이전 페이지 처리 -->
+						<c:if test="${pageMaker.prev }">
+							<li><a href="fullssa.do?page=${pageMaker.startPage -1 }&business_type=룸/풀싸롱	">&laquo;</a></li>
+						</c:if>
+						
+				<!-- 시작 페이지부터 끝 페이지까지 반복 처리 -->
+						<c:forEach begin="${pageMaker.startPage }"
+						 end="${pageMaker.endPage}" var="idx">
+							<li ${pageMaker.cri.page==idx?"class='active'":"" }>
+								<a href="fullssa.do${pageMaker.makeQuery(idx) }&business_type=룸/풀싸롱">${idx }</a>
+							</li>
+						</c:forEach>
+						
+				<!-- 다음 페이지 처리 -->
+						<c:if test="${pageMaker.next }">
+							<li><a href="fullssa.do?page=${pageMaker.endPage + 1 }&business_type=룸/풀싸롱">&raquo;</a></li>
+						</c:if>
+						
 			</ul>
 		</div>	
 </body>
