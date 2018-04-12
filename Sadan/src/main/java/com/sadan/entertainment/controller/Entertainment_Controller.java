@@ -2,12 +2,17 @@ package com.sadan.entertainment.controller;
 
 
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sadan.entertainment.service.Entertainment_Service;
 
@@ -26,10 +31,27 @@ public class Entertainment_Controller {
 		
 		return "board/entertainment/entertainment";
 	}
-	//토렌토
-	@RequestMapping("/entertainment/torento.do")
-	private String torento(Model model)throws Exception {
-
+	
+	/**
+	 * 토렌토 게시글 목록
+	 * @param model
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/entertainment/torento.do")
+	private String torento(Model model,@RequestParam String business_type)throws Exception {
+		Map<String, Object> map = new HashMap<String, Object>();
+		try {
+			map = entertainment_service.torento_Full_list(business_type);
+			System.out.println(business_type);
+			@SuppressWarnings({ "unchecked", "unused" })
+			List<Map<String, Object>> list = (List<Map<String, Object>>) map.get("list");
+			model.addAttribute("entertainment", list);
+			System.out.println(list);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		return "board/entertainment/torento";
 	}
 	//움짤/동영상

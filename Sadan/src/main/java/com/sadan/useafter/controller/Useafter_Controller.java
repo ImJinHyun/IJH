@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sadan.useafter.model.Useafter_DTO;
@@ -183,12 +184,7 @@ public class Useafter_Controller {
 					// 이미지 리스트로 간다.
 					return "redirect:fullssa.do?business_type="+goURL;
 				}
-				
-				
-				
-				
-				
-				
+
 				
 				/**
 				 * 노래방/나이트/바 게시글 목록

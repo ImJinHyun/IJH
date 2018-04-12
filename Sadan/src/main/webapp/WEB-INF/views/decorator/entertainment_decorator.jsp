@@ -146,7 +146,7 @@
 							<ul class="nav nav-tabs nav-stacked">
 								<li class="active">
 								<li class="left_subject"><a href="#" onclick="return false;">엔터테인먼트</a></li>
-								<li><a href="/entertainment/torento.do">토렌토</a></li>
+								<li><a href="/entertainment/torento.do?business_type=토렌트">토렌트</a></li>
 								<li><a href="/entertainment/video.do">움짤/동영상</a></li>
 								<li><a href="/entertainment/webtoonboard.do">웹툰게시판</a></li>
 								<li><a href="/entertainment/funnyboard.do">유머게시판</a></li>
