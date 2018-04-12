@@ -21,7 +21,7 @@
 		    , secret 
 		    from useafter 
 		    where 
-		    <include refid="search"></include>
+		 
 		    business_type = #{business_type}
 		    order by no desc
 		    ) as after,
