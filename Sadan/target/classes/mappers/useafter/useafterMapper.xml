@@ -14,7 +14,7 @@
 		    , writer
 		    , location
 		    , recommand
-		    , dates
+		    , date_format(dates,'%m-%d') dates
 		    , business_nm
 		    , business_type
 		    , hit

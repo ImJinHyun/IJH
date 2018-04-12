@@ -57,7 +57,7 @@
 		<thead class="main_tr">
 			<tr>
 				<th>번호</th>
-				<th>지역</th>
+<!-- 				<th>지역</th> -->
 				<th></th>
 				<th>제목</th>
 				<th>글쓴이</th>
@@ -71,7 +71,7 @@
 			<tr>
 				<td>${useafter.no}</td>
 				<td>[${useafter.location}]</td>
-				<td>[${useafter.business_type}]</td>
+<%-- 				<td>[${useafter.business_type}]</td> --%>
 				<td style="text-align: left;"><a href="board_read.do?no=${useafter.no }"> ${useafter.subject}</a></td>
 				<td>${useafter.writer}</td>												
 				<td>${useafter.dates}</td>
