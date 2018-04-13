@@ -24,6 +24,7 @@ public class Community_Controller {
 		
 		return "board/community/community";
 	}
+	
 		//공지사항	
 			@RequestMapping("/community/gongji.do")
 			private String gongji() {

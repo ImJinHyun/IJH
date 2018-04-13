@@ -14,15 +14,15 @@ $(function(){
 
 	//#=id / .class 선택자를 .on했을 때("click") 클릭했을 때 function() - 기능을 하겠다. 
 	$("#entertainment_list").on("click",function(){
-		location.href="/useafter/fullssa.do?business_type=토렌토";
+		location.href="/entertainment/torento.do?business_type=토렌트";
 	});
 	
 	$("#entertainment_delete").on("click",function(){
-		$("#useafter_Form").attr("action","board_delete.do").submit();
+		$("#entertainment_Form").attr("action","board_delete.do").submit();
 	});
 	
 	$("#entertainment_modify").on("click",function(){
-		$("#useafter_Form").attr("action","board_modify.do").submit();
+		$("#entertainment_Form").attr("action","board_modify.do").submit();
 	});
 	
 	
@@ -41,16 +41,16 @@ $(function(){
 	<div class="div_clear"></div>
 	<!-- 버튼 감싸기 -->
 	<div class="wrap_button">
-		<button type="button" class="btn btn-primary link_button" id="useafter_list">목록</button>
-		<button type="button" class="btn btn-primary link_button" id="useafter_delete">삭제</button>
-		<button type="button" class="btn btn-primary link_button" id="useafter_modify">수정</button>
+		<button type="button" class="btn btn-primary link_button" id="entertainment_list">목록</button>
+		<button type="button" class="btn btn-primary link_button" id="entertainment_delete">삭제</button>
+		<button type="button" class="btn btn-primary link_button" id="entertainment_modify">수정</button>
 	</div>
 	<div class="div_clear"></div>
 	
 	<!-- 바디 전체 -->
 	<div class="warp_bodyall">
 
-		<form id="useafter_Form"> 
+		<form id="entertainment_Form"> 
 			<!-- 히든으로 보낼 데이터들 -->
 			<input type="hidden" value="${entertainment.no }" name="no">
 			<input type="hidden" value="${entertainment.business_type }" name="business_type">

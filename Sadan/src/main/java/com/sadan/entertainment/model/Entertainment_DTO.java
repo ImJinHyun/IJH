@@ -83,7 +83,7 @@ public class Entertainment_DTO {
 	}
 	@Override
 	public String toString() {
-		return "Useafter_DTO [no=" + no + ", content=" + content + ", subject=" + subject + ", writer=" + writer
+		return "Entertainment_DTO [no=" + no + ", content=" + content + ", subject=" + subject + ", writer=" + writer
 				+ ", location=" + location + ", recommand=" + recommand + ", dates=" + dates + ", business_nm="
 				+ business_nm + ", business_type=" + business_type + ", hit=" + hit + ", secret=" + secret + "]";
 	}

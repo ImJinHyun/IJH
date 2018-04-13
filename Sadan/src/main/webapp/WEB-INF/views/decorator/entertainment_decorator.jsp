@@ -147,13 +147,13 @@
 								<li class="active">
 								<li class="left_subject"><a href="#" onclick="return false;">엔터테인먼트</a></li>
 								<li><a href="/entertainment/torento.do?business_type=토렌트">토렌트</a></li>
-								<li><a href="/entertainment/video.do">움짤/동영상</a></li>
-								<li><a href="/entertainment/webtoonboard.do">웹툰게시판</a></li>
-								<li><a href="/entertainment/funnyboard.do">유머게시판</a></li>
-								<li><a href="/entertainment/magazine.do">매거진</a></li>
-								<li><a href="/entertainment/restaurant.do">맛집</a></li>
-								<li><a href="/entertainment/choboguide.do">초보자가이드</a></li> 								
-								<li><a href="/entertainment/eventbanner.do">이벤트업소배너</a></li> 							
+								<li><a href="/entertainment/video.do?business_type=움짤/동영상">움짤/동영상</a></li>
+								<li><a href="/entertainment/webtoonboard.do?business_type=웹툰게시판">웹툰게시판</a></li>
+								<li><a href="/entertainment/funnyboard.do?business_type=유머게시판">유머게시판</a></li>
+								<li><a href="/entertainment/magazine.do?business_type=매거진">매거진</a></li>
+								<li><a href="/entertainment/restaurant.do?business_type=맛집">맛집</a></li>
+								<li><a href="/entertainment/choboguide.do?business_type=초보자가이드">초보자가이드</a></li> 								
+								<li><a href="/entertainment/eventbanner.do?business_type=이벤트업소배너">이벤트업소배너</a></li> 							
 							</ul>						
 						</div>
 						</div>

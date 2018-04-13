@@ -28,14 +28,14 @@ $(function(){
 		
 	//분류 자동선탣
 	$("#sel1 option").each(function(){
-		if($(this).val()=="${useafter.business_type}"){
+		if($(this).val()=="${entertainment.business_type}"){
 			$(this).attr("selected","selected");
 		};
 	});
 		
 	//지역 자동선택
 	$("#sel2 option").each(function(){
-		if($(this).val()=="${useafter.location}"){
+		if($(this).val()=="${entertainment.location}"){
 			$(this).attr("selected","selected");
 		};
 		
@@ -51,7 +51,7 @@ $(function(){
 	<div class="boardhead">
 		<!-- 글보기 헤더 감싸기 영역 -->
 		<div class="warp_boardhead">
-			<h3>룸/풀싸롱 수정</h3>
+			<h3>토렌트 수정</h3>
 		</div>
 	</div>
 	<div class="div_clear"></div>
@@ -72,11 +72,13 @@ $(function(){
 				<label class="control-label col-sm-1" for="email">분류 :</label>
 				<div class="col-sm-11">
 					<select class="form-control" id="sel1" name="business_type" disabled="disabled">
-						<option>제목</option>
-						<option>내용</option>
-						<option>제목+내용</option>
-						<option>글쓴이</option>
-						<option>글쓴이(코)</option>					
+						<option>토렌트</option>
+						<option>움짤/동영상</option>
+						<option>웹툰게시판</option>
+						<option>웹툰게시판</option>
+						<option>유머게시판</option>
+						<option>매거진</option>
+						<option>맛집</option>						
 					</select>
 				</div>
 			</div>
@@ -127,7 +129,7 @@ ${pageContent.request.contextPath}
 				height : '400px',
 				filebrowserImageUploadUrl : "${path}/imageUpload.do" //여기 경로로 파일을 전달하여 업로드 시킨다.
 			});
-			CKEDITOR.instances.ckeditor.setData('<p>${useafter.content}</p>');//자동엔터키방지
+			CKEDITOR.instances.ckeditor.setData('<p>${entertainment.content}</p>');//자동엔터키방지
 
 			CKEDITOR.on('dialogDefinition', function(ev) {
 				var dialogName = ev.data.name;

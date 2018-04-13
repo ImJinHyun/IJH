@@ -5,23 +5,36 @@
 
 <mapper namespace="com.sadan.entertainment.mapper.Entertainment_Mapper">
 
-	<select id="torento_Full_list" parameterType="String" resultType="Map">
-		SELECT no
-		, content
-		, subject
-		, writer
-		, location
-		, recommand
-		, date_format(dates,'%Y-%m-%d') dates
-		, business_nm
-		, business_type
-		, hit
-		, secret
-		FROM
-		ENTERTAINMENT
-		WHERE
-		BUSINESS_TYPE = #{business_type}
-		order by no desc
+	<select id="torento_Full_list" resultType="Map">
+		select * from (select	@rn:=@rn+1 as rownum, after.*
+			from		
+		    (select no
+			, content
+		    , subject
+		    , writer
+		    , location
+		    , recommand
+		    , date_format(dates,'%m-%d') dates
+		    , business_nm
+		    , business_type
+		    , hit
+		    , secret 
+		    from entertainment 
+		    where 
+		 
+		    business_type = #{business_type}
+		    order by no desc
+		    ) as after,
+		    (select @rn:=0) as R
+		    ) aftertable
+		    
+		    where rownum between #{criteria.startRow} and #{criteria.endRow}
+	</select>
+
+	<select id="getRow" resultType="Integer">
+	select count(*)
+	from entertainment
+	where business_type = #{business_type}
 	</select>
 
 	<insert id="board_insert" parameterType="String">
@@ -86,7 +99,7 @@
 		, business_nm = #{business_nm}
 		, business_type = #{business_type}
 		, secret = #{secret}
-		WHERE no = #{no}
+		WHERE no = #{no
 		
 	
 	

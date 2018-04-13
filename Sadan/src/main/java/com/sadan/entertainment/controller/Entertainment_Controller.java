@@ -2,6 +2,7 @@ package com.sadan.entertainment.controller;
 
 
 
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,9 +13,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.sadan.common.model.PageMaker;
+import com.sadan.common.model.SearchCriteria;
+import com.sadan.entertainment.model.Entertainment_DTO;
 import com.sadan.entertainment.service.Entertainment_Service;
+
 
 
 
@@ -39,14 +45,19 @@ public class Entertainment_Controller {
 	 * @throws Exception
 	 */
 	@RequestMapping(value="/entertainment/torento.do")
-	private String torento(Model model,@RequestParam String business_type)throws Exception {
+	private String torento(Model model,@RequestParam String business_type, SearchCriteria criteria)throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();
+		PageMaker pageMaker =new PageMaker();
 		try {
-			map = entertainment_service.torento_Full_list(business_type);
+			map = entertainment_service.torento_Full_list(business_type,criteria);
 			System.out.println(business_type);
+
+			pageMaker.setCri(criteria);
+			pageMaker.setTotalCount(entertainment_service.getRow(business_type));
 			@SuppressWarnings({ "unchecked", "unused" })
 			List<Map<String, Object>> list = (List<Map<String, Object>>) map.get("list");
 			model.addAttribute("entertainment", list);
+			model.addAttribute("pageMaker",pageMaker);
 			System.out.println(list);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -54,6 +65,133 @@ public class Entertainment_Controller {
 		
 		return "board/entertainment/torento";
 	}
+	
+	/**
+	 * 토렌트 글작성 매핑
+	 * @param model
+	 * @param type
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/entertainment/torentoinsert.do")
+	private String torentoinsert(Model model,@RequestParam String type)throws Exception {
+		model.addAttribute("type",type);
+		System.out.println(type);
+		return "board/entertainment/insert";
+	}
+	
+	/**
+	 * 토렌트 글등록 처리
+	 * @param model
+	 * @param first_board_DTO
+	 * @return
+	 * @throws Exception
+	 */
+
+	@RequestMapping(value = "/entertainment/board_insert.do", method = RequestMethod.POST)
+	private String board_insert(Model model,Entertainment_DTO entertainment_DTO ) throws Exception{
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		String goURL = URLEncoder.encode(entertainment_DTO.getBusiness_type(),"UTF-8");
+		try {
+			entertainment_service.board_insert(entertainment_DTO);
+		} catch (Exception e) {
+			e.printStackTrace();
+			resultMap.put("error", e.getMessage());
+			model.addAttribute("error",resultMap.get("error"));
+		}
+		
+		// 이미지 리스트로 간다.
+		return "redirect:torento.do?business_type="+goURL;
+	}
+	/**
+	 * 토렌트 제목클릭후 게시글내용보기
+	 * @param model
+	 * @param entertainmentr_DTO
+	 * @return
+	 * @throws Exception
+	 */
+	
+	@RequestMapping("/entertainment/board_read.do")
+	private String board_read(Model model,Entertainment_DTO entertainment_DTO) throws Exception{
+		
+		try {
+			System.out.println(entertainment_DTO.getNo());
+			model.addAttribute("entertainment", entertainment_service.board_read(entertainment_DTO));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return "board/entertainment/Read";
+		
+	}
+	/**
+	 * 토렌트 글삭제 처리
+	 * @param model
+	 * @param no
+	 * @param rttr
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/entertainment/board_delete.do")
+	private String board_delete(Entertainment_DTO entertainment_DTO)throws Exception{
+		
+		String goURL = URLEncoder.encode(entertainment_DTO.getBusiness_type(),"UTF-8");
+		try { 
+			entertainment_service.board_delete(entertainment_DTO);
+			System.out.println(entertainment_DTO);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:torento.do?business_type="+goURL;		
+	}
+	
+	/**
+	 * 글수정 매핑
+	 * @param entertainment_DTO
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/entertainment/board_modify.do")
+	private String board_modify(Entertainment_DTO entertainment_DTO, Model model) {
+		try {
+			System.out.println(entertainment_DTO.getNo());
+			model.addAttribute("entertainment", entertainment_service.board_read(entertainment_DTO));
+		} catch (Exception e) {
+			e.printStackTrace();
+		
+		}
+		return "board/entertainment/modify";
+	}
+	
+	/**
+	 * 토렌트 게시글 수정 처리
+	 * @param model
+	 * @param entertainment_DTO
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/entertainment/board_modify.do", method = RequestMethod.POST)
+	private String board_modify(Model model,Entertainment_DTO entertainment_DTO ) throws Exception{
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		System.out.println(entertainment_DTO);
+		String goURL = URLEncoder.encode(entertainment_DTO.getBusiness_type(),"UTF-8"); 
+		try {
+			entertainment_service.board_modify(entertainment_DTO);
+		} catch (Exception e) {
+			e.printStackTrace();
+			resultMap.put("error", e.getMessage());
+			model.addAttribute("error",resultMap.get("error"));
+		}
+		
+		// 이미지 리스트로 간다.
+		return "redirect:torento.do?business_type="+goURL;
+	}
+	
+	
+	
+	
+	
+	
 	//움짤/동영상
 	@RequestMapping("/entertainment/video.do")
 	private String video(Model model)throws Exception {

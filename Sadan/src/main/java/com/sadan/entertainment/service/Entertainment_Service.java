@@ -9,13 +9,16 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import com.sadan.boardtest.controller.Boardtest_ListController;
 import com.sadan.boardtest.mapper.Boardtest_ListMapper;
 import com.sadan.chat.mapper.Chat_Mapper;
+import com.sadan.common.model.SearchCriteria;
 import com.sadan.entertainment.mapper.Entertainment_Mapper;
 import com.sadan.entertainment.model.Entertainment_DTO;
+
 
 
 
@@ -26,10 +29,10 @@ public class Entertainment_Service {
 	@Autowired
 	private Entertainment_Mapper entertainment_Mapper;
 
-	public Map<String, Object> torento_Full_list(String business_type) {
+	public Map<String, Object> torento_Full_list(String business_type, SearchCriteria criteria) {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		try {
-			resultMap.put("list", entertainment_Mapper.torento_Full_list(business_type));
+			resultMap.put("list", entertainment_Mapper.torento_Full_list(business_type,criteria));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -46,6 +49,20 @@ public class Entertainment_Service {
 	
 	public void board_delete(Entertainment_DTO entertainment_DTO) {
 		entertainment_Mapper.board_delete(entertainment_DTO);
+	
+	}
+
+	public int getRow(String business_type) throws Exception{
+		return entertainment_Mapper.getRow(business_type);
+	}
+	
+	@Transactional
+	public void board_modify(Entertainment_DTO entertainment_DTO)throws Exception {
+		try {
+			entertainment_Mapper.board_modify(entertainment_DTO);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	
 	}
 	
