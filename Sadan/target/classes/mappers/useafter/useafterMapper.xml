@@ -21,7 +21,7 @@
 		    , secret 
 		    from useafter 
 		    where 
-		 
+		 	<include refid="search"></include>
 		    business_type = #{business_type}
 		    order by no desc
 		    ) as after,
@@ -32,9 +32,24 @@
 	</select>
 	
 	<!-- 검색조건 쿼리 -->
-<!-- 	<sql id="search"> -->
-<!-- 		<if test="searchType= != " -->
-<!-- 	</sql> -->
+	<sql id="search">
+		<if test="criteria.searchType != 'n'.toString() and searchType != null and searchType != ''.toString()">
+					where 1=0
+			<!-- 제목 검색 추가 -->
+			<if test="titleType">
+				or title like CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+			<!-- 내용 검색 추가 -->
+			<if test="contentType">
+				or content like CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+			<!-- 작성자 검색 추가 -->
+			<if test="writerType">
+				or writer like CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+		</if>
+	</sql>
+	
 	<!--페이지 쪽수 처리를 위해 전체 데이터의 갯수를 구한다 -->
 	<select id="getRow" resultType="Integer">
 	select count(*)

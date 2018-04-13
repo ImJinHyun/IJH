@@ -24,16 +24,16 @@
 	<select class="form-control">
 		<option value="n" ${pageMaker.cri.searchType == null or cri.searchType == "n"?"selected='selected'":"" } >전체</option>
 	 	<option value="gangNam" ${pageMaker.cri.searchType =="gangNam"?"selected='selected'":"" }>강남</option> 
-	 	<option value="nonGangNam">비강남</option> 
-	 	<option value="inCheon">인천</option> 
-	 	<option value="gyeonGi">경기</option> 
-	 	<option value="buSan">부산</option>
-	 	<option value="ulSan">울산/경남/제주</option>
-	 	<option value="daeGu">대구</option>
-	 	<option value="gyeongBuk">경북</option>
-	 	<option value="gwangJu">광주/전라</option>
-	 	<option value="daeJeon">대전/충청/세종</option>
-	 	<option value="gangWon">강원</option> 
+	 	<option value="nonGangNam"${pageMaker.cri.searchType =="nonGangNam"?"selected='selected'":"" }>비강남</option> 
+	 	<option value="inCheon"${pageMaker.cri.searchType =="incheon"?"selected='selected'":"" }>인천</option> 
+	 	<option value="gyeonGi"${pageMaker.cri.searchType =="gyeonGi"?"selected='selected'":"" }>경기</option> 
+	 	<option value="buSan" ${pageMaker.cri.searchType =="buSan"?"selected='selected'":"" }>부산</option>
+	 	<option value="ulSan" ${pageMaker.cri.searchType =="ulSan"?"selected='selected'":"" }>울산/경남/제주</option>
+	 	<option value="daeGu" ${pageMaker.cri.searchType =="daeGu"?"selected='selected'":"" }>대구</option>
+	 	<option value="gyeongBuk" ${pageMaker.cri.searchType =="gyeongBuk"?"selected='selected'":"" }>경북</option>
+	 	<option value="gwangJu" ${pageMaker.cri.searchType =="gwangJu"?"selected='selected'":"" }>광주/전라</option>
+	 	<option value="daeJeon" ${pageMaker.cri.searchType =="daeJeon"?"selected='selected'":"" }>대전/충청/세종</option>
+	 	<option value="gangWon" ${pageMaker.cri.searchType =="gangWon"?"selected='selected'":"" }>강원</option> 
 	 </select>
 	 
 	 <!-- 2차 분류 (보류 : 2018.04.12) -->
