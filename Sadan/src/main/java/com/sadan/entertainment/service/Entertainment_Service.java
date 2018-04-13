@@ -65,6 +65,10 @@ public class Entertainment_Service {
 		}
 	
 	}
+
+	public Entertainment_DTO main_List() {
+		return entertainment_Mapper.main_List();
+	}
 	
 	
 

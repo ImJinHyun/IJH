@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="text/html; charset=UTF-8">
 <title>게시판읽기</title>
 <link rel="stylesheet" href="/resources/css/board_read.css">
 
@@ -34,7 +34,7 @@ $(function(){
 	<div class="boardhead">
 		<!-- 글보기 헤더 감싸기 영역 -->
 		<div class="warp_boardhead">
-			<h3>룸싸롱 풀싸롱</h3>
+			<h3>${entertainment.business_type }</h3>
 		</div>
 	</div>
 	<!-- div 줄 바꿈 -->
@@ -50,7 +50,7 @@ $(function(){
 	<!-- 바디 전체 -->
 	<div class="warp_bodyall">
 
-		<form id="entertainment_Form"> 
+		<form id="entertainment_Form" accept-charset="UTF-8"> 
 			<!-- 히든으로 보낼 데이터들 -->
 			<input type="hidden" value="${entertainment.no }" name="no">
 			<input type="hidden" value="${entertainment.business_type }" name="business_type">

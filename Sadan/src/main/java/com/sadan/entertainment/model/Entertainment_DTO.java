@@ -15,6 +15,9 @@ public class Entertainment_DTO {
 	private String business_type;
 	private String hit;
 	private String secret;
+	private String rownum;
+	
+	
 	public String getNo() {
 		return no;
 	}
@@ -80,6 +83,12 @@ public class Entertainment_DTO {
 	}
 	public void setSecret(String secret) {
 		this.secret = secret;
+	}
+	public String getRownum() {
+		return rownum;
+	}
+	public void setRownum(String rownum) {
+		this.rownum = rownum;
 	}
 	@Override
 	public String toString() {

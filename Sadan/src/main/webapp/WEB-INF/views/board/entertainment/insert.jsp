@@ -37,7 +37,7 @@ $(function(){
 	<div class="boardhead">
 		<!-- 글보기 헤더 감싸기 영역 -->
 		<div class="warp_boardhead">
-			<h3>토렌토</h3>
+			<h3>${type } 등록</h3>
 		</div>
 	</div>
 	<div class="div_clear"></div>
@@ -56,11 +56,13 @@ $(function(){
 				<label class="control-label col-sm-1" for="email">분류 :</label>
 				<div class="col-sm-11">
 					<select class="form-control" id="sel1" name="business_type" disabled="disabled">
-						<option>제목</option>
-						<option>내용</option>
-						<option>제목+내용</option>
-						<option>글쓴이</option>
-						<option>글쓴이(코)</option>												
+						<option>토렌트</option>
+						<option>움짤/동영상</option>
+						<option>웹툰게시판</option>
+						<option>웹툰게시판</option>
+						<option>유머게시판</option>
+						<option>매거진</option>
+						<option>맛집</option>														
 					</select>
 				</div>
 			</div>

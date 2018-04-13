@@ -26,4 +26,6 @@ public interface Entertainment_Mapper {
 
 	public int getRow(String business_type) throws Exception;
 
+	public Entertainment_DTO main_List();
+
 }

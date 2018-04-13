@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="text/html; charset=UTF-8">
 <title>토렌토수정</title>
 <script type="text/javascript" src="${path }/ckeditor/ckeditor.js"></script>
 <link rel="stylesheet" href="/resources/css/board_write.css">
@@ -51,12 +51,12 @@ $(function(){
 	<div class="boardhead">
 		<!-- 글보기 헤더 감싸기 영역 -->
 		<div class="warp_boardhead">
-			<h3>토렌트 수정</h3>
+			<h3>${entertainment.business_type } 수정</h3>
 		</div>
 	</div>
 	<div class="div_clear"></div>
 	<div class="container-fluid">
-		<form class="form-horizontal" action="board_modify.do" method="post" role="form">
+		<form class="form-horizontal" action="board_modify.do" method="post" role="form" accept-charset="UTF-8">
 			<input type="hidden" value="${entertainment.no }" name="no">
 		
 			<!-- 비밀글 -->

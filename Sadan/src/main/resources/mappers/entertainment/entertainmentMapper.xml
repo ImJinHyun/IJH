@@ -5,8 +5,9 @@
 
 <mapper namespace="com.sadan.entertainment.mapper.Entertainment_Mapper">
 
+
 	<select id="torento_Full_list" resultType="Map">
-		select * from (select	@rn:=@rn+1 as rownum, after.*
+		select * from (select	truncate(@rn:=@rn+1,0) as rownum, after.*
 			from		
 		    (select no
 			, content
@@ -21,8 +22,7 @@
 		    , secret 
 		    from entertainment 
 		    where 
-		 
-		    business_type = #{business_type}
+		 	business_type = #{business_type}
 		    order by no desc
 		    ) as after,
 		    (select @rn:=0) as R
@@ -99,7 +99,7 @@
 		, business_nm = #{business_nm}
 		, business_type = #{business_type}
 		, secret = #{secret}
-		WHERE no = #{no
+		WHERE no = #{no}
 		
 	
 	

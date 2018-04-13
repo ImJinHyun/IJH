@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>이벤트업소배너</title>
+<title>커뮤니티</title>
 <link rel="stylesheet" href="/resources/css/jeyu.css">
 </head>
 <body>
 		<div class="board_all">
 		<div class="board_subject">
 			<div class="board_main_subject">			
-				<span>이벤트업소배너</span>
+				<span>공지사항</span>
 				<span><a href="#" onclick="return false;" class="more">more</a></span>			
 			</div>
 		</div>

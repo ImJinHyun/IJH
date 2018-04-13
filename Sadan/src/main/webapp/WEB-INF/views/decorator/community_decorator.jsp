@@ -1,9 +1,3 @@
-<!-- sitemesh 사용을 위한 설정 파일 -->
-<!-- 작성자 : 이영환 -->
-<!-- 작성일 : 2017-01-12 -->
-<!-- 최종수정일 : 2017-09-05 -->
-
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="decorator"
@@ -11,15 +5,12 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<decorator:usePage id="thePage"/>
-<% String selection = thePage.getProperty("meta.selection"); %>
-
 <!-- header.jsp 에서 복사해서 가져오세요. -->
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>18sadan | <decorator:title />
+<title>유흥그라운드 | 커뮤니티<decorator:title />
 </title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -146,13 +137,13 @@
 							<ul class="nav nav-tabs nav-stacked">
 								<li class="active">
 								<li class="left_subject"><a href="#" onclick="return false;">커뮤니티</a></li>
-								<li><a href="/community/gongji.do">공지사항</a></li>			
-								<li><a href="/community/greeting.do">가입인사(등업)</a></li>
-								<li><a href="/community/qanswer.do">질문및답변</a></li>
-								<li><a href="/community/jeongmo.do">정모와번개</a></li>
-								<li><a href="/community/freeboard.do">자유게시판</a></li>
-								<li><a href="/community/foxboard.do">여우게시판</a></li>
-								<li><a href="/community/joboffer.do">구인</a></li>
+								<li><a href="/community/board.do?business_type=공지">공지사항</a></li>			
+								<li><a href="/community/board.do?business_type=가입인사(등업)">가입인사(등업)</a></li>
+								<li><a href="/community/board.do?business_type=질문및답변">질문및답변</a></li>
+								<li><a href="/community/board.do?business_type=정모와번개">정모와번개</a></li>
+								<li><a href="/community/board.do?business_type=자유게시판">자유게시판</a></li>
+								<li><a href="/community/board.do?business_type=여우게시판">여우게시판</a></li>
+								<li><a href="/community/board.do?business_type=구인">구인</a></li>
 								<li><a href="/community/choboguide.do">초보자가이드</a></li> 								
 								<li><a href="/community/eventbanner.do">이벤트업소배너</a></li> 								
 							</ul>						

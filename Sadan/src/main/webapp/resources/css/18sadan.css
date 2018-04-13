@@ -96,12 +96,10 @@ a:hover {columns: #bbbbbb;text-decoration: none;cursor: pointer;}
 .wrapbody{
 /* 	background-color: #66CDAA; */
 	width:1300px;
-	height: 2000px;
 	margin : 0 auto;
 }
 .left_body{
 	width : 250px;
-	height:1200px;
 	float : left;
 	margin-right: -250px;
 	background-color: #FF7F50;
@@ -258,7 +256,6 @@ a:hover {columns: #bbbbbb;text-decoration: none;cursor: pointer;}
 }
 .right_body .right_banner_all {
 	width:250px;
-	height:1200px;
 /* 	background-color: #FF7F50; */
 	padding: 5px;
 	padding-left: 0;

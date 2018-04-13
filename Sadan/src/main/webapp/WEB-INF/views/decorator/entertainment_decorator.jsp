@@ -1,18 +1,9 @@
-<!-- sitemesh 사용을 위한 설정 파일 -->
-<!-- 작성자 : 이영환 -->
-<!-- 작성일 : 2017-01-12 -->
-<!-- 최종수정일 : 2017-09-05 -->
-
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="decorator"
 	uri="http://www.opensymphony.com/sitemesh/decorator"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
-<decorator:usePage id="thePage"/>
-<% String selection = thePage.getProperty("meta.selection"); %>
 
 <!-- header.jsp 에서 복사해서 가져오세요. -->
 <!DOCTYPE html>
@@ -146,14 +137,14 @@
 							<ul class="nav nav-tabs nav-stacked">
 								<li class="active">
 								<li class="left_subject"><a href="#" onclick="return false;">엔터테인먼트</a></li>
-								<li><a href="/entertainment/torento.do?business_type=토렌트">토렌트</a></li>
-								<li><a href="/entertainment/video.do?business_type=움짤/동영상">움짤/동영상</a></li>
-								<li><a href="/entertainment/webtoonboard.do?business_type=웹툰게시판">웹툰게시판</a></li>
-								<li><a href="/entertainment/funnyboard.do?business_type=유머게시판">유머게시판</a></li>
-								<li><a href="/entertainment/magazine.do?business_type=매거진">매거진</a></li>
-								<li><a href="/entertainment/restaurant.do?business_type=맛집">맛집</a></li>
-								<li><a href="/entertainment/choboguide.do?business_type=초보자가이드">초보자가이드</a></li> 								
-								<li><a href="/entertainment/eventbanner.do?business_type=이벤트업소배너">이벤트업소배너</a></li> 							
+								<li><a href="/entertainment/board.do?business_type=토렌트">토렌트</a></li>
+								<li><a href="/entertainment/board.do?business_type=움짤/동영상">움짤/동영상</a></li>
+								<li><a href="/entertainment/board.do?business_type=웹툰게시판">웹툰게시판</a></li>
+								<li><a href="/entertainment/board.do?business_type=유머게시판">유머게시판</a></li>
+								<li><a href="/entertainment/board.do?business_type=매거진">매거진</a></li>
+								<li><a href="/entertainment/board.do?business_type=맛집">맛집</a></li>
+								<li><a href="/entertainment/board.do?business_type=초보자가이드">초보자가이드</a></li> 								
+								<li><a href="/entertainment/board.do?business_type=이벤트업소배너">이벤트업소배너</a></li> 							
 							</ul>						
 						</div>
 						</div>

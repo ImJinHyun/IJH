@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>DB테스트</title>
+<title>이용후기</title>
 <script type="text/javascript" src="${path }/ckeditor/ckeditor.js"></script>
 <link rel="stylesheet" href="/resources/css/board_write.css">
 
@@ -37,7 +37,7 @@ $(function(){
 	<div class="boardhead">
 		<!-- 글보기 헤더 감싸기 영역 -->
 		<div class="warp_boardhead">
-			<h3>룸싸롱 풀싸롱</h3>
+			<h3>이용후기</h3>
 		</div>
 	</div>
 	<div class="div_clear"></div>

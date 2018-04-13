@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.sadan.common.model.Criteria;
 import com.sadan.common.model.PageMaker;
 import com.sadan.common.model.SearchCriteria;
 import com.sadan.entertainment.model.Entertainment_DTO;
@@ -33,7 +34,22 @@ public class Entertainment_Controller {
 	private Entertainment_Service entertainment_service;
 	
 	@RequestMapping("/entertainment/main.do")
-	private String entertainment() {
+	private String entertainment(Model model,SearchCriteria criteria) {
+		String type[] = {"토렌트","움짤/동영상","웹툰게시판","유머게시판","매거진","맛집"};
+		Map<String, Object> map = new HashMap<String, Object>();
+		try {
+			for (int i = 0; i < type.length; i++) {
+				System.out.println(type[i]);
+				map = entertainment_service.torento_Full_list(type[i], criteria);
+				@SuppressWarnings({ "unchecked", "unused" })
+				List<Map<String, Object>> list = (List<Map<String, Object>>) map.get("list");
+				model.addAttribute("enter"+i, list);
+			}
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 		return "board/entertainment/entertainment";
 	}
@@ -44,19 +60,19 @@ public class Entertainment_Controller {
 	 * @return
 	 * @throws Exception
 	 */
-	@RequestMapping(value="/entertainment/torento.do")
-	private String torento(Model model,@RequestParam String business_type, SearchCriteria criteria)throws Exception {
+	@RequestMapping(value="/entertainment/board.do")
+	private String torento(Model model,@RequestParam String business_type,SearchCriteria criteria)throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();
 		PageMaker pageMaker =new PageMaker();
 		try {
 			map = entertainment_service.torento_Full_list(business_type,criteria);
 			System.out.println(business_type);
-
 			pageMaker.setCri(criteria);
 			pageMaker.setTotalCount(entertainment_service.getRow(business_type));
 			@SuppressWarnings({ "unchecked", "unused" })
 			List<Map<String, Object>> list = (List<Map<String, Object>>) map.get("list");
 			model.addAttribute("entertainment", list);
+			model.addAttribute("business_type", business_type);
 			model.addAttribute("pageMaker",pageMaker);
 			System.out.println(list);
 		} catch (Exception e) {
@@ -101,7 +117,7 @@ public class Entertainment_Controller {
 		}
 		
 		// 이미지 리스트로 간다.
-		return "redirect:torento.do?business_type="+goURL;
+		return "redirect:board.do?business_type="+goURL;
 	}
 	/**
 	 * 토렌트 제목클릭후 게시글내용보기
@@ -174,7 +190,8 @@ public class Entertainment_Controller {
 	private String board_modify(Model model,Entertainment_DTO entertainment_DTO ) throws Exception{
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		System.out.println(entertainment_DTO);
-		String goURL = URLEncoder.encode(entertainment_DTO.getBusiness_type(),"UTF-8"); 
+		System.out.println(entertainment_DTO.getBusiness_type());
+		String goURL = URLEncoder.encode(entertainment_DTO.getBusiness_type(),"UTF-8");
 		try {
 			entertainment_service.board_modify(entertainment_DTO);
 		} catch (Exception e) {
@@ -184,7 +201,7 @@ public class Entertainment_Controller {
 		}
 		
 		// 이미지 리스트로 간다.
-		return "redirect:torento.do?business_type="+goURL;
+		return "redirect:board.do?business_type="+goURL;
 	}
 	
 	
@@ -192,12 +209,8 @@ public class Entertainment_Controller {
 	
 	
 	
-	//움짤/동영상
-	@RequestMapping("/entertainment/video.do")
-	private String video(Model model)throws Exception {
-
-		return "board/entertainment/video";
-	}
+	
+	
 	//웹툰게시판
 	@RequestMapping("/entertainment/webtoonboard.do")
 	private String webtoonboard(Model model)throws Exception {
