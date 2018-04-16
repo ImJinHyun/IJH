@@ -25,26 +25,30 @@
 		    business_type = #{business_type}
 		    order by no desc
 		    ) as after,
-		    (select @rn:=0) as R
-		    ) aftertable
-		    
-		    where rownum between #{criteria.startRow} and #{criteria.endRow}
-	</select>
-	
-	<!-- 검색조건 쿼리 -->
-	<sql id="search">
-		<if test="criteria.searchType != 'n'.toString() and searchType != null and searchType != ''.toString()">
-					where 1=0
-			<!-- 제목 검색 추가 -->
-			<if test="titleType">
+				    (select @rn:=0) as R
+				    ) aftertable
+				    
+				    where rownum between #{criteria.startRow} and #{criteria.endRow}
+			</select>
+			
+			<!-- 검색조건 쿼리 -->
+			<sql id="search">
+				<if test="criteria.searchType != 'n'.toString() and searchType != null and searchType != ''.toString()">
+							where 1=0
+			<!-- 강남 -->
+			<if test="gangNam">
 				or title like CONCAT(CONCAT('%',#{keyword}),'%')
 			</if>
-			<!-- 내용 검색 추가 -->
-			<if test="contentType">
+			<!-- 비강남 -->
+			<if test="nonGangNam">
 				or content like CONCAT(CONCAT('%',#{keyword}),'%')
 			</if>
-			<!-- 작성자 검색 추가 -->
-			<if test="writerType">
+			<!-- 인천 -->
+			<if test="inCheon">
+				or writer like CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+			
+			<if test="gyeonGi">
 				or writer like CONCAT(CONCAT('%',#{keyword}),'%')
 			</if>
 		</if>

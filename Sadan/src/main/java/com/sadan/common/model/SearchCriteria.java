@@ -36,6 +36,53 @@ public class SearchCriteria extends Criteria{
 		else return true; // 있는 경우
 	}
 
+	// 작성자로 검색하는 아닌지 알아 내는 getter
+	public boolean isGangNam() {
+		if(searchType.indexOf("gangNam")<0) return false; // 없는 경우
+		else return true; // 있는 경우
+	}
+	
+	public boolean isNonGangNam() {
+		if(searchType.indexOf("nonGangNam")<0) return false; // 없는 경우
+		else return true; // 있는 경우
+	}
+	public boolean isInCheon() {
+		if(searchType.indexOf("inCheon")<0) return false; // 없는 경우
+		else return true; // 있는 경우
+	}
+	public boolean isGyeonGi() {
+		if(searchType.indexOf("gyeonGi")<0) return false; // 없는 경우
+		else return true; // 있는 경우
+	}
+	public boolean isBuSan() {
+		if(searchType.indexOf("buSan")<0) return false; // 없는 경우
+		else return true; // 있는 경우
+	}
+	public boolean isUlSan() {
+		if(searchType.indexOf("ulSan")<0) return false; // 없는 경우
+		else return true; // 있는 경우
+	}
+	public boolean isDaeGu() {
+		if(searchType.indexOf("daeGu")<0) return false; // 없는 경우
+		else return true; // 있는 경우
+	}
+	public boolean isGyeongBuk() {
+		if(searchType.indexOf("geyongBuk")<0) return false; // 없는 경우
+		else return true; // 있는 경우
+	}
+	public boolean isGwangJu() {
+		if(searchType.indexOf("gwangJu")<0) return false; // 없는 경우
+		else return true; // 있는 경우
+	}
+	public boolean isDaeJeon() {
+		if(searchType.indexOf("daeJeon")<0) return false; // 없는 경우
+		else return true; // 있는 경우
+	}
+	public boolean isGangWon() {
+		if(searchType.indexOf("gangWon")<0) return false; // 없는 경우
+		else return true; // 있는 경우
+	}
+	
 	@Override
 	public String toString() {
 		return "SearchCriteria [searchType=" + searchType + ", keyword=" + keyword
