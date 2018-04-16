@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sadan.question.mapper.Question_Mapper">
+
+
+	<select id="board_list" resultType="Map">
+		select * from (select	truncate(@rn:=@rn+1,0) as rownum, after.*
+			from		
+		    (select no
+			, content
+		    , subject
+		    , writer
+		    , location
+		    , recommand
+		    , date_format(dates,'%m-%d') dates
+		    , business_nm
+		    , business_type
+		    , hit
+		    , secret 
+		    from question 
+		    where 
+		 	business_type = #{business_type}
+		    order by no desc
+		    ) as after,
+		    (select @rn:=0) as R
+		    ) aftertable
+		    
+		    where rownum between #{criteria.startRow} and #{criteria.endRow}
+	</select>
+
+	<select id="getRow" resultType="Integer">
+	select count(*)
+	from question
+	where business_type = #{business_type}
+	</select>
+
+	<insert id="board_insert" parameterType="String">
+
+		insert into question(
+		no
+		,content
+		,subject
+		,writer
+		,location
+		,recommand
+		,dates
+		,business_nm
+		,business_type
+		,hit
+		,secret
+		) values (
+		(select ifnull(max(no),0)+1 from question asdf)
+		,#{content}
+		, #{subject}
+		, #{writer}
+		, #{location}
+		, '0'
+		, now()
+		, #{business_nm}
+		, #{business_type}
+		,'0'
+		,#{secret}
+		);
+	</insert>
+	
+	<select id="board_read" parameterType="String" resultType="com.sadan.question.model.Question_DTO">
+	select 
+	 no
+	 
+		, replace(replace(content,'\r\n',''),'\r','') content	
+		, subject
+		, writer
+		, location
+		, recommand
+		, date_format(dates,'%Y-%m-%d %H:%i') dates
+		, business_nm
+		, business_type
+		, hit
+		, secret
+	from question
+	where no = #{no}
+
+	</select>
+	
+	<delete id="board_delete" parameterType="String">
+		DELETE FROM question
+			WHERE no = #{no}	
+	</delete>
+	
+	<update id="board_modify" parameterType="String">
+	UPDATE question SET
+		  content = #{content}
+		, subject = #{subject}
+		, writer = #{writer}
+		, location = #{location}
+		, business_nm = #{business_nm}
+		, business_type = #{business_type}
+		, secret = #{secret}
+		WHERE no = #{no}	
+	</update>
+</mapper>

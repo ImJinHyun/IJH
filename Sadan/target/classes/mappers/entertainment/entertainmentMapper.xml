@@ -6,7 +6,7 @@
 <mapper namespace="com.sadan.entertainment.mapper.Entertainment_Mapper">
 
 
-	<select id="torento_Full_list" resultType="Map">
+	<select id="board_list" resultType="Map">
 		select * from (select	truncate(@rn:=@rn+1,0) as rownum, after.*
 			from		
 		    (select no

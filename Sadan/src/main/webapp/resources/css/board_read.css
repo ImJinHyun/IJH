@@ -45,12 +45,16 @@ hr{
 	padding : 0px;
 }	
 
-.link_button{
-	clear :both;
+.link_button{	
 	height:30px;
 	float:right;
-	margin : 5px 0px;
-	}
+	margin : 0 2px 5px 0;
+}
+
+.link_button:first-child {
+	margin-right: 10px;
+	
+}
 .board_body{
 	 position: relative;
     border: 1px solid #ddd;

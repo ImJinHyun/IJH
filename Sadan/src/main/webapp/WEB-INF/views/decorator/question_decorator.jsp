@@ -11,15 +11,12 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<decorator:usePage id="thePage"/>
-<% String selection = thePage.getProperty("meta.selection"); %>
-
 <!-- header.jsp 에서 복사해서 가져오세요. -->
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>18sadan | <decorator:title />
+<title>18sadan | 제휴문의 <decorator:title />
 </title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -145,12 +142,8 @@
 							<div class="span6">						
 							<ul class="nav nav-tabs nav-stacked">
 								<li class="active">
-								<li class="left_subject"><a href="#" onclick="return false">고객센터</a></li>
-								<li><a href="/question/fullssa.do">업소공지사항</a></li>
-								<li><a href="/question/fullssa.do">고객문의(일반)</a></li>
-								<li><a href="/question/fullssa.do">고객문의(업소)</a></li>								   																 
-								<li><a href="/question/chobo.do">초보자가이드</a></li> 								
-								<li><a href="/question/event.do">이벤트업소배너</a></li>															
+								<li class="left_subject"><a href="#" onclick="return false">제휴문의</a></li>
+								<li><a href="/question/board.do?business_type=제휴문의">제휴문의</a></li>														
 							</ul>						
 						</div>
 						</div>

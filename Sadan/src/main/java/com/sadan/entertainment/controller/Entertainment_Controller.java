@@ -40,22 +40,19 @@ public class Entertainment_Controller {
 		try {
 			for (int i = 0; i < type.length; i++) {
 				System.out.println(type[i]);
-				map = entertainment_service.torento_Full_list(type[i], criteria);
+				map = entertainment_service.board_list(type[i], criteria);
 				@SuppressWarnings({ "unchecked", "unused" })
 				List<Map<String, Object>> list = (List<Map<String, Object>>) map.get("list");
 				model.addAttribute("enter"+i, list);
-			}
-			
-			
+			}						
 		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		
+			e.printStackTrace();
+		}		
 		return "board/entertainment/entertainment";
 	}
 	
 	/**
-	 * 토렌토 게시글 목록
+	 * 엔터테인먼트 게시글 목록
 	 * @param model
 	 * @return
 	 * @throws Exception
@@ -65,7 +62,7 @@ public class Entertainment_Controller {
 		Map<String, Object> map = new HashMap<String, Object>();
 		PageMaker pageMaker =new PageMaker();
 		try {
-			map = entertainment_service.torento_Full_list(business_type,criteria);
+			map = entertainment_service.board_list(business_type,criteria);
 			System.out.println(business_type);
 			pageMaker.setCri(criteria);
 			pageMaker.setTotalCount(entertainment_service.getRow(business_type));
@@ -79,11 +76,11 @@ public class Entertainment_Controller {
 			e.printStackTrace();
 		}
 		
-		return "board/entertainment/torento";
+		return "board/entertainment/board_list";
 	}
 	
 	/**
-	 * 토렌트 글작성 매핑
+	 * 엔터테인먼트 글작성 매핑
 	 * @param model
 	 * @param type
 	 * @return
@@ -97,7 +94,7 @@ public class Entertainment_Controller {
 	}
 	
 	/**
-	 * 토렌트 글등록 처리
+	 * 엔터테인먼트 글등록 처리
 	 * @param model
 	 * @param first_board_DTO
 	 * @return
@@ -120,7 +117,7 @@ public class Entertainment_Controller {
 		return "redirect:board.do?business_type="+goURL;
 	}
 	/**
-	 * 토렌트 제목클릭후 게시글내용보기
+	 * 엔터테인먼트 제목클릭후 게시글내용보기
 	 * @param model
 	 * @param entertainmentr_DTO
 	 * @return
@@ -141,7 +138,7 @@ public class Entertainment_Controller {
 		
 	}
 	/**
-	 * 토렌트 글삭제 처리
+	 * 엔터테인먼트 글삭제 처리
 	 * @param model
 	 * @param no
 	 * @param rttr
@@ -158,7 +155,7 @@ public class Entertainment_Controller {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:torento.do?business_type="+goURL;		
+		return "redirect:board_list.do?business_type="+goURL;		
 	}
 	
 	/**
@@ -180,7 +177,7 @@ public class Entertainment_Controller {
 	}
 	
 	/**
-	 * 토렌트 게시글 수정 처리
+	 * 엔터테인먼트 게시글 수정 처리
 	 * @param model
 	 * @param entertainment_DTO
 	 * @return
@@ -203,6 +200,9 @@ public class Entertainment_Controller {
 		// 이미지 리스트로 간다.
 		return "redirect:board.do?business_type="+goURL;
 	}
+	
+	
+	
 	
 	
 	

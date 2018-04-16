@@ -31,6 +31,7 @@
 		  </table>
   		</div>
 	</div><!-- board_all끝 -->
+	
 	<div class="board_all">
 		<div class="board_subject">
 			<div class="board_main_subject">			
@@ -53,6 +54,7 @@
 		  </table>
   		</div>
 	</div><!-- board_all끝 -->
+	
 	<div class="board_all">
 		<div class="board_subject">
 			<div class="board_main_subject">			
@@ -75,6 +77,7 @@
 		  </table>
   		</div>
 	</div><!-- board_all끝 -->
+	
 	<div class="board_all">
 		<div class="board_subject">
 			<div class="board_main_subject">			
@@ -97,6 +100,7 @@
 		  </table>
   		</div>
 	</div><!-- board_all끝 -->
+	
 	<div class="board_all">
 		<div class="board_subject">
 			<div class="board_main_subject">			
@@ -119,6 +123,7 @@
 		  </table>
   		</div>
 	</div><!-- board_all끝 -->
+	
 	<div class="board_all">
 		<div class="board_subject">
 			<div class="board_main_subject">			

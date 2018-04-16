@@ -1,11 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>커뮤니티</title>
-<link rel="stylesheet" href="/resources/css/jeyu.css">
+<link rel="stylesheet" href="/resources/css/enter.css">
+
 </head>
 <body>
 		<div class="board_all">
@@ -16,19 +19,16 @@
 			</div>
 		</div>
 		
-		<div class="table-responsive">          
-		  <table class="table table-hover">
+			<div class="table-responsive">          
+		  <table class="table table-hover" style="margin-bottom:0px;">
 		    <tbody>
+		    <c:forEach var="board" items="${commu0 }" varStatus="status" begin="0" end="6">
 		      <tr>
-		        <td>2018-01-01</td>
-		        <td><a href="#" onclick="return false;" class="more">글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다</a></td>
-		        <td>글쓴이</td>
-		      </tr>
-		       <tr>
-		        <td>2018-01-02</td>
-		        <td><a href="#" onclick="return false;" class="more">글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다</a></td>
-		        <td>글쓴이</td>
-		      </tr>
+		        <td>${board.dates }</td>
+		        <td><a href="board_read.do?no=${board.no }" class="more">${board.subject }</a></td>
+		        <td>${board.writer }</td>
+		      </tr>		     
+		      </c:forEach>  
 		    </tbody>
 		  </table>
   		</div>
@@ -43,18 +43,15 @@
 		</div>
 		
 		<div class="table-responsive">          
-		  <table class="table table-hover">
+		  <table class="table table-hover" style="margin-bottom:0px;">
 		    <tbody>
+		    <c:forEach var="board" items="${commu1 }" varStatus="status" begin="0" end="6">
 		      <tr>
-		        <td>2018-01-01</td>
-		        <td><a href="#" onclick="return false;" class="more">글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다</a></td>
-		        <td>글쓴이</td>
-		      </tr>
-		       <tr>
-		        <td>2018-01-02</td>
-		        <td><a href="#" onclick="return false;" class="more">글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다</a></td>
-		        <td>글쓴이</td>
-		      </tr>
+		        <td>${board.dates }</td>
+		        <td><a href="board_read.do?no=${board.no }" class="more">${board.subject }</a></td>
+		        <td>${board.writer }</td>
+		      </tr>		     
+		      </c:forEach>  
 		    </tbody>
 		  </table>
   		</div>
@@ -69,18 +66,15 @@
 		</div>
 		
 		<div class="table-responsive">          
-		  <table class="table table-hover">
+		  <table class="table table-hover" style="margin-bottom:0px;">
 		    <tbody>
+		    <c:forEach var="board" items="${commu2 }" varStatus="status" begin="0" end="6">
 		      <tr>
-		        <td>2018-01-01</td>
-		        <td><a href="#" onclick="return false;" class="more">글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다</a></td>
-		        <td>글쓴이</td>
-		      </tr>
-		       <tr>
-		        <td>2018-01-02</td>
-		        <td><a href="#" onclick="return false;" class="more">글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다</a></td>
-		        <td>글쓴이</td>
-		      </tr>
+		        <td>${board.dates }</td>
+		        <td><a href="board_read.do?no=${board.no }" class="more">${board.subject }</a></td>
+		        <td>${board.writer }</td>
+		      </tr>		     
+		      </c:forEach>  
 		    </tbody>
 		  </table>
   		</div>
@@ -95,18 +89,15 @@
 		</div>
 		
 		<div class="table-responsive">          
-		  <table class="table table-hover">
+		  <table class="table table-hover" style="margin-bottom:0px;">
 		    <tbody>
+		    <c:forEach var="board" items="${commu3 }" varStatus="status" begin="0" end="6">
 		      <tr>
-		        <td>2018-01-01</td>
-		        <td><a href="#" onclick="return false;" class="more">글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다</a></td>
-		        <td>글쓴이</td>
-		      </tr>
-		       <tr>
-		        <td>2018-01-02</td>
-		        <td><a href="#" onclick="return false;" class="more">글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다</a></td>
-		        <td>글쓴이</td>
-		      </tr>
+		        <td>${board.dates }</td>
+		        <td><a href="board_read.do?no=${board.no }" class="more">${board.subject }</a></td>
+		        <td>${board.writer }</td>
+		      </tr>		     
+		      </c:forEach>  
 		    </tbody>
 		  </table>
   		</div>
@@ -121,18 +112,15 @@
 		</div>
 		
 		<div class="table-responsive">          
-		  <table class="table table-hover">
+		  <table class="table table-hover" style="margin-bottom:0px;">
 		    <tbody>
+		    <c:forEach var="board" items="${commu4 }" varStatus="status" begin="0" end="6">
 		      <tr>
-		        <td>2018-01-01</td>
-		        <td><a href="#" onclick="return false;" class="more">글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다</a></td>
-		        <td>글쓴이</td>
-		      </tr>
-		       <tr>
-		        <td>2018-01-02</td>
-		        <td><a href="#" onclick="return false;" class="more">글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다</a></td>
-		        <td>글쓴이</td>
-		      </tr>
+		        <td>${board.dates }</td>
+		        <td><a href="board_read.do?no=${board.no }" class="more">${board.subject }</a></td>
+		        <td>${board.writer }</td>
+		      </tr>		     
+		      </c:forEach>  
 		    </tbody>
 		  </table>
   		</div>
@@ -147,18 +135,15 @@
 		</div>
 		
 		<div class="table-responsive">          
-		  <table class="table table-hover">
+		  <table class="table table-hover" style="margin-bottom:0px;" >
 		    <tbody>
+		    <c:forEach var="board" items="${commu5 }" varStatus="status" begin="0" end="6">
 		      <tr>
-		        <td>2018-01-01</td>
-		        <td><a href="#" onclick="return false;" class="more">글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다</a></td>
-		        <td>글쓴이</td>
+		        <td>${board.dates }</td>
+		        <td><a href="board_read.do?no=${board.no }" class="more">${board.subject }</a></td>
+		        <td>${board.writer }</td>
 		      </tr>
-		       <tr>
-		        <td>2018-01-02</td>
-		        <td><a href="#" onclick="return false;" class="more">글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다</a></td>
-		        <td>글쓴이</td>
-		      </tr>
+		      </c:forEach>  
 		    </tbody>
 		  </table>
   		</div>
@@ -173,18 +158,15 @@
 		</div>
 		
 		<div class="table-responsive">          
-		  <table class="table table-hover">
+		  <table class="table table-hover" style="margin-bottom:0px;" >
 		    <tbody>
+		    <c:forEach var="board" items="${commu6 }" varStatus="status" begin="0" end="6">
 		      <tr>
-		        <td>2018-01-01</td>
-		        <td><a href="#" onclick="return false;" class="more">글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다</a></td>
-		        <td>글쓴이</td>
+		        <td>${board.dates }</td>
+		        <td><a href="board_read.do?no=${board.no }" class="more">${board.subject }</a></td>
+		        <td>${board.writer }</td>
 		      </tr>
-		       <tr>
-		        <td>2018-01-02</td>
-		        <td><a href="#" onclick="return false;" class="more">글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다글내용입니다</a></td>
-		        <td>글쓴이</td>
-		      </tr>
+		      </c:forEach>  
 		    </tbody>
 		  </table>
   		</div>

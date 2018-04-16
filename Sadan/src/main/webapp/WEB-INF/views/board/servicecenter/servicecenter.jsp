@@ -1,79 +1,83 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>DB테스트</title>
-<link rel="stylesheet" href="/resources/css/chatinglink.css">
-<link rel="stylesheet" href="/resources/css/jeyu.css">
-<link rel="stylesheet" href="/resources/css/pr.css">
+<title>고객센터</title>
+<link rel="stylesheet" href="/resources/css/enter.css">
 
 </head>
 <body>
-	<div class="prfullssa_all">
+		<div class="board_all">
 		<div class="board_subject">
 			<div class="board_main_subject">			
-				<span>고객센터(일반회원)</span>							
+				<span>업소공지사항</span>
+				<span><a href="#" onclick="return false;" class="more">more</a></span>			
 			</div>
 		</div>
 		
-	</div>
-	<div>
-	<select class="form-control">
-	 	<option>제목</option> 
-	 	<option>내용</option> 
-	 	<option>제목+내용</option> 
-	 	<option>글쓴이</option> 
-	 	<option>글쓴이(댓글)</option> 
-	 </select>
-	 <input type="text" class="form-control" id="usr">
-	 <button type="button" class="btn">검색</button>
-	 </div>		 
-	<table class="table table-hover">
-		<thead class="main_tr">
-			<tr>
-				<th>제목</th>
-				<th>글쓴이</th>
-				<th>날짜</th>
-				<th>조회</th>
-				<th>추천</th>
-			</tr>			
-		</thead>
-		<tbody>
-			<tr>
-				<td>18사단</td>
-				<td>임진현</td>
-				<td>2018-01-01</td>
-				<td>1999</td>
-				<td>욘사마</td>
-			</tr>
-			<tr>
-				<td>임진현</td>
-				<td>임진현</td>
-				<td>임진현</td>
-				<td>임진현</td>
-				<td>임진현</td>
-			</tr>
-			<tr>
-				<td>임진현</td>
-				<td>임진현</td>
-				<td>임진현</td>
-				<td>임진현</td>
-				<td>임진현</td>
-			</tr>
-		</tbody>
-	</table>		
-		<hr/>
-		<a class="btn btn-default pull-right">글쓰기</a>		
-		<div class="text-center">
-			<ul class="pagination">
-				<li><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li>
-				<li><a href="#">5</a></li>
-			</ul>
-		</div>	
+			<div class="table-responsive">          
+		  <table class="table table-hover" style="margin-bottom:0px;">
+		    <tbody>
+		    <c:forEach var="board" items="${commu0 }" varStatus="status" begin="0" end="2">
+		      <tr>
+		        <td>${board.dates }</td>
+		        <td><a href="board_read.do?no=${board.no }" class="more">${board.subject }</a></td>
+		        <td>${board.writer }</td>
+		      </tr>		     
+		      </c:forEach>  
+		    </tbody>
+		  </table>
+  		</div>
+	</div><!-- board_all끝 -->
+	
+	<div class="board_all">
+		<div class="board_subject">
+			<div class="board_main_subject">			
+				<span>고객문의(일반)</span>
+				<span><a href="#" onclick="return false;" class="more">more</a></span>			
+			</div>
+		</div>
+		
+		<div class="table-responsive">          
+		  <table class="table table-hover" style="margin-bottom:0px;">
+		    <tbody>
+		    <c:forEach var="board" items="${commu1 }" varStatus="status" begin="0" end="2">
+		      <tr>
+		        <td>${board.dates }</td>
+		        <td><a href="board_read.do?no=${board.no }" class="more">${board.subject }</a></td>
+		        <td>${board.writer }</td>
+		      </tr>		     
+		      </c:forEach>  
+		    </tbody>
+		  </table>
+  		</div>
+	</div><!-- board_all끝 -->
+	
+	<div class="board_all">
+		<div class="board_subject">
+			<div class="board_main_subject">			
+				<span>고객문의(업소)</span>
+				<span><a href="#" onclick="return false;" class="more">more</a></span>			
+			</div>
+		</div>
+		
+		<div class="table-responsive">          
+		  <table class="table table-hover" style="margin-bottom:0px;">
+		    <tbody>
+		    <c:forEach var="board" items="${commu2 }" varStatus="status" begin="0" end="2">
+		      <tr>
+		        <td>${board.dates }</td>
+		        <td><a href="board_read.do?no=${board.no }" class="more">${board.subject }</a></td>
+		        <td>${board.writer }</td>
+		      </tr>		     
+		      </c:forEach>  
+		    </tbody>
+		  </table>
+  		</div>
+	</div><!-- board_all끝 -->
 </body>
 </html>

@@ -14,7 +14,7 @@ $(function(){
 
 	//#=id / .class 선택자를 .on했을 때("click") 클릭했을 때 function() - 기능을 하겠다. 
 	$("#entertainment_list").on("click",function(){
-		location.href="/entertainment/torento.do?business_type=토렌트";
+		location.href="/entertainment/board.do?business_type=토렌트";
 	});
 	
 	$("#entertainment_delete").on("click",function(){

@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>움짤/동영상</title>
+<title>제휴문의</title>
+
 <link rel="stylesheet" href="/resources/css/chatinglink.css">
 <link rel="stylesheet" href="/resources/css/jeyu.css">
 <link rel="stylesheet" href="/resources/css/pr.css">
@@ -15,7 +16,7 @@
 	<div class="prfullssa_all">
 		<div class="board_subject">
 			<div class="board_main_subject">			
-				<span>움짤/동영상</span>							
+				<span>${business_type} </span>							
 			</div>
 		</div>
 	</div>
@@ -61,14 +62,14 @@
 			</tr>			
 		</thead>
 		<tbody>
-		<c:forEach var="entertainment" items="${entertainment}" varStatus="status">
+		<c:forEach var="a" items="${question}" varStatus="status">
 			<tr>
-				<td>${entertainment.no}</td>
-				<td><a href="board_read.do?no=${entertainment.no }"> ${entertainment.subject}</a></td>
-				<td>${entertainment.writer}</td>
-				<td>${entertainment.dates}</td>
-				<td>${entertainment.hit}</td>
-				<td>${entertainment.recommand}</td>	
+				<td>${a.no}</td>
+				<td><a href="board_read.do?no=${a.no }"> ${a.subject}</a></td>
+				<td>${a.writer}</td>
+				<td>${a.dates}</td>
+				<td>${a.hit}</td>
+				<td>${a.recommand}</td>	
 <%-- 				<td>[${entertainment.location}]</td> --%>
 <%-- 				<td>[${entertainment.business_type}]</td> --%>
 <%-- 				<td style="text-align: left;"><a href="board_read.do?no=${entertainment.no }"> ${entertainment.subject}</a></td> --%>
@@ -81,25 +82,25 @@
 		</tbody>
 	</table>		
 		<hr/>
-		<a class="btn btn-default pull-right" href="torentoinsert.do?type=움짤/동영상">글쓰기</a>		
+		<a class="btn btn-default pull-right" href="boardinsert.do?type=${business_type }">글쓰기</a>		
 		<div class="text-center">
 			<ul class="pagination">
 			<!-- 이전 페이지 처리 -->
 						<c:if test="${pageMaker.prev }">
-							<li><a href="video.do?page=${pageMaker.startPage -1 }&business_type=움짤/동영상">&laquo;</a></li>
+							<li><a href="board.do?page=${pageMaker.startPage -1 }&business_type=토렌트">&laquo;</a></li>
 						</c:if>
 						
 						<!-- 시작 페이지부터 끝 페이지까지 반복 처리 -->
 						<c:forEach begin="${pageMaker.startPage }"
 						 end="${pageMaker.endPage}" var="idx">
 							<li ${pageMaker.cri.page==idx?"class='active'":"" }>
-								<a href="video.do${pageMaker.makeQuery(idx) }&business_type=움짤/동영상">${idx }</a>
+								<a href="board.do${pageMaker.makeQuery(idx) }&business_type=토렌트">${idx }</a>
 							</li>
 						</c:forEach>
 						
 				<!-- 다음 페이지 처리 -->
 						<c:if test="${pageMaker.next }">
-							<li><a href="video.do?page=${pageMaker.endPage + 1 }&business_type=움짤/동영상">&raquo;</a></li>
+							<li><a href="board.do?page=${pageMaker.endPage + 1 }&business_type=토렌트">&raquo;</a></li>
 						</c:if>
 			</ul>
 		</div>	

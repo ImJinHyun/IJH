@@ -29,10 +29,10 @@ public class Entertainment_Service {
 	@Autowired
 	private Entertainment_Mapper entertainment_Mapper;
 
-	public Map<String, Object> torento_Full_list(String business_type, SearchCriteria criteria) {
+	public Map<String, Object> board_list(String business_type, SearchCriteria criteria) {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		try {
-			resultMap.put("list", entertainment_Mapper.torento_Full_list(business_type,criteria));
+			resultMap.put("list", entertainment_Mapper.board_list(business_type,criteria));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

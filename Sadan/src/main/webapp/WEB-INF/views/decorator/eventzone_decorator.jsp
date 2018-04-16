@@ -10,16 +10,12 @@
 	uri="http://www.opensymphony.com/sitemesh/decorator"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
-<decorator:usePage id="thePage"/>
-<% String selection = thePage.getProperty("meta.selection"); %>
-
 <!-- header.jsp 에서 복사해서 가져오세요. -->
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>18sadan | <decorator:title />
+<title>유흥그라운드 | 이벤트존 <decorator:title />
 </title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -146,10 +142,10 @@
 							<ul class="nav nav-tabs nav-stacked">
 								<li class="active">
 								<li class="left_subject"><a href="#" onclick="return false">이벤트존</a></li>
-								<li><a href="/eventzone/ugevent.do">유그이벤트</a></li>
-								<li><a href="/eventzone/singleevent.do">개별업소이벤트</a></li>
-								<li><a href="/eventzone/highlevelevent.do">고렙이밴트</a></li>
-								<li class="left_subject"><a href="#" onclick="return false">포인트게임</a></li>
+								<li><a href="/eventzone/board.do?business_type=유그이벤트">유그이벤트</a></li>
+								<li><a href="/eventzone/board.do?business_type=개별업소이벤트">개별업소이벤트</a></li>
+								<li><a href="/eventzone/board.do?business_type=고렙이벤트">고렙이밴트</a></li>
+								<li class="left_subject"><a href="/eventzone/highlevelevent.do">포인트게임</a></li>
 								<li><a href="/eventzone/lotto.do">즉석복권</a></li>
 								<li><a href="/eventzone/sportsmasage.do">레이싱게임</a></li>																   																 
 								<li><a href="/eventzone/choboguide.do">초보자가이드</a></li> 								

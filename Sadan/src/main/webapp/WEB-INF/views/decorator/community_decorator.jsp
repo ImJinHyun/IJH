@@ -137,7 +137,7 @@
 							<ul class="nav nav-tabs nav-stacked">
 								<li class="active">
 								<li class="left_subject"><a href="#" onclick="return false;">커뮤니티</a></li>
-								<li><a href="/community/board.do?business_type=공지">공지사항</a></li>			
+								<li><a href="/community/board.do?business_type=공지사항">공지사항</a></li>			
 								<li><a href="/community/board.do?business_type=가입인사(등업)">가입인사(등업)</a></li>
 								<li><a href="/community/board.do?business_type=질문및답변">질문및답변</a></li>
 								<li><a href="/community/board.do?business_type=정모와번개">정모와번개</a></li>

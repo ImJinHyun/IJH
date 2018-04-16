@@ -14,7 +14,7 @@ import com.sadan.entertainment.model.Entertainment_DTO;
 @Mapper
 public interface Entertainment_Mapper {
 
-	public List<Map<String, Object>> torento_Full_list(@Param("business_type") String business_type,@Param("criteria") SearchCriteria criteria)throws Exception;
+	public List<Map<String, Object>> board_list(@Param("business_type") String business_type,@Param("criteria") SearchCriteria criteria)throws Exception;
 	
 	public void board_insert(Entertainment_DTO entertainment_DTO);
 
