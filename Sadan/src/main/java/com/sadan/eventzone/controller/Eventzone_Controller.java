@@ -31,13 +31,15 @@ public class Eventzone_Controller {
 	private Eventzone_Service eventzone_service;
 	
 	@RequestMapping("/eventzone/main.do")
-	private String eventzone(Model model,SearchCriteria criteria) {
+	private String eventzone_main(Model model,SearchCriteria criteria) {
 		String type[] = {"유그이벤트","개별업소이벤트","고렙이벤트","즉석복권","레이싱게임"};
 		Map<String, Object> map = new HashMap<String, Object>();
 		try {
 			for (int i = 0; i < type.length; i++) {
-				System.out.println(type[i]);
-				map = eventzone_service.board_list(type[i], criteria);
+				
+				criteria.setBusiness_type(type[i]);
+				
+				map = eventzone_service.board_list(criteria);
 				@SuppressWarnings({ "unchecked", "unused" })
 				List<Map<String, Object>> list = (List<Map<String, Object>>) map.get("list");
 				model.addAttribute("event"+i, list);
@@ -56,18 +58,16 @@ public class Eventzone_Controller {
 	 * @throws Exception
 	 */
 	@RequestMapping(value="/eventzone/board.do")
-	private String eventzone(Model model,@RequestParam String business_type,SearchCriteria criteria)throws Exception {
+	private String eventzone(Model model,SearchCriteria criteria)throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();
 		PageMaker pageMaker =new PageMaker();
-		try {
-			map = eventzone_service.board_list(business_type,criteria);
-			System.out.println(business_type);
-			pageMaker.setCri(criteria);
-			pageMaker.setTotalCount(eventzone_service.getRow(business_type));
+		try { 
+			map = eventzone_service.board_list(criteria);
+			pageMaker.setCri(criteria); 
+			pageMaker.setTotalCount(eventzone_service.getRow(criteria));
 			@SuppressWarnings({ "unchecked", "unused" })
-			List<Map<String, Object>> list = (List<Map<String, Object>>) map.get("list");
+			List<Map<String, Object>> list = (List<Map<String, Object>>) map.get("list"); 
 			model.addAttribute("eventzone", list);
-			model.addAttribute("business_type", business_type);
 			model.addAttribute("pageMaker",pageMaker);
 			System.out.println(list);
 		} catch (Exception e) {

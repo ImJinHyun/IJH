@@ -12,7 +12,7 @@ import com.sadan.useafter.model.Useafter_DTO;
 @Mapper
 public interface Useafter_Mapper {
 
-	public List<Map<String, Object>> room_Full_list(@Param("business_type") String business_type,@Param("criteria") SearchCriteria criteria)throws Exception;
+	public List<Map<String, Object>> room_Full_list(@Param("criteria") SearchCriteria criteria)throws Exception;
 
 	public void board_insert(Useafter_DTO useafter_DTO);
 
@@ -22,7 +22,7 @@ public interface Useafter_Mapper {
 
 	public void board_modify(Useafter_DTO useafter_DTO)throws Exception;
 
-	public int getRow(String business_type) throws Exception;
+	public int getRow(@Param("criteria") SearchCriteria criteria) throws Exception;
 
 	
 }

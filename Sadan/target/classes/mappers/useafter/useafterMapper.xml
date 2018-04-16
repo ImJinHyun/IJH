@@ -21,8 +21,15 @@
 		    , secret 
 		    from useafter 
 		    where 
-		 	<include refid="search"></include>
-		    business_type = #{business_type}
+		    1=1
+		 	<if test="criteria.business_type != 'n'.toString() and criteria.business_type != null and criteria.business_type != ''.toString()">
+		    and  business_type = #{criteria.business_type}
+		    </if>
+		   	<if test="criteria.location != null and  criteria.location != ''.toString() and criteria.location != 'n'.toString()">
+		   	and location = #{criteria.location}
+		   	</if>
+		    
+		    <include refid="search"></include>
 		    order by no desc
 		    ) as after,
 				    (select @rn:=0) as R
@@ -33,24 +40,22 @@
 			
 			<!-- 검색조건 쿼리 -->
 			<sql id="search">
-				<if test="criteria.searchType != 'n'.toString() and searchType != null and searchType != ''.toString()">
-							where 1=0
-			<!-- 강남 -->
-			<if test="gangNam">
-				or title like CONCAT(CONCAT('%',#{keyword}),'%')
+			<if test="criteria.searchType != 'n'.toString() and criteria.searchType != null and criteria.searchType != ''.toString()">
+							and 1=0
+			<!-- 제목 -->
+			<if test="criteria.subject">
+				or subject like CONCAT(CONCAT('%',#{criteria.keyword}),'%')
 			</if>
-			<!-- 비강남 -->
-			<if test="nonGangNam">
-				or content like CONCAT(CONCAT('%',#{keyword}),'%')
+			<!-- 내용 -->
+			<if test="criteria.content">
+				or content like CONCAT(CONCAT('%',#{criteria.keyword}),'%')
 			</if>
-			<!-- 인천 -->
-			<if test="inCheon">
-				or writer like CONCAT(CONCAT('%',#{keyword}),'%')
+			<!-- 작성자 -->
+			<if test="criteria.writer">
+				or writer like CONCAT(CONCAT('%',#{criteria.keyword}),'%')
 			</if>
 			
-			<if test="gyeonGi">
-				or writer like CONCAT(CONCAT('%',#{keyword}),'%')
-			</if>
+
 		</if>
 	</sql>
 	
@@ -58,7 +63,18 @@
 	<select id="getRow" resultType="Integer">
 	select count(*)
 	from useafter
-	where business_type = #{business_type}
+	where 
+	1=1
+	<if test="criteria.business_type != 'n'.toString() and criteria.business_type != null and criteria.business_type != ''.toString()">
+	and business_type = #{criteria.business_type}
+	</if>
+		<if test="criteria.location != null and  criteria.location != '' and  criteria.location != 'n'.toString()">
+		   	and location = #{criteria.location}
+		</if>
+		
+		
+		<!-- 검색조건 쿼리 -->
+			<include refid="search"></include>
 	</select>
 	
 	<insert id="board_insert" parameterType="String">

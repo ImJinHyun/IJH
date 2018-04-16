@@ -12,7 +12,7 @@ import com.sadan.eventzone.model.Eventzone_DTO;
 @Mapper
 public interface Eventzone_Mapper {
 	
-	public List<Map<String, Object>> board_list(@Param("business_type") String business_type,@Param("criteria") SearchCriteria criteria)throws Exception;
+	public List<Map<String, Object>> board_list(@Param("criteria") SearchCriteria criteria)throws Exception;
 	
 	public void board_insert(Eventzone_DTO eventzone_DTO);
 
@@ -22,7 +22,7 @@ public interface Eventzone_Mapper {
 
 	public void board_modify(Eventzone_DTO eventzone_DTO)throws Exception;
 
-	public int getRow(String business_type) throws Exception;
+	public int getRow(@Param("criteria") SearchCriteria criteria) throws Exception;
 
 	public Eventzone_DTO main_List();
 }

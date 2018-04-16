@@ -34,6 +34,7 @@ public class PageMaker {
 			.queryParam("perPageNum", cri.getPerPageNum())
 			.queryParam("searchType", cri.getSearchType())
 			.queryParam("keyword", cri.getKeyword())
+			.queryParam("location", cri.getLocation())
 			.build();
 //		System.out.println(uriComponents.toUriString());
 		return uriComponents.toUriString();

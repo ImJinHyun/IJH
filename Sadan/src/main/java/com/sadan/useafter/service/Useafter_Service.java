@@ -29,10 +29,10 @@ public class Useafter_Service {
 	private Useafter_Mapper useafter_Mapper;
 
 	@Transactional
-	public Map<String, Object> room_Full_list(String business_type, SearchCriteria criteria)throws Exception {
+	public Map<String, Object> room_Full_list(SearchCriteria criteria)throws Exception {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		try {
-			resultMap.put("list", useafter_Mapper.room_Full_list(business_type,criteria));
+			resultMap.put("list", useafter_Mapper.room_Full_list(criteria)); 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -54,8 +54,8 @@ public class Useafter_Service {
 	}
 
 
-	public int getRow(String business_type) throws Exception{
-		return useafter_Mapper.getRow(business_type); 
+	public int getRow(SearchCriteria criteria) throws Exception{
+		return useafter_Mapper.getRow(criteria); 
 	}
 	
 	@Transactional

@@ -21,36 +21,53 @@
 	</div>
 	<!-- 검색 시작 -->
 	<form action="fullssa.do?business_type=룸/풀싸롱">
-	<select class="form-control">
-		<option value="n" ${pageMaker.cri.searchType == null or cri.searchType == "n"?"selected='selected'":"" } >전체</option>
-	 	<option value="gangNam" ${pageMaker.cri.searchType =="gangNam"?"selected='selected'":"" }>강남</option> 
-	 	<option value="nonGangNam"${pageMaker.cri.searchType =="nonGangNam"?"selected='selected'":"" }>비강남</option> 
-	 	<option value="inCheon"${pageMaker.cri.searchType =="incheon"?"selected='selected'":"" }>인천</option> 
-	 	<option value="gyeonGi"${pageMaker.cri.searchType =="gyeonGi"?"selected='selected'":"" }>경기</option> 
-	 	<option value="buSan" ${pageMaker.cri.searchType =="buSan"?"selected='selected'":"" }>부산</option>
-	 	<option value="ulSan" ${pageMaker.cri.searchType =="ulSan"?"selected='selected'":"" }>울산/경남/제주</option>
-	 	<option value="daeGu" ${pageMaker.cri.searchType =="daeGu"?"selected='selected'":"" }>대구</option>
-	 	<option value="gyeongBuk" ${pageMaker.cri.searchType =="gyeongBuk"?"selected='selected'":"" }>경북</option>
-	 	<option value="gwangJu" ${pageMaker.cri.searchType =="gwangJu"?"selected='selected'":"" }>광주/전라</option>
-	 	<option value="daeJeon" ${pageMaker.cri.searchType =="daeJeon"?"selected='selected'":"" }>대전/충청/세종</option>
-	 	<option value="gangWon" ${pageMaker.cri.searchType =="gangWon"?"selected='selected'":"" }>강원</option> 
+	<input type="hidden" name="page" value="1"/>
+			<input type="hidden" name="perPageNum" value="${pageMaker.cri.perPageNum }"/>
+			
+			<!-- 1차 분류 -->
+	<select class="form-control" name="location">
+		<option value="n" ${pageMaker.cri.location == null or cri.location == "n"?"selected='selected'":"" } >전체</option>
+	 	<option value="강남" ${pageMaker.cri.location =="강남"?"selected='selected'":"" }>강남</option> 
+	 	<option value="비강남"${pageMaker.cri.location =="비강남"?"selected='selected'":"" }>비강남</option> 
+	 	<option value="인천"${pageMaker.cri.location =="인천"?"selected='selected'":"" }>인천</option> 
+	 	<option value="경기"${pageMaker.cri.location =="경기"?"selected='selected'":"" }>경기</option> 
+	 	<option value="부산" ${pageMaker.cri.location =="부산"?"selected='selected'":"" }>부산</option>
+	 	<option value="울산" ${pageMaker.cri.location =="울산"?"selected='selected'":"" }>울산/경남/제주</option>
+	 	<option value="대구" ${pageMaker.cri.location =="대구"?"selected='selected'":"" }>대구</option>
+	 	<option value="경북" ${pageMaker.cri.location =="경북"?"selected='selected'":"" }>경북</option>
+	 	<option value="광주" ${pageMaker.cri.location =="광주"?"selected='selected'":"" }>광주/전라</option>
+	 	<option value="대전" ${pageMaker.cri.location =="대전"?"selected='selected'":"" }>대전/충청/세종</option>
+	 	<option value="강원" ${pageMaker.cri.location =="강원"?"selected='selected'":"" }>강원</option> 
 	 </select>
 	 
 	 <!-- 2차 분류 (보류 : 2018.04.12) -->
-<!-- 	 <select class="form-control"> -->
-<!-- 	 	<option>룸/풀싸롱</option>  -->
-<!-- 	 	<option>노래방/나이트/바</option>  -->
-<!-- 	 	<option>아로마</option>  -->
-<!-- 	 	<option>출장마사지</option>  -->
-<!-- 	 	<option>스포츠마사지</option> -->
-<!-- 	 	<option>키스방</option> -->
-<!-- 	 	<option>오피</option> -->
-<!-- 	 	<option>휴게텔</option> -->
-<!-- 	 	<option>기타업소</option>  -->
-<!-- 	 </select> -->
+	 <select class="form-control" name="business_type">
+	 <option value="n" ${pageMaker.cri.business_type == null or cri.business_type == "n"?"selected='selected'":"" } >전체</option>
+	 <option value="룸/풀싸롱" ${pageMaker.cri.business_type == "룸/풀싸롱"?"selected='selected'":"" } >룸/풀싸롱</option>
+	 <option value="노래방/나이트/바" ${pageMaker.cri.business_type == "노래방/나이트/바"?"selected='selected'":"" } >노래방/나이트/바</option>
+	 <option value="아로마" ${pageMaker.cri.business_type == "아로마"?"selected='selected'":"" } >아로마</option>
+	 <option value="출장마사지" ${pageMaker.cri.business_type == "출장마사지"?"selected='selected'":"" } >출장마사지</option>
+	 <option value="스포츠마사지" ${pageMaker.cri.business_type == "스포츠마사지"?"selected='selected'":"" } >스포츠마사지</option>
+	 <option value="키스방" ${pageMaker.cri.business_type == "키스방"?"selected='selected'":"" } >키스방</option>
+	 <option value="오피" ${pageMaker.cri.business_type == "오피"?"selected='selected'":"" } >오피</option>
+	 <option value="휴게텔" ${pageMaker.cri.business_type == "휴게텔"?"selected='selected'":"" } >휴게텔</option>
+	 <option value="기타업소" ${pageMaker.cri.business_type == "기타업소"?"selected='selected'":"" } >기타업소</option>
+	 </select>
 
-	 <input type="text" class="form-control" id="usr">
-	 <button type="button" class="btn">검색</button>
+	<!-- 3차 분류 (보류 : 2018.04.17) -->
+	 <select class="form-control" name="searchType">
+	 <option value="n" ${pageMaker.cri.searchType == null or cri.business_type == "n"?"selected='selected'":"" } >---</option>
+	 <option value="t" ${pageMaker.cri.searchType== "t"?"selected='selected'":"" } >제목</option>
+	 <option value="c" ${pageMaker.cri.searchType == "c"?"selected='selected'":"" } >내용</option>
+	 <option value="w" ${pageMaker.cri.searchType == "w"?"selected='selected'":"" } >작성자</option>
+	 <option value="tc" ${pageMaker.cri.searchType == "tc"?"selected='selected'":"" } >제목 + 내용</option>
+	 <option value="tw" ${pageMaker.cri.searchType == "tw"?"selected='selected'":"" } >제목 + 작성자</option>
+	 <option value="cw" ${pageMaker.cri.searchType == "cw"?"selected='selected'":"" } >내용 + 작성자</option>
+	 <option value="tcw" ${pageMaker.cri.searchType == "tcw"?"selected='selected'":"" } >전체</option>
+	 </select>
+
+	 <input name="keyword" value="${pageMaker.cri.keyword }" />
+	 <button type="submit" class="btn">검색</button>
 	 </form>		 
 	 <!-- 게시글 시작 -->
 	<table class="table table-hover">
@@ -91,7 +108,7 @@
 			<ul class="pagination">
 			<!-- 이전 페이지 처리 -->
 						<c:if test="${pageMaker.prev }">
-							<li><a href="fullssa.do?page=${pageMaker.startPage -1 }&business_type=룸/풀싸롱	">&laquo;</a></li>
+							<li><a href="fullssa.do?page=${pageMaker.startPage -1 }&location=${pageMaker.cri.location }&business_type=룸/풀싸롱	">&laquo;</a></li>
 						</c:if>
 						
 				<!-- 시작 페이지부터 끝 페이지까지 반복 처리 -->
@@ -104,7 +121,7 @@
 						
 				<!-- 다음 페이지 처리 -->
 						<c:if test="${pageMaker.next }">
-							<li><a href="fullssa.do?page=${pageMaker.endPage + 1 }&business_type=룸/풀싸롱">&raquo;</a></li>
+							<li><a href="fullssa.do?page=${pageMaker.endPage + 1 }&location=${pageMaker.cri.location }&business_type=룸/풀싸롱">&raquo;</a></li>
 						</c:if>
 						
 			</ul>

@@ -4,7 +4,19 @@ public class SearchCriteria extends Criteria{
 
 	private String searchType; // 검색의 항목 저장
 	private String keyword; // 검색 데이터 저장
+	private String location;
+	private String business_type;
+	
+	private String content;
+	private String subject;
+	private String writer;
 
+	public String getBusiness_type() {
+		return business_type;
+	}
+	public void setBusiness_type(String business_type) {
+		this.business_type = business_type;
+	}
 	public String getSearchType() {
 		return searchType;
 	}
@@ -18,74 +30,34 @@ public class SearchCriteria extends Criteria{
 		this.keyword = keyword;
 	}
 
-	// 제목으로 검색하는 아닌지 알아 내는 getter
-	public boolean isTitleType() {
+	
+
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	// 작성자로 검색하는 아닌지 알아 내는 getter
+	public boolean isSubject() {
 		if(searchType.indexOf("t")<0) return false; // 없는 경우
 		else return true; // 있는 경우
 	}
-
-	// 내용으로 검색하는 아닌지 알아 내는 getter
-	public boolean isContentType() {
+	
+	public boolean isContent() {
 		if(searchType.indexOf("c")<0) return false; // 없는 경우
 		else return true; // 있는 경우
 	}
-
-	// 작성자로 검색하는 아닌지 알아 내는 getter
-	public boolean isWriterType() {
+	public boolean isWriter() {
 		if(searchType.indexOf("w")<0) return false; // 없는 경우
 		else return true; // 있는 경우
 	}
-
-	// 작성자로 검색하는 아닌지 알아 내는 getter
-	public boolean isGangNam() {
-		if(searchType.indexOf("gangNam")<0) return false; // 없는 경우
-		else return true; // 있는 경우
-	}
-	
-	public boolean isNonGangNam() {
-		if(searchType.indexOf("nonGangNam")<0) return false; // 없는 경우
-		else return true; // 있는 경우
-	}
-	public boolean isInCheon() {
-		if(searchType.indexOf("inCheon")<0) return false; // 없는 경우
-		else return true; // 있는 경우
-	}
-	public boolean isGyeonGi() {
-		if(searchType.indexOf("gyeonGi")<0) return false; // 없는 경우
-		else return true; // 있는 경우
-	}
-	public boolean isBuSan() {
-		if(searchType.indexOf("buSan")<0) return false; // 없는 경우
-		else return true; // 있는 경우
-	}
-	public boolean isUlSan() {
-		if(searchType.indexOf("ulSan")<0) return false; // 없는 경우
-		else return true; // 있는 경우
-	}
-	public boolean isDaeGu() {
-		if(searchType.indexOf("daeGu")<0) return false; // 없는 경우
-		else return true; // 있는 경우
-	}
-	public boolean isGyeongBuk() {
-		if(searchType.indexOf("geyongBuk")<0) return false; // 없는 경우
-		else return true; // 있는 경우
-	}
-	public boolean isGwangJu() {
-		if(searchType.indexOf("gwangJu")<0) return false; // 없는 경우
-		else return true; // 있는 경우
-	}
-	public boolean isDaeJeon() {
-		if(searchType.indexOf("daeJeon")<0) return false; // 없는 경우
-		else return true; // 있는 경우
-	}
-	public boolean isGangWon() {
-		if(searchType.indexOf("gangWon")<0) return false; // 없는 경우
-		else return true; // 있는 경우
-	}
-	
 	@Override
 	public String toString() {
-		return "SearchCriteria [searchType=" + searchType + ", keyword=" + keyword
-				+ "]+,"+super.toString();
+		return "SearchCriteria [searchType=" + searchType + ", keyword=" + keyword + ", location=" + location
+				+ ", business_type=" + business_type + ", content=" + content + ", subject=" + subject + ", writer="
+				+ writer + "]";
 	}
+
 }

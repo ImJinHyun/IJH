@@ -1,45 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
-	xmlns:tx="http://www.springframework.org/schema/tx"
-	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
 		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
-	
+
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"	>
-		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://211.117.148.143:3306/sadan?serverTimezone=UTC"></property>
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
+		<property name="url"
+			value="jdbc:log4jdbc:mysql://211.117.148.143:3306/sadan?serverTimezone=UTC"></property>
 		<property name="username" value="admin"></property>
 		<property name="password" value="1111"></property>
 	</bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation" value="classpath:/mybatis-config.xml">
+		</property>
+		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"></property>
+		<!-- /**/*Mapper.xml 폴더가 여러개 와도 상관없다. -->
+	</bean>
+
+<!-- 	<bean id="dataSource" class=""> -->
+<!-- 		<constructor-arg ref="dataSourceSpied" /> -->
+<!-- 		<property name="logFormatter"> -->
+<!-- 			<bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter"> -->
+<!-- 				<property name="loggingType" value="MULTI_LINE" /> -->
+<!-- 				<property name="sqlPrefix" value="SQL:::" /> -->
+<!-- 			</bean> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
 	
-		  <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		  	<property name="dataSource" ref="dataSource"></property>
-		  	<property name="configLocation" value="classpath:/mybatis-config.xml">	</property>
-		  	<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"></property>
-		  	<!-- /**/*Mapper.xml 폴더가 여러개 와도 상관없다. -->
-		  </bean>
-		  
-		  <!-- 134 Mybatis Template 설정 -->
-		  <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" >
-		  <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
-		  </bean>
-		  
-		  	<!-- Transaction p.489 -->
+	
+
+
+	<!-- 134 Mybatis Template 설정 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+	</bean>
+
+	<!-- Transaction p.489 -->
 	<bean id="transactionManager"
-	class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
-	
+
 	<!-- Transaction 처리를 위해서 @Transactional 어노테이션을 사용할 수 있도록 해준다. -->
-	<tx:annotation-driven/>
-	
+	<tx:annotation-driven />
+
 </beans>

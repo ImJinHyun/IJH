@@ -28,10 +28,10 @@ public class Eventzone_Service {
 	@Autowired
 	private Eventzone_Mapper eventzone_Mapper;
 	
-	public Map<String, Object> board_list(String business_type, SearchCriteria criteria) {
+	public Map<String, Object> board_list(SearchCriteria criteria) {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		try {
-			resultMap.put("list", eventzone_Mapper.board_list(business_type,criteria));
+			resultMap.put("list", eventzone_Mapper.board_list(criteria)); 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -51,8 +51,8 @@ public class Eventzone_Service {
 	
 	}
 
-	public int getRow(String business_type) throws Exception{
-		return eventzone_Mapper.getRow(business_type);
+	public int getRow(SearchCriteria criteria) throws Exception{
+		return eventzone_Mapper.getRow(criteria); 
 	}
 	
 	@Transactional

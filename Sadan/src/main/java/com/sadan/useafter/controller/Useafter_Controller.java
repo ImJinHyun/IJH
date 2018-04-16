@@ -63,19 +63,19 @@ public class Useafter_Controller {
 //				}
 				
 				@RequestMapping(value="/useafter/fullssa.do")
-				private String Pagefullssa(SearchCriteria criteria,Model model,@RequestParam String business_type)throws Exception {
+				private String Pagefullssa(SearchCriteria criteria,Model model)throws Exception {
 					Map<String, Object> map = new HashMap<String, Object>();
 					PageMaker pageMaker = new PageMaker();
 					try {
 						//게시글 불러오기
-						map = useafter_service.room_Full_list(business_type,criteria);
-						System.out.println(business_type);
+						map = useafter_service.room_Full_list(criteria);
+						
 						
 						
 						//페이징처리
 						pageMaker.setCri(criteria);
 						//페이지 전체 갯수 구하기
-						pageMaker.setTotalCount(useafter_service.getRow(business_type));
+						pageMaker.setTotalCount(useafter_service.getRow(criteria));
 						
 						System.out.println(pageMaker);
 						@SuppressWarnings({ "unchecked", "unused" })
