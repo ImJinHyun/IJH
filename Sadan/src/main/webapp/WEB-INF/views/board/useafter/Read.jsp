@@ -25,6 +25,9 @@ $(function(){
 		$("#useafter_Form").attr("action","board_modify.do").submit();
 	});
 	
+	$("#recommand").on("click",function(){
+		
+	});
 	
 });
 </script>
@@ -107,7 +110,8 @@ $(function(){
 				${useafter.content }
 			</div>
 			
-			
+			<button id="recommand">추천</button>
+			<button>신고</button>
 			
 			<div class="clear"></div>
 			<!-- 본문 내용 끝 -->

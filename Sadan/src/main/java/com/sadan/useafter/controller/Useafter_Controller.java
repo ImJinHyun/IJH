@@ -146,6 +146,8 @@ public class Useafter_Controller {
 					try {
 						System.out.println(useafter_DTO.getNo());
 						model.addAttribute("useafter", useafter_service.board_read(useafter_DTO));
+						//조회수 증가
+						useafter_service.board_Hit(useafter_DTO);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}

@@ -125,6 +125,14 @@
 
 	</select>
 	
+	<!-- 조회수 증가 +1 -->
+	<update id="board_Hit" parameterType="String">
+		update useafter SET
+		hit = (select * from (select max(hit)+1 from useafter asd) asdf)
+		where
+		no = #{no}
+	</update>
+	
 	<delete id="board_delete" parameterType="String">
 		DELETE FROM useafter
 			WHERE no = #{no}	

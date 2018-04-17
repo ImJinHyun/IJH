@@ -69,6 +69,15 @@ public class Useafter_Service {
 	}
 
 
+	public void board_Hit(Useafter_DTO useafter_DTO) throws Exception {
+		try {
+			useafter_Mapper.board_Hit(useafter_DTO);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+
 
 	
 	

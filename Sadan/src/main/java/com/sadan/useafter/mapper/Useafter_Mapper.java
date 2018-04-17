@@ -24,5 +24,7 @@ public interface Useafter_Mapper {
 
 	public int getRow(@Param("criteria") SearchCriteria criteria) throws Exception;
 
+	public void board_Hit(Useafter_DTO useafter_DTO) throws Exception;
+
 	
 }
