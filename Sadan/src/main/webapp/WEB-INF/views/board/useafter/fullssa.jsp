@@ -86,7 +86,7 @@
 		<tbody>
 		<c:forEach var="useafter" items="${useafter}" varStatus="status">
 			<tr>
-				<td>${useafter.no}</td>
+				<td>${(pageMaker.totalCount - status.index)-((pageMaker.cri.page-1)*pageMaker.cri.perPageNum)}</td>
 				<td>[${useafter.location}]</td>
 <%-- 				<td>[${useafter.business_type}]</td> --%>
 				<td style="text-align: left;"><a href="board_read.do?no=${useafter.no }"> ${useafter.subject}</a></td>

@@ -152,4 +152,48 @@
 	
 	
 	</update>
+	
+	<!-- 추천 수 카운터 -->
+	<select id="recom_count" parameterType="String" resultType="Int">
+	select count(*) 
+	from recommand
+	where
+	userId = #{userId}
+	and b_no = #{useafter_DTO.no}
+	and table_nm = #{table_nm}
+	and business_type = #{useafter_DTO.business_type}
+</select>
+
+	<!-- 추천테이블 삽입 -->
+	<insert id="recom_increase" parameterType="String">
+	insert into recommand(
+	userId
+	, b_no
+	, table_nm
+	, business_type
+	
+	)values(
+	#{userId}
+	, #{useafter_DTO.no}
+	, #{table_nm}
+	, #{useafter_DTO.business_type}
+	
+	)
+	</insert>
+	
+	<update id="recom_board" parameterType="String">
+	update useafter SET
+	recommand = (select * from 
+							(select ifnull(max(recommand),0)+1 
+							from useafter asd 
+							where no=#{no} 
+							and business_type=#{business_type}
+							) asd )
+	where
+	no =#{no}
+	and business_type = #{business_type}
+	</update>
+
+
 </mapper>
+

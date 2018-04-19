@@ -26,9 +26,17 @@ $(function(){
 	});
 	
 	$("#recommand").on("click",function(){
-		
+		$("#useafter_Form").attr("action","recommand.do").submit();
 	});
 	
+	
+	// 게시글을 추천 후 성공/실패를 한번만 경고 창을 띄운다.
+	var result = "${msg }";
+	if(result=="RECOMMANDSUCCESS")
+		alert("게시글이 추천 되었습니다.");
+	
+	if(result=="RECOMMANDFAILED")
+		alert("추천은 게시글당 1번만 가능합니다.");
 });
 </script>
 </head>

@@ -7,9 +7,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,6 +26,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sadan.common.model.PageMaker;
 import com.sadan.common.model.SearchCriteria;
+import com.sadan.member.model.LoginDTO;
 import com.sadan.useafter.model.Useafter_DTO;
 import com.sadan.useafter.service.Useafter_Service;
 
@@ -218,6 +223,44 @@ public class Useafter_Controller {
 					return "redirect:fullssa.do?business_type="+goURL;
 				}
 
+				
+				@RequestMapping("/useafter/recommand.do")
+				private  String recommand(Useafter_DTO useafter_DTO,HttpServletRequest request,RedirectAttributes rttr, SearchCriteria criteria) throws Exception
+				{
+					HttpSession session = request.getSession();
+					LoginDTO loginDTO =  (LoginDTO) session.getAttribute("login");
+					String userId = loginDTO.getUserId();
+					//서블릿 경로가 테이블 이름이라 서블릿에서 table명 추출
+					String table = request.getServletPath();
+					String table_path = table.substring(table.indexOf("/")+1);
+					String table_nm = table_path.substring(0,table_path.indexOf("/"));
+					//이미 추천했는지 count 뽑아오기
+					int recommand_Count = useafter_service.recom_count(useafter_DTO, table_nm,userId);
+					
+					System.out.println("컨트롤러 추천 여부======"+recommand_Count);
+					
+					
+					//IF 없으면 추천수 +1
+					if(recommand_Count ==0) {
+						//추천 테이블에 삽입
+						useafter_service.recom_increase(useafter_DTO, table_nm,userId);
+						
+						//게시글에 추천수 +1
+						useafter_service.recom_board(useafter_DTO);
+						
+						//추천이 완료되면 메세지를 딱 한번만 존재하게 글보기로 보낸다
+						rttr.addFlashAttribute("msg","RECOMMANDSUCCESS");
+					}
+					
+					if(recommand_Count !=0) {
+						rttr.addFlashAttribute("msg","RECOMMANDFAILED");
+					}
+					
+					//글보기로 이동
+					return "redirect:board_read.do?no="+useafter_DTO.getNo();
+					
+				}
+					
 				
 				/**
 				 * 노래방/나이트/바 게시글 목록

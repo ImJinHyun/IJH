@@ -78,6 +78,32 @@ public class Useafter_Service {
 	}
 
 
+	public int recom_count(Useafter_DTO useafter_DTO, String table_nm, String userId) throws Exception {
+		int recommand_Count = 0 ;;
+		try {
+			recommand_Count = useafter_Mapper.recom_count(useafter_DTO, table_nm, userId);
+			System.out.println("service========="+recommand_Count);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return recommand_Count; 
+	}
+
+
+	public void recom_increase(Useafter_DTO useafter_DTO, String table_nm, String userId) {
+		try {
+			useafter_Mapper.recom_increase(useafter_DTO,table_nm,userId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	public void recom_board(Useafter_DTO useafter_DTO) {
+		useafter_Mapper.recom_board(useafter_DTO);
+	}
+
+
 
 	
 	

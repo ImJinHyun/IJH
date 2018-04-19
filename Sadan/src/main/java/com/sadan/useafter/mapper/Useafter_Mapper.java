@@ -26,5 +26,12 @@ public interface Useafter_Mapper {
 
 	public void board_Hit(Useafter_DTO useafter_DTO) throws Exception;
 
+	public int recom_count(@Param("useafter_DTO") Useafter_DTO useafter_DTO,@Param("table_nm") String table_nm, @Param("userId")String userId);
+
+	public void recom_increase(@Param("useafter_DTO") Useafter_DTO useafter_DTO,@Param("table_nm") String table_nm, @Param("userId")String userId);
+
+	public void recom_board(Useafter_DTO useafter_DTO);
+
+
 	
 }
