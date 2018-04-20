@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.sadan.common.model.SearchCriteria;
 import com.sadan.useafter.model.Useafter_DTO;
+import com.sadan.useafter.model.Useafter_reply_DTO;
 
 @Mapper
 public interface Useafter_Mapper {
@@ -31,6 +32,11 @@ public interface Useafter_Mapper {
 	public void recom_increase(@Param("useafter_DTO") Useafter_DTO useafter_DTO,@Param("table_nm") String table_nm, @Param("userId")String userId);
 
 	public void recom_board(Useafter_DTO useafter_DTO);
+
+
+	public  List<Map<String, Object>> board_reply_list(@Param("criteria") SearchCriteria criteria,@Param("useafter_DTO") Useafter_DTO useafter_DTO);
+
+	public int getReplyRow(@Param("useafter_DTO") Useafter_DTO useafter_DTO);
 
 
 	

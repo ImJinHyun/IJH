@@ -37,6 +37,9 @@ $(function(){
 	
 	if(result=="RECOMMANDFAILED")
 		alert("추천은 게시글당 1번만 가능합니다.");
+	
+	if(result == "REPLY_INSERT_FAILED")
+		alert("댓글 작성에 실패하였습니다.관리자에게 문의해 주세요");
 });
 </script>
 </head>
@@ -93,18 +96,17 @@ $(function(){
 						<span style="color: blue; font-size:10px;">${useafter.recommand }</span>
 					</div>
 					<div style="float: right; color: #aaa;"></div>
-					<div class="clear"></div>
+					<div class="div_clear"></div>
 				</div>
 				<!-- 작성일 조회 추천 날짜 끝 -->
 				
-				<br>
-				<hr>	
 		</div>
 		<!-- 제목 끝 -->
-		<div class="clear">
+		<div class="div_clear">
 		</div>
 		
-		
+		<!-- 본문 감싸기 -->
+		<div class="board_warp">
 		
 		<!-- 글 본문 시작 -->
 			<!-- 예약문의시 18사단 회원임을 알려주세요 -->
@@ -118,16 +120,43 @@ $(function(){
 				${useafter.content }
 			</div>
 			
+		
+			
+			<!-- 본문 내용 끝 -->
+			<br><br>
 			<button id="recommand">추천</button>
 			<button>신고</button>
+			<br><br>
+			</div>		<!-- 본문 감싸기 끝 -->
 			
-			<div class="clear"></div>
-			<!-- 본문 내용 끝 -->
-		
 			<!-- 댓글 시작 -->
-			<div class="reply">
-			
+			<!-- 댓글 목록 감싸기 -->
+			<div	class="reply_list">
+			<c:forEach var="reply" items="${useafter_reply }">
+				<div class="reply_info">
+					${reply.replyer } 	<span class="info_bt">작성일 : </span><span class="info_st">${reply.regdate }  </span> 
+				</div>
+				
+				<div class="div_clear"></div>
+				<div class="reply_content">
+				${reply.replytext }
+				</div>
+			</c:forEach>
 			</div>
+			
+			
+				<!-- 댓글 쓰기 부분 감싸기 -->
+			
+			<form class="reply_insert" action="replies_insert.do">
+			<input type="hidden" name="no" value="${useafter.no }"/>
+			<input type="hidden" name="replyer" value="${login.userId }"/>
+				<textarea rows="5" cols="100" class="reply_text" required="required" name="replytext"></textarea>
+				<button>등록</button>
+				<input type="checkbox" name="secret"> 비밀글
+				
+				<div class="div_clear"></div>
+			</form>
+			
 		</div>
 		<!-- 바디 내용 끝 -->
 		

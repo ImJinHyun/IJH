@@ -146,11 +146,23 @@ public class Useafter_Controller {
 				 */
 				
 				@RequestMapping("/useafter/board_read.do")
-				private String board_read(Model model,Useafter_DTO useafter_DTO) throws Exception{
+				private String board_read(Model model,Useafter_DTO useafter_DTO,SearchCriteria criteria) throws Exception{
 					
 					try {
 						System.out.println(useafter_DTO.getNo());
+						PageMaker pageMaker = new PageMaker();
+						pageMaker.setCri(criteria);
+						pageMaker.setTotalCount(useafter_service.getReplyRow(useafter_DTO));
+						
+						System.out.println(pageMaker);
+						Map<String, Object> map = new HashMap<String, Object>();
+						map = useafter_service.board_reply_list(criteria,useafter_DTO);
+						@SuppressWarnings({ "unchecked", "unused" })
+						List<Map<String, Object>> list = (List<Map<String, Object>>) map.get("list");
+						
 						model.addAttribute("useafter", useafter_service.board_read(useafter_DTO));
+						model.addAttribute("useafter_reply",list);
+						model.addAttribute("pageMaker",pageMaker);
 						//조회수 증가
 						useafter_service.board_Hit(useafter_DTO);
 					} catch (Exception e) {
@@ -223,7 +235,15 @@ public class Useafter_Controller {
 					return "redirect:fullssa.do?business_type="+goURL;
 				}
 
-				
+				/**
+				 * 게시글 추천
+				 * @param useafter_DTO
+				 * @param request
+				 * @param rttr
+				 * @param criteria
+				 * @return
+				 * @throws Exception
+				 */
 				@RequestMapping("/useafter/recommand.do")
 				private  String recommand(Useafter_DTO useafter_DTO,HttpServletRequest request,RedirectAttributes rttr, SearchCriteria criteria) throws Exception
 				{
@@ -261,6 +281,25 @@ public class Useafter_Controller {
 					
 				}
 					
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 				/**
 				 * 노래방/나이트/바 게시글 목록

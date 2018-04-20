@@ -20,6 +20,7 @@ import com.sadan.chat.mapper.Chat_Mapper;
 import com.sadan.common.model.SearchCriteria;
 import com.sadan.useafter.mapper.Useafter_Mapper;
 import com.sadan.useafter.model.Useafter_DTO;
+import com.sadan.useafter.model.Useafter_reply_DTO;
 
 @Service
 public class Useafter_Service {
@@ -101,6 +102,25 @@ public class Useafter_Service {
 
 	public void recom_board(Useafter_DTO useafter_DTO) {
 		useafter_Mapper.recom_board(useafter_DTO);
+	}
+
+
+	
+
+
+	public Map<String, Object> board_reply_list(SearchCriteria criteria, Useafter_DTO useafter_DTO) {
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		try {
+			resultMap.put("list", useafter_Mapper.board_reply_list(criteria, useafter_DTO)); 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return resultMap;
+	} 
+
+
+	public int getReplyRow(Useafter_DTO useafter_DTO) {
+		return useafter_Mapper.getReplyRow(useafter_DTO);
 	}
 
 

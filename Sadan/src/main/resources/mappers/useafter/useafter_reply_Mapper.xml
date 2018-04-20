@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sadan.useafter.mapper.Useafter_reply_Mapper">
+
+
+	<select id="reply_list" parameterType="String">
+	select * from (select @rn:=@rn+1) as rownum), use_reply.*
+	(select rno
+	, no
+	, replytext
+	, replyer
+	, date_format(regdate,%Y-%m-%d) regdate
+	, date_format(updatedate, %Y-%m-%d) updatedate
+	
+	from 
+	useafter_reply
+	where no = #{reply_DTO.no}) use_reply
+	, (select @rn:=0) as R) after_reply
+	
+	where rownum between #{criteria.startRow} and #{criteria.endRow}
+		
+	
+	</select>
+	
+	<select id="getRow" parameterType="String">
+	select count(*)
+	from useafter_reply
+	where no = #{no}
+	</select>
+	
+	
+	<insert id="reply_insert">
+	insert into useafter_reply(
+		 no
+		 ,replytext 
+        ,replyer 
+	)values(
+		#{no}
+		, #{replytext}
+		, #{replyer}
+	)
+	</insert>
+
+</mapper>
+
