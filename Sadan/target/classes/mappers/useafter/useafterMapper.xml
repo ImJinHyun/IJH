@@ -115,8 +115,8 @@ select * from (select @rn:=@rn+1 as rownum, use_reply.*
 	, no
 	, replace(replace(replytext,'\r\n',''),'\r','') replytext
 	, replyer
-	, date_format(regdate,'%Y-%m-%d %h:%m') regdate
-	, date_format(updatedate, '%Y-%m-%d %h:%m') updatedate
+	, date_format(regdate,'%Y-%m-%d %h:%i') regdate
+	, date_format(updatedate, '%Y-%m-%d %h:%i') updatedate
 	
 	from 
 	useafter_reply
