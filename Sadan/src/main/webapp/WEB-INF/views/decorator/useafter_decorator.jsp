@@ -14,6 +14,9 @@
 <decorator:usePage id="thePage"/>
 <% String selection = thePage.getProperty("meta.selection"); %>
 
+
+
+
 <!-- header.jsp 에서 복사해서 가져오세요. -->
 <!DOCTYPE html>
 <html>
@@ -28,13 +31,13 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="/resources/js/bootstrap.js"></script>
 
-<script>
+<% session.setAttribute("goURI", request.getAttribute("javax.servlet.forward.request_uri")); %>
 
-</script>
 <decorator:head />
 </head>
 
 <body>
+
 <div class="all">
 									
 			<div class="header">

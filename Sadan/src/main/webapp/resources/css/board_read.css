@@ -161,3 +161,30 @@ hr{
 .reply_content{
 	background-color: white;
 }
+
+.reply_info{
+	float : left;
+	width:70%;
+}
+
+.reply_modify{
+	float:right;
+	width:29%;
+	text-align: right;
+}
+
+.cursor{
+	cursor: pointer;
+}
+.reply_bt {
+	color : #25183f;
+	font-family: '돋움',Dotum,Verdana,applegothic;
+	font-size : 11px;
+	text-align: right;
+}
+.reply_st {
+	color : #d90000;
+	font-family: '돋움',Dotum,Verdana,applegothic;
+	font-size : 11px;
+	text-align: right;
+}

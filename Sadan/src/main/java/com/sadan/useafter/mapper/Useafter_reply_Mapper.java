@@ -22,6 +22,10 @@ public interface Useafter_reply_Mapper {
 
 	public int getRow(String no);
 
+	public void reply_update(Useafter_reply_DTO useafter_reply_DTO);
+
+	public void reply_delete(Useafter_reply_DTO useafter_reply_DTO);
+
 
 	
 }

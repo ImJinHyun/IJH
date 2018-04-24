@@ -40,6 +40,45 @@ $(function(){
 	
 	if(result == "REPLY_INSERT_FAILED")
 		alert("댓글 작성에 실패하였습니다.관리자에게 문의해 주세요");
+
+	if(result == "REPLY_UPDATE_SUCCESS")
+		alert("댓글이 수정되었습니다.");
+	
+	if(result == "REPLY_UPDATE_FAILED")
+		alert("댓글 수정에 실패하였습니다.관리자에게 문의해 주세요");
+	
+	if(result == "REPLY_DELETE_SUCCESS")
+		alert("댓글이 삭제되었습니다.");
+	
+	if(result == "REPLY_DELETE_FAILED")
+		alert("댓글 삭제에 실패하였습니다.관리자에게 문의해 주세요");
+	
+	//수정 클릭시
+	$("#btn_reply_modify").on("click",function(){
+		var content = $(this).parent().parent().children("#content").html();
+		var rno =  $(this).parent().parent().children("#reply_info").children("#rno").attr("value");
+		$(this).parent().parent().children("#content").empty();
+		$(this).parent().parent().children("#reply_modify").remove();
+		$(this).parent().parent().children("#content").append("			<form class='reply_insert' action='replies_update.do' id='reply_modify' method='post'>"
+			+"<input type='hidden' name='no' value='${useafter.no }'/>"
+			+"<input type='hidden' name='rno' value='"+rno+"'/>"
+				+"<input type='hidden' name='replyer' value='${login.nickname }''/>"
+					+"<textarea rows='5' cols='100' class='reply_text' required='required' name='replytext'>"+content+"</textarea>"
+					+"<button type='submit'>수정</button>"
+					+"<input type='checkbox' name='secret'> 비밀글"
+					
+					+"<div class='div_clear'></div>"
+					+"</form>"
+					);
+	});
+	
+	$("#btn_reply_delete").on("click",function(){
+		if(confirm("댓글을 삭제하시겠습니까?")){
+			var rno =  $(this).parent().parent().children("#reply_info").children("#rno").attr("value");
+			var no = ${useafter.no};
+			location.href="/useafter/replies_delete.do?rno="+rno+"&no="+no;
+		}
+	});
 });
 </script>
 </head>
@@ -133,13 +172,28 @@ $(function(){
 			<!-- 댓글 목록 감싸기 -->
 			<div	class="reply_list">
 			<c:forEach var="reply" items="${useafter_reply }">
-				<div class="reply_info">
-					${reply.replyer } 	<span class="info_bt">작성일 : </span><span class="info_st">${reply.regdate }  </span> 
+			<div id="clicksel">
+				<div class="reply_info" id="reply_info">
+					${reply.replyer } 	<span class="info_bt">작성일 : </span><span class="info_st">${reply.regdate }  </span>
+					 
+					 <input type="hidden" value="${reply.rno}" id="rno" name="rno">
 				</div>
 				
-				<div class="div_clear"></div>
-				<div class="reply_content">
+				<div class="reply_modify">
+				<c:choose>
+					<c:when test="${reply.replyer == login.nickname }">
+					<span class="reply_bt cursor" id="btn_reply_modify">수정 | </span> 			<span class="reply_st cursor"  id="btn_reply_delete">삭제</span>
+					</c:when>
+					<c:otherwise>
+					<span class="reply_st cursor">신고</span> 			<span class="reply_bt cursor"> | 답변</span>
+					</c:otherwise>
+				</c:choose>
+				
+				</div>
+				<div class="div_clear" id="reply_in"></div>
+				<div class="reply_content" id="content">
 				${reply.replytext }
+				</div>
 				</div>
 			</c:forEach>
 			</div>
@@ -147,10 +201,10 @@ $(function(){
 			
 				<!-- 댓글 쓰기 부분 감싸기 -->
 			
-			<form class="reply_insert" action="replies_insert.do">
+			<form class="reply_insert" action="replies_insert.do" method="post">
 			<input type="hidden" name="no" value="${useafter.no }"/>
-			<input type="hidden" name="replyer" value="${login.userId }"/>
-				<textarea rows="5" cols="100" class="reply_text" required="required" name="replytext"></textarea>
+			<input type="hidden" name="replyer" value="${login.nickname }"/>
+				<textarea  rows="5" cols="100" class="reply_text" required="required" name="replytext"></textarea>
 				<button>등록</button>
 				<input type="checkbox" name="secret"> 비밀글
 				

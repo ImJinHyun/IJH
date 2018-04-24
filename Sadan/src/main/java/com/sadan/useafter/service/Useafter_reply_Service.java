@@ -56,6 +56,20 @@ public class Useafter_reply_Service {
 
 
 
+	public void reply_update(Useafter_reply_DTO useafter_reply_DTO) {
+		useafter_reply_Mapper.reply_update(useafter_reply_DTO);
+		
+	}
+
+
+
+	public void reply_delete(Useafter_reply_DTO useafter_reply_DTO) {
+		useafter_reply_Mapper.reply_delete(useafter_reply_DTO);
+		
+	}
+
+
+
 	
 	
 	

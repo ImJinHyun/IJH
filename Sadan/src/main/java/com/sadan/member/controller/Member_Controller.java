@@ -87,7 +87,7 @@ public class Member_Controller {
 		
 		loginDTO  = member_Service.login(loginDTO);
 		logger.info(""+loginDTO);
-		
+		String goURI = "../Index/main.do";
 		if(loginDTO == null ){
 			// login 실패할 때의 처리
 			return "redirect:../Index/main.do";
@@ -95,12 +95,18 @@ public class Member_Controller {
 		else{ // 로그인이 성공했을 때
 			session.setAttribute("login", loginDTO);
 			
+			  if(session.getAttribute("goURI") != null) {
+				  goURI=(String)session.getAttribute("goURI");
+				  // 정상적인 login.do를 실행한 경우 session이 남아 있으면 session쪽으로 이동은 방지
+				  session.setAttribute("goURI", null);
+			  }
+			  
 			if(loginDTO.getGrade()==5){	//등급이 5일때 가관리자 등급
-				return "redirect:../Index/main.do";
+				return "redirect:"+goURI;
 			}else if(loginDTO.getGrade()==3){
-				return "redirect:../index/main.do";
+				return "redirect:"+goURI;
 			}else{
-			return "redirect:../time/list.ti";
+			return "redirect:"+goURI;
 			}
 		}
 	}

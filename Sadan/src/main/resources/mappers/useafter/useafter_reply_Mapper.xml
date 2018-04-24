@@ -37,12 +37,29 @@
 		 no
 		 ,replytext 
         ,replyer 
+        ,regdate
 	)values(
 		#{no}
 		, #{replytext}
 		, #{replyer}
+		,now()
 	)
 	</insert>
+	
+	<update id="reply_update">
+		update  useafter_reply set
+		replytext = #{replytext}
+		where
+		rno = #{rno}
+	</update>
+	
+	<update id="reply_delete">
+	
+	delete from
+	useafter_reply
+	where
+	rno = #{rno}
+	</update>
 
 </mapper>
 

@@ -59,4 +59,38 @@ public class Useafter_reply_Controller {
 		//return "redirect:board_read.do?no="+useafter_DTO.getNo();
 	}
 	
+	@RequestMapping("/useafter/replies_update.do")
+	public String reply_update(Useafter_reply_DTO useafter_reply_DTO, RedirectAttributes rttr){
+		try {
+			// 등록 실행
+			useafter_reply_Service.reply_update(useafter_reply_DTO);
+			
+			// 등록이 성공하면 성공했다는 entity 생성
+			rttr.addFlashAttribute("msg","REPLY_UPDATE_SUCCESS");
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			rttr.addFlashAttribute("msg","REPLY_UPDATE_FAILED");
+		}
+		return "redirect:/useafter/board_read.do?no="+useafter_reply_DTO.getNo();
+		//return "redirect:board_read.do?no="+useafter_DTO.getNo();
+	}
+	
+	@RequestMapping("/useafter/replies_delete.do")
+	public String reply_delete(Useafter_reply_DTO useafter_reply_DTO, RedirectAttributes rttr){
+		try {
+			// 등록 실행
+			useafter_reply_Service.reply_delete(useafter_reply_DTO);
+			
+			// 등록이 성공하면 성공했다는 entity 생성
+			rttr.addFlashAttribute("msg","REPLY_DELETE_SUCCESS");
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			rttr.addFlashAttribute("msg","REPLY_DELETE_FAILED");
+		}
+		return "redirect:/useafter/board_read.do?no="+useafter_reply_DTO.getNo();
+		//return "redirect:board_read.do?no="+useafter_DTO.getNo();
+	}
+	
 }

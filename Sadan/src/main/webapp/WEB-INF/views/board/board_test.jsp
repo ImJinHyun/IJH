@@ -77,6 +77,11 @@
 프로토콜 : <%=request.getProtocol( ) %> <br/>
 요청방식 : <%=request.getMethod( ) %> <br/>
 컨텍스트 경로 : <%=request.getContextPath( ) %> <br/>
+서블릿 경로 : <%= request.getServletPath() %>
+경로 :  <%=getServletContext().getRealPath(request.getRequestURI())%>
+서블릿 경로 : <%=request.getAttribute("javax.servlet.forward.request_uri") %>
+
+
 
  <div id="contentsArea">
       <section id="titlename" class="qnaBoard">
