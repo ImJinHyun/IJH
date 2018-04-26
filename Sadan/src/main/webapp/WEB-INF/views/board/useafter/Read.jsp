@@ -62,7 +62,7 @@ $(function(){
 	
 	//수정 클릭시
 	$(".btn_reply_modify").click(function(){
-		var content = $("#reply_text").val();
+		var content = $(this).parent().parent().children("#reply_text").val();
 		
 		var rno =  $(this).parent().parent().children("#reply_info").children("#rno").attr("value");
 		
@@ -103,7 +103,7 @@ $(function(){
 	
 	
 	
-	$("#btn_reply_delete").on("click",function(){
+	$(".btn_reply_delete").on("click",function(){
 		if(confirm("댓글을 삭제하시겠습니까?")){
 			var rno =  $(this).parent().parent().children("#reply_info").children("#rno").attr("value");
 			var no = ${useafter.no};
@@ -112,16 +112,6 @@ $(function(){
 	});
 	
 	
-	
-	var reply_margin = function(a){
-		if(a>0){
-			$(this).attr("style","margin-left:30px;");
-		};
-		alert(a);
-		alert($(".answer_seq").val());
-	};
- 	
-	alert(2);
 	
 	
 });
@@ -240,7 +230,8 @@ $(".clicksel").on("load",function(){
 				<div class="reply_modify">
 				<c:choose>
 					<c:when test="${reply.replyer == login.nickname }">
-					<span class="btn_reply_modify reply_bt cursor"  >수정 | </span> 			<span class="reply_st cursor"  id="btn_reply_delete">삭제</span>
+					<span class="btn_reply_modify reply_bt cursor"  >수정 | </span> <span class="btn_reply_answer reply_bt cursor"  id="">답변 | </span>			<span class="btn_reply_delete reply_st cursor"  id="btn_reply_delete">삭제</span>
+					
 					</c:when>
 					<c:otherwise>
 					<span class="reply_st cursor">신고</span> 			<span class="btn_reply_answer reply_bt cursor"  id=""> | 답변</span>

@@ -85,7 +85,8 @@
 		</thead>
 		<tbody>
 		<c:forEach var="useafter" items="${useafter}" varStatus="status">
-			<tr>
+
+			<tr id="${status.index }">
 				<td>${(pageMaker.totalCount - status.index)-((pageMaker.cri.page-1)*pageMaker.cri.perPageNum)}</td>
 				<td>[${useafter.location}]</td>
 <%-- 				<td>[${useafter.business_type}]</td> --%>
@@ -95,6 +96,12 @@
 				<td>${useafter.hit}</td>
 				<td>${useafter.recommand}</td>							
 			</tr>
+			
+			<script type="text/javascript">
+			//	if(${useafter.answer_seq} > 0){
+					//$("#${status.index}").children("#wrap_reply").before("<div class='answer'>RE : </div>");
+		//		};
+			</script>
 		</c:forEach>
 		</tbody>
 	</table>		
