@@ -185,6 +185,7 @@ public class Eventzone_Controller {
 	private String board_modify(Model model,Eventzone_DTO eventzone_DTO ) throws Exception{
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		System.out.println(eventzone_DTO);
+		
 		System.out.println(eventzone_DTO.getBusiness_type());
 		String goURL = URLEncoder.encode(eventzone_DTO.getBusiness_type(),"UTF-8");
 		try {

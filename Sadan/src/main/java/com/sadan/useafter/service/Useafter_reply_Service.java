@@ -70,6 +70,12 @@ public class Useafter_reply_Service {
 
 
 
+	public void reply_answer(Useafter_reply_DTO useafter_reply_DTO) {
+			useafter_reply_Mapper.reply_answer(useafter_reply_DTO);
+	}
+
+
+
 	
 	
 	

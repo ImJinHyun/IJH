@@ -15,6 +15,10 @@ public class Useafter_DTO {
 	private String business_type;
 	private String hit;
 	private String secret;
+	private String answer_num;
+	private String answer_lev;
+	private String answer_seq;
+	
 	public String getNo() {
 		return no;
 	}
@@ -80,6 +84,24 @@ public class Useafter_DTO {
 	}
 	public void setSecret(String secret) {
 		this.secret = secret;
+	}
+	public String getAnswer_num() {
+		return answer_num;
+	}
+	public void setAnswer_num(String answer_num) {
+		this.answer_num = answer_num;
+	}
+	public String getAnswer_lev() {
+		return answer_lev;
+	}
+	public void setAnswer_lev(String answer_lev) {
+		this.answer_lev = answer_lev;
+	}
+	public String getAnswer_seq() {
+		return answer_seq;
+	}
+	public void setAnswer_seq(String answer_seq) {
+		this.answer_seq = answer_seq;
 	}
 	@Override
 	public String toString() {

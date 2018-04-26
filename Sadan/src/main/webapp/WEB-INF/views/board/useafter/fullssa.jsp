@@ -15,12 +15,12 @@
 	<div class="prfullssa_all">
 		<div class="board_subject">
 			<div class="board_main_subject">			
-				<span>룸/풀싸롱</span>							
+				<span>${business_type }</span>							
 			</div>
 		</div>
 	</div>
 	<!-- 검색 시작 -->
-	<form action="fullssa.do?business_type=룸/풀싸롱">
+	<form action="fullssa.do?business_type=${business_type }">
 	<input type="hidden" name="page" value="1"/>
 			<input type="hidden" name="perPageNum" value="${pageMaker.cri.perPageNum }"/>
 			
@@ -102,7 +102,7 @@
 		<hr/>
 		
 		
-		<a class="btn btn-default pull-right" href="fullssainsert.do?type=룸/풀싸롱">글쓰기</a>		
+		<a class="btn btn-default pull-right" href="fullssainsert.do?business_type=${business_type }">글쓰기</a>		
 		<!-- 페이지 처리 시작 -->
 		<div class="text-center">
 			<ul class="pagination">

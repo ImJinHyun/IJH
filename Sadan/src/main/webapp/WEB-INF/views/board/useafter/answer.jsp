@@ -18,16 +18,32 @@ $(function(){
 		
 		//분류 비활성화 하면 값이 안넘어감, 그래서 풀어줘야함
 		$("#sel1").removeAttr("disabled");
+		$("#sel2").removeAttr("disabled");
 	});
 	
 	
 	$("#sel1 option").each(function(){
-		if($(this).val()=="${business_type}"){
+		if($(this).val()=="${useafter.business_type}"){
 			$(this).attr("selected","selected");
 		};
-		
 	});
+		
+	$("#sel2 option").each(function(){
+			if($(this).val()=="${useafter.location}"){
+				$(this).attr("selected","selected");
+		};
+	});
+
+
+	var answer_seq = ${seq_count}
+	var Re = "Re : ";
+	for (var i = 0; i < answer_seq; i++) {
+		Re += "Re : ";
+	};
+
 	
+	$("#subject").val(Re);
+
 
 	
 });
@@ -42,7 +58,7 @@ $(function(){
 	</div>
 	<div class="div_clear"></div>
 	<div class="container-fluid">
-		<form class="form-horizontal" action="board_insert.do" method="post" role="form">
+		<form class="form-horizontal" action="board_answer.do" method="post" role="form">
 			<!-- 비밀글 -->
 			<div class="form-group">
 				<label class="control-label col-sm-1" for="pwd"
@@ -73,7 +89,7 @@ $(function(){
 			<div class="form-group">
 				<label class="control-label col-sm-1" for="email">지역 :</label>
 				<div class="col-sm-11">
-					<select class="form-control" id="sel2" name="location">
+					<select class="form-control" id="sel2" name="location"  disabled="disabled">
 					<option>선택하세요</option>
 						<option>강남</option>
 						<option>비강남</option>
@@ -94,7 +110,7 @@ $(function(){
 			<div class="form-group">
 				<label class="control-label col-sm-1">제목 :</label>
 				<div class="col-sm-11">
-					<input type="text" class="form-control" id="subject" name="subject"
+					<input type="text" class="form-control" id="subject" name="subject" 
 						placeholder="제목을 입력하세요">
 				</div>
 			</div>
@@ -102,7 +118,9 @@ $(function(){
 			<!-- 본문 내용이 히든으로 넘어간다. -->
 				<input type="hidden" name="content" id="content" />
 				<input type="hidden" name="writer" id="writer" value="${login.nickname }">
-			
+				<input type="hidden" name="answer_num" id="no" value="${useafter.answer_num}">
+				<input type="hidden" name="answer_seq" id="no" value="${useafter.answer_seq}">
+				
 			
 			<!--     <div class="form-group">         -->
 			<!--       <div class="col-sm-offset-2 col-sm-10"> -->
@@ -125,9 +143,8 @@ $(function(){
 					</div>
 				</div>
 			</div>
-		</form>
+			</form>
 	</div>
-${pageContent.request.contextPath}
 
 
 	<script>
