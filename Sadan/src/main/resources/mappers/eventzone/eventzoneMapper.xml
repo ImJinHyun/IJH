@@ -101,4 +101,14 @@
 		, secret = #{secret}
 		WHERE no = #{no}	
 	</update>
+	
+	<insert id="file_upload" parameterType="String">
+		insert into file(
+		  fileName
+		 ,fileRealName
+		  ) values (
+		 #{fileName}
+		,#{fileRealName}
+		)
+	</insert>
 </mapper>

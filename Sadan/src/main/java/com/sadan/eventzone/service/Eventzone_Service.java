@@ -21,6 +21,7 @@ import com.sadan.eventzone.model.Eventzone_DTO;
 
 
 
+
 @Service
 public class Eventzone_Service {
 	private static final Logger logger = LoggerFactory.getLogger(Eventzone_Service.class);
@@ -68,6 +69,10 @@ public class Eventzone_Service {
 	public Eventzone_DTO main_List() {
 		return eventzone_Mapper.main_List();
 	}
+	
+	
+	
+	
 	
 
 

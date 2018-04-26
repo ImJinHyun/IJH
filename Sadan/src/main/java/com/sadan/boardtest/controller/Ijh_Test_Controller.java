@@ -90,7 +90,13 @@ public class Ijh_Test_Controller {
 		private String chat(Model model)throws Exception {
 					
 			return "leftmenuboard/chat";
-		}			
+		}
+	//관리자배너
+		@RequestMapping("/banner/banner.do")
+		private String banner(Model model)throws Exception {
+							
+			return "admin/banner";
+		}	
 		
 	
 					

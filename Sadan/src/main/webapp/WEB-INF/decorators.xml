@@ -13,6 +13,8 @@
 		<pattern>/menuboard/*</pattern> 
 		<pattern>/member/*</pattern> 
 		<pattern>/leftmenuboard/*</pattern>
+		<pattern>/banner/*</pattern>
+		
 		
 	
 	</decorator>
@@ -42,6 +44,9 @@
 			<pattern>/servicecenter/*</pattern>
 		</decorator>
 		<decorator name="question" page="question_decorator.jsp">
+			<pattern>/question/*</pattern>
+		</decorator>
+		<decorator name="banner" page="banner_decorator.jsp">
 			<pattern>/question/*</pattern>
 		</decorator>
 		
