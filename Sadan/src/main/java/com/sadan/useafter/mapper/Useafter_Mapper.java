@@ -38,6 +38,12 @@ public interface Useafter_Mapper {
 
 	public int getReplyRow(@Param("useafter_DTO") Useafter_DTO useafter_DTO);
 
+	public void answer_insert(Useafter_DTO useafter_DTO);
+
+	public void answer_seq(Useafter_DTO useafter_DTO);
+
+	public int answer_seq_count(Useafter_DTO useafter_DTO);
+
 
 	
 }

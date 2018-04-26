@@ -26,6 +26,8 @@ public interface Useafter_reply_Mapper {
 
 	public void reply_delete(Useafter_reply_DTO useafter_reply_DTO);
 
+	public void reply_answer(Useafter_reply_DTO useafter_reply_DTO);
+
 
 	
 }

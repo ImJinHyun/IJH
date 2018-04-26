@@ -34,15 +34,23 @@
 	
 	<insert id="reply_insert">
 	insert into useafter_reply(
+	rno,
 		 no
 		 ,replytext 
         ,replyer 
         ,regdate
+        , answer_num
+        , answer_lev
+        , answer_seq
 	)values(
-		#{no}
+		(select ifnull(max(rno),0)+1 from useafter_reply asdf)
+		,#{no}
 		, #{replytext}
 		, #{replyer}
 		,now()
+		, (select ifnull(max(rno),0)+1 from useafter_reply asdf)
+		,  0
+		,  0
 	)
 	</insert>
 	
@@ -60,6 +68,28 @@
 	where
 	rno = #{rno}
 	</update>
+	
+	<insert id="reply_answer">
+		insert into useafter_reply(
+		rno
+		 , no
+		 ,replytext 
+        ,replyer 
+        ,regdate
+        , answer_num
+        , answer_lev
+        , answer_seq
+	)values(
+	(select ifnull(max(rno),0)+1 from useafter_reply asdf)
+		,#{no}
+		, #{replytext}
+		, #{replyer}
+		,now()
+		, #{answer_num}
+		,  (select ifnull(max(answer_lev),0)+1 from useafter_reply qqq where answer_num = #{answer_num})
+		,  (select ifnull(max(answer_seq),0)+1 from useafter_reply qqq where answer_num = #{answer_num})
+	)
+	</insert>
 
 </mapper>
 

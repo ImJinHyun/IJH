@@ -2,6 +2,8 @@ package com.sadan.useafter.controller;
 
 
 
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
+
 import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
@@ -68,7 +70,7 @@ public class Useafter_Controller {
 //				}
 				
 				@RequestMapping(value="/useafter/fullssa.do")
-				private String Pagefullssa(SearchCriteria criteria,Model model)throws Exception {
+				private String Pagefullssa(SearchCriteria criteria,Model model, String business_type)throws Exception {
 					Map<String, Object> map = new HashMap<String, Object>();
 					PageMaker pageMaker = new PageMaker();
 					try {
@@ -86,6 +88,7 @@ public class Useafter_Controller {
 						@SuppressWarnings({ "unchecked", "unused" })
 						List<Map<String, Object>> list = (List<Map<String, Object>>) map.get("list");
 						model.addAttribute("useafter", list);
+						model.addAttribute("business_type",business_type);
 						model.addAttribute("pageMaker",pageMaker);
 						System.out.println(list);
 					} catch (Exception e) {
@@ -108,9 +111,9 @@ public class Useafter_Controller {
 				 * @throws Exception
 				 */
 				@RequestMapping("/useafter/fullssainsert.do")
-				private String fullssainsert(Model model,@RequestParam String type)throws Exception {
-					model.addAttribute("type",type);
-					System.out.println(type);
+				private String fullssainsert(Model model,@RequestParam String business_type)throws Exception {
+					model.addAttribute("business_type",business_type);
+					System.out.println(business_type);
 					return "board/useafter/insert";
 				}
 				
@@ -134,7 +137,6 @@ public class Useafter_Controller {
 						model.addAttribute("error",resultMap.get("error"));
 					}
 					
-					// 이미지 리스트로 간다.
 					return "redirect:fullssa.do?business_type="+goURL;
 				}
 				/**
@@ -280,9 +282,57 @@ public class Useafter_Controller {
 					return "redirect:board_read.do?no="+useafter_DTO.getNo();
 					
 				}
+				
+				/**
+				 * 풀싸롱 답변 처리
+				 * @param model
+				 * @param first_board_DTO
+				 * @return
+				 * @throws Exception
+				 */
+			
+				@RequestMapping(value = "/useafter/board_answer.do", method = RequestMethod.POST)
+				private String answer_insert(Model model,Useafter_DTO useafter_DTO ) throws Exception{
+					Map<String, Object> resultMap = new HashMap<String, Object>();
+					String goURL = URLEncoder.encode(useafter_DTO.getBusiness_type(),"UTF-8");
+					try {
+						//원본글 답변 갯 수 늘리기
+					//	useafter_service.answer_seq(useafter_DTO);
+						
+						
+						//글답변 등록
+						useafter_service.answer_insert(useafter_DTO);
+					} catch (Exception e) {
+						e.printStackTrace();
+						resultMap.put("error", e.getMessage());
+						model.addAttribute("error",resultMap.get("error"));
+					}
+					
+					// 이미지 리스트로 간다.
+					return "redirect:fullssa.do?business_type="+goURL;
+				}
 					
 				
-				
+				/**
+				 * 풀싸롱 답변 매핑
+				 * @param model
+				 * @param type
+				 * @return
+				 * @throws Exception
+				 */
+				@RequestMapping("/useafter/board_answer.do")
+				private String answer_map(Useafter_DTO useafter_DTO, Model model)throws Exception {
+					try {
+						model.addAttribute("useafter", useafter_service.board_read(useafter_DTO));
+						System.out.println("돼?");
+						model.addAttribute("seq_count",useafter_service.answer_seq_count(useafter_DTO));
+						System.out.println(useafter_service.answer_seq_count(useafter_DTO));
+					} catch (Exception e) {
+						e.printStackTrace();
+					
+					}
+					return "board/useafter/answer";
+				}
 				
 				
 				

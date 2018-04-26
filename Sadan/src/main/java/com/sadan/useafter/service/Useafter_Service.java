@@ -124,6 +124,22 @@ public class Useafter_Service {
 	}
 
 
+	public void answer_insert(Useafter_DTO useafter_DTO) {
+	useafter_Mapper.answer_insert(useafter_DTO);
+		
+	}
+
+
+	public void answer_seq(Useafter_DTO useafter_DTO) {
+useafter_Mapper.answer_seq(useafter_DTO);		
+	}
+
+
+	public int answer_seq_count(Useafter_DTO useafter_DTO) {
+		return useafter_Mapper.answer_seq_count(useafter_DTO); 
+	}
+
+
 
 	
 	

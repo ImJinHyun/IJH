@@ -93,4 +93,21 @@ public class Useafter_reply_Controller {
 		//return "redirect:board_read.do?no="+useafter_DTO.getNo();
 	}
 	
+	@RequestMapping("/useafter/replies_answer.do")
+	public String reply_answer(Useafter_reply_DTO useafter_reply_DTO, RedirectAttributes rttr){
+		try {
+			// 등록 실행
+			useafter_reply_Service.reply_answer(useafter_reply_DTO);
+			
+			// 등록이 성공하면 성공했다는 entity 생성
+			rttr.addFlashAttribute("msg","ANSWER_INSERT_SUCCESS");
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			rttr.addFlashAttribute("msg","ANSWER_INSERT_FAILED");
+		}
+		return "redirect:/useafter/board_read.do?no="+useafter_reply_DTO.getNo();
+		//return "redirect:board_read.do?no="+useafter_DTO.getNo();
+	}
+	
 }

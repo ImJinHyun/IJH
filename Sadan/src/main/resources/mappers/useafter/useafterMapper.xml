@@ -19,6 +19,9 @@
 		    , business_type
 		    , hit
 		    , secret 
+		    , answer_num
+		    , answer_lev
+		    , answer_seq
 		    from useafter 
 		    where 
 		    1=1
@@ -30,13 +33,13 @@
 		   	</if>
 		    
 		    <include refid="search"></include>
-		    order by no desc
+		    order by answer_num desc, answer_seq asc
 		    ) as after,
 				    (select @rn:=0) as R
 				    ) aftertable
 				    
 				    where rownum between #{criteria.startRow} and #{criteria.endRow}
-			</select>
+		</select>
 			
 			<!-- 검색조건 쿼리 -->
 			<sql id="search">
@@ -91,6 +94,9 @@
 		,business_type
 		,hit
 		,secret
+		, answer_num
+		, answer_lev
+		, answer_seq
 		) values (
 		(select ifnull(max(no),0)+1 from useafter asdf)
 		,#{content}
@@ -103,7 +109,10 @@
 		, #{business_type}
 		,'0'
 		,#{secret}
-		);
+		, (select ifnull(max(no),0)+1 from useafter asdf)
+		, 0
+		, 0
+		)
 	</insert>
 	
 	
@@ -117,10 +126,13 @@ select * from (select @rn:=@rn+1 as rownum, use_reply.*
 	, replyer
 	, date_format(regdate,'%Y-%m-%d %h:%i') regdate
 	, date_format(updatedate, '%Y-%m-%d %h:%i') updatedate
-	
+	, answer_num
+	, answer_lev
+	, answer_seq
 	from 
 	useafter_reply
-	where no = #{useafter_DTO.no}) use_reply
+	where 
+	no = #{useafter_DTO.no}) use_reply
 	, (select @rn:=0) as R) after_reply
 	
 	where rownum between #{criteria.startRow} and #{criteria.endRow};
@@ -151,6 +163,9 @@ select * from (select @rn:=@rn+1 as rownum, use_reply.*
 		, business_type
 		, hit
 		, secret
+		, answer_num
+		, answer_lev
+		, answer_seq
 	from useafter
 	where no = #{no}
 
@@ -159,7 +174,7 @@ select * from (select @rn:=@rn+1 as rownum, use_reply.*
 	<!-- 조회수 증가 +1 -->
 	<update id="board_Hit" parameterType="String">
 		update useafter SET
-		hit = (select * from (select max(hit)+1 from useafter asd) asdf)
+		hit = (select * from (select max(hit)+1 from useafter asd where no = #{no}) asdf)
 		where
 		no = #{no}
 	</update>
@@ -225,6 +240,51 @@ select * from (select @rn:=@rn+1 as rownum, use_reply.*
 	and business_type = #{business_type}
 	</update>
 
-
+	<!-- 답변 갯수 추가 -->
+	<update id="answer_seq">
+	update useafter set
+	answer_seq = answer_seq+1
+	where
+	answer_num = #{answer_num}
+	and answer_seq+1 > #{answer_seq}
+</update>
+	<!--  답변 등록 -->
+	<insert id="answer_insert" parameterType="String">
+	insert into useafter(
+		no
+		,content
+		,subject
+		,writer
+		,location
+		,recommand
+		,dates
+		,business_nm
+		,business_type
+		,hit
+		,secret
+		, answer_num
+		, answer_lev
+		, answer_seq
+	)values(
+		(select ifnull(max(no),0)+1 from useafter asdf)
+		,#{content}
+		, #{subject}
+		, #{writer}
+		, #{location}
+		, '0'
+		, now()
+		, #{business_nm}
+		, #{business_type}
+		,'0'
+		,#{secret}
+		, #{answer_num}
+		, (select ifnull(max(answer_lev),0)+1 from useafter qqq where answer_num = #{answer_num})
+		, (select ifnull(max(answer_seq),0)+1 from useafter zzz where answer_num = #{answer_num})
+	)
+	</insert>
+	
+	<select id="answer_seq_count" resultType="Int">
+	(select ifnull(max(answer_seq),0) answer_seq from useafter zzz where answer_num = #{answer_num})
+	</select>
 </mapper>
 

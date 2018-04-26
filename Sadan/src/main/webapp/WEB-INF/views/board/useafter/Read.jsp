@@ -25,9 +25,16 @@ $(function(){
 		$("#useafter_Form").attr("action","board_modify.do").submit();
 	});
 	
+	$("#useafter_answer").on("click",function(){
+		
+		$("#useafter_Form").attr("action","board_answer.do").submit();
+	});
+	
 	$("#recommand").on("click",function(){
 		$("#useafter_Form").attr("action","recommand.do").submit();
 	});
+	
+	
 	
 	
 	// 게시글을 추천 후 성공/실패를 한번만 경고 창을 띄운다.
@@ -72,6 +79,25 @@ $(function(){
 					);
 	});
 	
+	//답글 클릭시
+	$("#btn_reply_answer").on("click",function(){
+		var content = $(this).parent().parent().children("#content").html();
+		var rno =  $(this).parent().parent().children("#reply_info").children("#rno").attr("value");
+		var rno =  $(this).parent().parent().children("#reply_info").children("#answer_num").attr("value");
+		$(this).parent().parent().children("#reply_answer").remove();
+		$(this).parent().parent().children("#content").append("			<form class='reply_insert' action='replies_answer.do' id='reply_answer' method='post'>"
+			+"<input type='hidden' name='no' value='${useafter.no }'/>"
+			+"<input type='hidden' name='answer_num' value='"+rno+"'/>"
+				+"<input type='hidden' name='replyer' value='${login.nickname }''/>"
+					+"<textarea rows='5' cols='100' class='reply_text' required='required' name='replytext'></textarea>"
+					+"<button type='submit'>수정</button>"
+					+"<input type='checkbox' name='secret'> 비밀글"
+					
+					+"<div class='div_clear'></div>"
+					+"</form>"
+					);
+	});
+	
 	$("#btn_reply_delete").on("click",function(){
 		if(confirm("댓글을 삭제하시겠습니까?")){
 			var rno =  $(this).parent().parent().children("#reply_info").children("#rno").attr("value");
@@ -97,6 +123,7 @@ $(function(){
 		<button type="button" class="btn btn-primary link_button" id="useafter_list">목록</button>
 		<button type="button" class="btn btn-primary link_button" id="useafter_delete">삭제</button>
 		<button type="button" class="btn btn-primary link_button" id="useafter_modify">수정</button>
+		<button type="button" class="btn btn-primary link_button" id="useafter_answer">답변</button>
 	</div>
 	<div class="div_clear"></div>
 	
@@ -107,6 +134,7 @@ $(function(){
 			<!-- 히든으로 보낼 데이터들 -->
 			<input type="hidden" value="${useafter.no }" name="no">
 			<input type="hidden" value="${useafter.business_type }" name="business_type">
+			<input type="hidden" value="${useafter.answer_num }" name="answer_num">
 		</form>
 		
 	
@@ -176,6 +204,7 @@ $(function(){
 				<div class="reply_info" id="reply_info">
 					${reply.replyer } 	<span class="info_bt">작성일 : </span><span class="info_st">${reply.regdate }  </span>
 					 
+					 <input type="hidden" value="${reply.answer_num}" id="answer_num" name="answer_num">
 					 <input type="hidden" value="${reply.rno}" id="rno" name="rno">
 				</div>
 				
@@ -185,7 +214,7 @@ $(function(){
 					<span class="reply_bt cursor" id="btn_reply_modify">수정 | </span> 			<span class="reply_st cursor"  id="btn_reply_delete">삭제</span>
 					</c:when>
 					<c:otherwise>
-					<span class="reply_st cursor">신고</span> 			<span class="reply_bt cursor"> | 답변</span>
+					<span class="reply_st cursor">신고</span> 			<span class="reply_bt cursor" id="btn_reply_answer"> | 답변</span>
 					</c:otherwise>
 				</c:choose>
 				
@@ -204,6 +233,7 @@ $(function(){
 			<form class="reply_insert" action="replies_insert.do" method="post">
 			<input type="hidden" name="no" value="${useafter.no }"/>
 			<input type="hidden" name="replyer" value="${login.nickname }"/>
+			<input type="hidden" name="answer_num" value="${useafter }">
 				<textarea  rows="5" cols="100" class="reply_text" required="required" name="replytext"></textarea>
 				<button>등록</button>
 				<input type="checkbox" name="secret"> 비밀글
