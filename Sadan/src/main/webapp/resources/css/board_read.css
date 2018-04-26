@@ -148,7 +148,22 @@ hr{
 	width:79%;
 	margin: 5px;
 }
-
+.reply_answer{
+	 margin: 0;
+    border-bottom: 1px solid #ddd;
+    text-align : center;
+    font-size: 12px;
+    color: #333;
+    background-color: #F5F6F6 !important;
+}
+.reply_update{
+	 margin: 0;
+    border-bottom: 1px solid #ddd;
+    text-align : center;
+    font-size: 12px;
+    color: #333;
+    background-color: #F5F6F6 !important;
+}
 .reply_list{
 	 margin: 0;
     border-bottom: 1px solid #ddd;
@@ -160,11 +175,12 @@ hr{
 
 .reply_content{
 	background-color: white;
+	width : 100%;
 }
 
 .reply_info{
 	float : left;
-	width:70%;
+	width:65%;
 }
 
 .reply_modify{
@@ -187,4 +203,13 @@ hr{
 	font-family: '돋움',Dotum,Verdana,applegothic;
 	font-size : 11px;
 	text-align: right;
+}
+.answer{
+	width : 5%;
+	height : 100%;
+	float : left;
+}
+.reply_right_wrap{
+	float : left;
+	width:100%;
 }

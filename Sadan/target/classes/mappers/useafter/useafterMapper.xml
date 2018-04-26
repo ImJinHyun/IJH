@@ -132,10 +132,12 @@ select * from (select @rn:=@rn+1 as rownum, use_reply.*
 	from 
 	useafter_reply
 	where 
-	no = #{useafter_DTO.no}) use_reply
+	no = #{useafter_DTO.no}
+	
+	ORDER BY  answer_num desc, answer_seq asc) use_reply
 	, (select @rn:=0) as R) after_reply
 	
-	where rownum between #{criteria.startRow} and #{criteria.endRow};
+	where rownum between #{criteria.startRow} and #{criteria.endRow}
     
 		
 	
