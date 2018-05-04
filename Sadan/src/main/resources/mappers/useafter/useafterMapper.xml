@@ -288,5 +288,42 @@ select * from (select @rn:=@rn+1 as rownum, use_reply.*
 	<select id="answer_seq_count" resultType="Int">
 	(select ifnull(max(answer_seq),0) answer_seq from useafter zzz where answer_num = #{answer_num})
 	</select>
+	
+	
+		<!-- 신고 여부 카운터 -->
+	<select id="report_count" parameterType="String" resultType="Int">
+	select count(*) 
+	from report
+	where
+	report_Id = #{userId}
+	and bno = #{useafter_DTO.no}
+	and table_nm = #{table_nm}
+	and business_type = #{useafter_DTO.business_type}
+	</select>
+	
+	<!-- 신고 추가 -->
+	<insert id="board_report">
+	insert into report(
+	no,
+    bno,
+    subject,
+    writer,
+    cause,
+    report_id,
+    dates,
+    table_nm
+	
+	)values(
+    (select ifnull(max(no),0)+1 from report asdf)
+    , #{useafter_DTO.no}
+    , #{useafter_DTO.subject}
+    , #{cause}
+    , #{userId}
+    ,now()
+    , #{table_nm}
+    )
+	
+	</insert>
+
 </mapper>
 

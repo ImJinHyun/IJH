@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.sadan.admin.service.Report_Service;
 import com.sadan.common.model.PageMaker;
 import com.sadan.common.model.SearchCriteria;
 import com.sadan.member.model.LoginDTO;
@@ -334,9 +335,58 @@ public class Useafter_Controller {
 					return "board/useafter/answer";
 				}
 				
+				private  String board_report_pop(SearchCriteria criteria) throws Exception{
+					
+					
+					return null;
+					
+				}
 				
-				
-				
+
+				/**
+				 * 게시글 신고
+				 * @param useafter_DTO
+				 * @param request
+				 * @param rttr
+				 * @param criteria
+				 * @return
+				 * @throws Exception
+				 */
+				@RequestMapping("/useafter/report.do")
+				private  String board_report(Useafter_DTO useafter_DTO,HttpServletRequest request,RedirectAttributes rttr, String cause) throws Exception
+				{
+					HttpSession session = request.getSession();
+					LoginDTO loginDTO =  (LoginDTO) session.getAttribute("login");
+					String userId = loginDTO.getUserId();
+					//서블릿 경로가 테이블 이름이라 서블릿에서 table명 추출
+					String table = request.getServletPath();
+					String table_path = table.substring(table.indexOf("/")+1);
+					String table_nm = table_path.substring(0,table_path.indexOf("/"));
+					//이미 추천했는지 count 뽑아오기
+					int report_Count = useafter_service.report_count(useafter_DTO, table_nm,userId, cause);
+					
+					System.out.println("컨트롤러 신고 여부======"+report_Count);
+					
+					
+					//IF 없으면 관리자에게 신고하자 
+					if(report_Count ==0) {
+						//신고 테이블에 삽입
+						useafter_service.board_report(useafter_DTO, table_nm,userId,cause);
+						//게시글에 추천수 +1
+						
+						//추천이 완료되면 메세지를 딱 한번만 존재하게 글보기로 보낸다
+						rttr.addFlashAttribute("msg","REPORTSUCCESS");
+					}
+					
+					if(report_Count !=0) {
+						rttr.addFlashAttribute("msg","REPORTFAILED");
+					}
+					
+					//글보기로 이동
+					return "redirect:board_read.do?no="+useafter_DTO.getNo();
+					
+				}
+
 				
 				
 				

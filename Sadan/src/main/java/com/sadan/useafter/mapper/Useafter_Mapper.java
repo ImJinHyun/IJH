@@ -44,6 +44,10 @@ public interface Useafter_Mapper {
 
 	public int answer_seq_count(Useafter_DTO useafter_DTO);
 
+	public int report_count(@Param("useafter_DTO") Useafter_DTO useafter_DTO,@Param("table_nm") String table_nm,@Param("userId") String userId, String cause);
+
+	public void board_report(@Param("useafter_DTO") Useafter_DTO useafter_DTO,@Param("table_nm") String table_nm,@Param("userId") String userId, String cause);
+
 
 	
 }

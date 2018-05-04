@@ -40,6 +40,13 @@
 	 	<option value="강원" ${pageMaker.cri.location =="강원"?"selected='selected'":"" }>강원</option> 
 	 </select>
 	 
+	 <button>강남</button>
+	 <button>강남2</button>
+	 <button>강남3</button>
+	 <button>강남4</button>
+	 <button>강남5</button>
+	 <button>강남6</button>
+	 
 	 <!-- 2차 분류 (보류 : 2018.04.12) -->
 	 <select class="form-control" name="business_type">
 	 <option value="n" ${pageMaker.cri.business_type == null or cri.business_type == "n"?"selected='selected'":"" } >전체</option>

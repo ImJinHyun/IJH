@@ -140,6 +140,17 @@ useafter_Mapper.answer_seq(useafter_DTO);
 	}
 
 
+	public int report_count(Useafter_DTO useafter_DTO, String table_nm, String userId, String cause) {
+		
+		return useafter_Mapper.report_count(useafter_DTO, table_nm, userId,cause);
+	} 
+
+
+	public void board_report(Useafter_DTO useafter_DTO, String table_nm, String userId, String cause) {
+		useafter_Mapper.board_report(useafter_DTO,table_nm,userId, cause);
+	}
+
+
 
 	
 	

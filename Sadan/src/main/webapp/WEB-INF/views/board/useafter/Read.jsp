@@ -8,7 +8,17 @@
 <meta charset="UTF-8">
 <title>게시판읽기</title>
 <link rel="stylesheet" href="/resources/css/board_read.css">
+<script type="text/javascript">
+function popupOpen(){
+	var url= "/orderController/modiftCartPopup";    //팝업창에 출력될 페이지 URL
+	var winWidth = 700;
+    var winHeight = 600;
+    var popupOption= "width="+winWidth+", height="+winHeight;    //팝업창 옵션(optoin)
+    var myWindow = window.open(url,"TestName",popupOption);
+    myWindow.document.write("<h1>"+myWindow.name+"</h1>");
+}
 
+</script>
 <script type="text/javascript">
 $(function(){
 
@@ -34,7 +44,17 @@ $(function(){
 		$("#useafter_Form").attr("action","recommand.do").submit();
 	});
 	
+	//신고모달 실행
+	$("#report_btn").on("click",function(){
+
+	        $("#myModal").modal();
+	//	$("#useafter_Form").attr("action","report.do").submit();
+	});
 	
+	$("#report_sub").on("click",function(){
+
+		$("#report_form").attr("action","report.do").submit();
+});
 	
 	
 	// 게시글을 추천 후 성공/실패를 한번만 경고 창을 띄운다.
@@ -208,7 +228,35 @@ $(".clicksel").on("load",function(){
 			<!-- 본문 내용 끝 -->
 			<br><br>
 			<button id="recommand">추천</button>
-			<button>신고</button>
+			
+			<!-- 신고기능 모달 -->
+			<button id="report_btn">신고</button>
+			 <div class="modal fade" id="myModal" role="dialog">
+			    <div class="modal-dialog">
+					<div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			          <h4 class="modal-title" style="text-align: left">신고</h4>
+			        </div>
+			        <div class="modal-body" style="padding:40px 50px;">
+			        	<form id="report_form" method="post">
+			          <input type="text" name="cause" width="100%" class="form-control" id="cause" placeholder="신고사유를 입력해주세요">
+			          <input type=hidden name="no" value="${useafter.no }">
+			          <input type=hidden name="subject"  value="${useafter.subject }">
+			          <input type=hidden name="writer" value="${useafter.writer }">
+			          <input type=hidden name="business_type" value="${useafter.business_type }">
+			        </form>
+			        </div>
+			        
+			        <div class="modal-footer">
+			          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove" style="color:white;"></span> Cancel</button>
+			          <button type="submit" class="btn btn-success btn-default pull-right" id="report_sub"><span class="glyphicon glyphicon-off" style="color:white;"></span> Report</button>
+			        </div>
+			      </div>
+			      </div>
+      </div>
+      
+			
 			<br><br>
 			</div>		<!-- 본문 감싸기 끝 -->
 			
@@ -248,7 +296,7 @@ $(".clicksel").on("load",function(){
 				if(${reply.answer_seq} > 0){
 					$("#${status.index}").children("#wrap_reply").before("<div class='answer'>RE : </div>");
 					$("#${status.index}").children("#wrap_reply").attr("style","width : 95%;");
-				};
+				}; 
 			</script>
 				</div>
 				<div class="div_clear"></div>

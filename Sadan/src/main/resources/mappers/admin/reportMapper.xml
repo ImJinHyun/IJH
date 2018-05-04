@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sadan.admin.mapper.Report_Mapper">
+	
+		<!-- 신고 여부 카운터 -->
+	<select id="report_count2" parameterType="String" resultType="Int">
+	select count(*) 
+	from report
+	where
+	report_Id = #{userId}
+	and bno = #{DTO.no}
+	and table_nm = #{table_nm}
+	and business_type = #{DTO.business_type}
+</select>
+</mapper>
+
